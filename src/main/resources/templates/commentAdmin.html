@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<head th:replace="plantillas/header :: head"></head>
+	</head>
+	<body>
+		<header th:replace="plantillas/header :: menuAdmin"></header>
+		<h3 th:if="${hidden}">Se el primero en comentar.</h3>
+		<table th:if="${not hidden}">
+			<thead>
+				<tr>
+					<th>Subido por</th>	
+					<th>Comentario</th>	
+					<th>Fecha</th>
+					<th>Estado</th>	
+					<th>Moderar</th>
+				</tr>
+			</thead>
+			<tr  th:each="dato:${datos}">
+				<td th:text="${dato.nombre}"></td>	
+				<td th:text="${dato.content}"></td>	
+				<td th:text="${dato.date}"></td>	
+				<td th:text="${dato.status}"></td>
+				<td> <a th:href="@{/censurar(id=${dato.idComment})}">censurar</a></td>
+			</tr>
+		</table>
+	</body>
+</html>

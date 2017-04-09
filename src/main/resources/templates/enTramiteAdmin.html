@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="plantillas/header :: head"></head>
+	<body>
+		<header th:replace="plantillas/header :: menuAdmin"></header>
+		<h1 id="propuestas">Propuestas en trámite</h1>
+		
+		<h3 th:if="${hidden}">Todavia no se creo ninguna propuesta.</h3>
+
+		<table id= "tablaPropuestasEnTramite" th:if="${not hidden}">
+				<thead>
+					<tr>
+						<th>Propuestas </th>				
+						<th>Votos actuales </th>					
+						<th>Votos para ser aceptada </th>
+						<th>Opcion </th>
+						<th>Comentarios </th>
+						<th>Modificar Número Mínimo de votos </th>
+					</tr>
+				</thead>
+				<tr th:each="proposal:${proposals}">
+					<td th:text="${proposal.name}"></td>
+					<td th:text="${proposal.valoration}"></td>
+					<td th:text="${proposal.minVotes}"></td>
+					<td> 
+						<a th:href="@{/rechazarPropuesta(idPropuesta=${proposal.id})}">Rechazar</a>
+					</td>
+					<td> <a th:href="@{/comment(id=${proposal.id})}">Ver comentarios</a></td>
+					<td> 
+						<form th:action="@{/modificarMinVotes}" method="POST">
+						<input name="idPropuesta" type="hidden" th:value="${proposal.id}"/>
+					    <input id="minVotes" name="minVotes" type="number" th:value="${proposal.minVotes}"/>
+					    <input type="submit" value="Modificar" />
+						</form>
+					</td>
+					
+				</tr>
+			</table>
+		
+	</body>
+</html>

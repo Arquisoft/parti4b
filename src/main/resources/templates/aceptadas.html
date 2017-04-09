@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<head th:replace="plantillas/header :: head"></head>
+</head>
+<body>
+	<header th:replace="plantillas/header :: menuUser"></header>
+	<h1>Propuestas Aceptadas</h1>
+
+	<h3 th:if="${hidden}">Todavia no se acepto ninguna propuesta.</h3>
+	<table th:if="${not hidden}">
+		<thead>
+			<tr>
+				<th>Propuestas</th>
+				<th>Descripción</th>
+				<th>Comentarios</th>
+			</tr>
+		</thead>
+		<tr th:each="proposal:${proposals}">
+			<td th:text="${proposal.name}"></td>
+			<td th:text="${proposal.content}"></td>
+			<td><a th:href="@{/comment(id=${proposal.id})}">ver</a></td>
+		</tr>
+	</table>
+
+</body>
+</html>

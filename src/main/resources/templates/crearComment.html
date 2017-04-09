@@ -1,0 +1,15 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="plantillas/header :: head"></head>
+	<body>
+		<header th:replace="plantillas/header :: menuUserVer"></header>
+		<form th:action="@{/salvarComment}" method="POST">
+		    <label for="comment">Introduce tu comentario: </label>
+		    <br/>
+		    <textarea name="comment" cols="100" rows="20">
+		    </textarea>
+		    <br/>
+		    <input type="submit" value="comentar" />
+		</form>
+		
+	</body>
+</html>

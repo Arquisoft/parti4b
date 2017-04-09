@@ -1,0 +1,16 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="plantillas/header :: head"></head>
+	<body>
+		<h1 id="titulo">Participation System</h1>
+		<form id="form" th:action="@{/login}" method="POST">
+		    <label id="dniLabel" for="dni">DNI: </label>
+		    <input type="text" id="dni" name="dni" />
+		    <br/>
+		    <label id="passwordLabel" for="password">Password: </label>
+		    <input type="password" id="password" name="password" />
+		    <br/>
+		    <input type="submit" id="login" value="login" />
+		</form>
+		<h4 th:if="${hidden}" th:text="${mensaje}"></h4>
+	</body>
+</html>
