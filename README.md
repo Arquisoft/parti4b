@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/Arquisoft/parti4b.svg?branch=master)](https://travis-ci.org/Arquisoft/parti4b)
 [![codecov](https://codecov.io/gh/Arquisoft/parti4b/branch/master/graph/badge.svg)](https://codecov.io/gh/Arquisoft/parti4b)
 
-# participationSystem4b
+# parti4b
 
 [![Join the chat at https://gitter.im/Arquisoft/participationSystem4b](https://badges.gitter.im/Arquisoft/participationSystem4b.svg)](https://gitter.im/Arquisoft/participants0?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 

@@ -4,7 +4,8 @@ import static org.junit.Assert.*;
 
 import java.util.List;
 
-import org.junit.Before;
+import javax.annotation.PostConstruct;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import es.uniovi.asw.Application;
 import es.uniovi.asw.conf.Factories;
-import es.uniovi.asw.util.Util;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = Application.class)
@@ -28,16 +28,14 @@ public class CommentTest {
 	private Proposal propuesta;
 	private int numComments;
 
-	@Before
+	@PostConstruct
 	public void inicializar() {
-		int idU = Util.generarAleatorio(
-				factories.getServicesFactory().getCitizenService().count());
-		int idP = Util.generarAleatorio(
-				factories.getServicesFactory().getProposalService().count());
 		usuario = factories.getPersistenceFactory().newCitizenRepository()
-				.findByID(idU);
+				.findByID(1);
 		propuesta = factories.getPersistenceFactory().newProposalRepository()
-				.findByID(idP);
+				.findByID(1);
+		numComments = (int) factories.getPersistenceFactory()
+				.newCommentaryRepository().count();
 	}
 
 	@Test

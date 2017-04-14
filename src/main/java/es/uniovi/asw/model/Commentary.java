@@ -7,6 +7,7 @@ import java.util.GregorianCalendar;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+import es.uniovi.asw.model.exception.CitizenException;
 import es.uniovi.asw.model.types.status.EstadosComentario;
 
 @Entity
@@ -38,11 +39,15 @@ public class Commentary {
 	}
 
 	public Commentary(Citizen citizen, Proposal proposal, String content) {
+		if (citizen.equals(null))
+			new CitizenException("Citizen is null");
+		if (proposal.equals(null))
+			new CitizenException("Proposal is null");
 		Calendar calendar = GregorianCalendar.getInstance();
-		this.creationDate = new Date(calendar.getTimeInMillis());
-		this.content = content;
-		this.valoration = 0;
-		this.status = EstadosComentario.Correcto;
+		setCreationDate(new Date(calendar.getTimeInMillis()));
+		setContent(content);
+		setValoracion(0);
+		setEstado(EstadosComentario.Correcto);
 		Association.Comenta.link(citizen, this, proposal);
 	}
 

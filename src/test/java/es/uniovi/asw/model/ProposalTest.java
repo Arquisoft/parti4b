@@ -3,7 +3,9 @@ package es.uniovi.asw.model;
 import static org.junit.Assert.*;
 
 import java.security.NoSuchAlgorithmException;
-import org.junit.Before;
+import java.util.List;
+
+import javax.annotation.PostConstruct;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import es.uniovi.asw.Application;
 import es.uniovi.asw.conf.Factories;
 import es.uniovi.asw.model.exception.CitizenException;
+import es.uniovi.asw.model.types.status.EstadosPropuesta;
+import es.uniovi.asw.util.Util;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = Application.class)
@@ -23,12 +27,16 @@ public class ProposalTest {
 	@Autowired
 	private Factories factory;
 
+	private Citizen c;
 	private Proposal proposal;
 	private int numProposals;
 
-	@Before
-	public void inicializeTest()
+	@PostConstruct
+	public void inicializar()
 			throws NoSuchAlgorithmException, CitizenException {
+		c = factory.getServicesFactory().getCitizenService().findById(
+				Util.generarAleatorio((int) factory.getPersistenceFactory()
+						.newCitizenRepository().count()));
 		proposal = new Proposal("Test", "ProposalTest", 10);
 		numProposals = (int) factory.getPersistenceFactory()
 				.newProposalRepository().count();
@@ -39,49 +47,69 @@ public class ProposalTest {
 		factory.getServicesFactory().getProposalService().save(proposal);
 		assertEquals(numProposals + 1, factory.getPersistenceFactory()
 				.newProposalRepository().count());
+		factory.getPersistenceFactory().newProposalRepository()
+				.delete(proposal);
 	}
 
-	/*
-	 * @Test public void testProposalAll() { List<Proposal> proposals =
-	 * factory.getServicesFactory() .getProposalService() .findAll();
-	 * 
-	 * for (Proposal p : proposals){ assertNotNull(p.getName());
-	 * assertNotNull(p.getContent()); assertNotNull(p.getMinVotes());
-	 * assertNotNull(p.getStatus()); } }
-	 * 
-	 * @Test public void testProposalFindById(){ for (int i = 1; i < 10; i++) {
-	 * int id = generarAleatorio(numProposals); Proposal p =
-	 * factory.getServicesFactory() .getProposalService() .findById(id);
-	 * assertNotNull(p.getName()); assertNotNull(p.getContent());
-	 * assertNotNull(p.getMinVotes()); assertNotNull(p.getStatus());
-	 * 
-	 * } }
-	 * 
-	 * @Test public void testProposalFindByStatus() { List<Proposal> proposals =
-	 * factory.getServicesFactory() .getProposalService()
-	 * .findByStatus(EstadosPropuesta.EnTramite); for (Proposal p : proposals) {
-	 * assertNotNull(p.getName()); assertNotNull(p.getContent());
-	 * assertNotNull(p.getMinVotes()); assertNotNull(p.getStatus()); }
-	 * 
-	 * }
-	 * 
-	 * @Test public void testProposalFindByCitizen(){ Citizen c =
-	 * factory.getServicesFactory() .getCitizenService() .findById(501L);
-	 * Proposal p = factory.getServicesFactory() .getProposalService()
-	 * .findByCitizen(c.getDni());
-	 * 
-	 * assertNotNull(p.getName()); assertNotNull(p.getContent());
-	 * assertNotNull(p.getMinVotes()); assertNotNull(p.getStatus());
-	 * 
-	 * }
-	 * 
-	 * @Test public void testProposaldelete(){ numProposals = (int)
-	 * factory.getPersistenceFactory() .newProposalRepository() .count();
-	 * factory.getPersistenceFactory() .newProposalRepository()
-	 * .delete(proposal); assertEquals(numProposals,
-	 * factory.getPersistenceFactory() .newProposalRepository() .count()); }
-	 * 
-	 * private int generarAleatorio(int maximo) { Random random = new Random();
-	 * return (int) (random.nextDouble() * maximo) + 1; }
-	 */
+	@Test
+	public void testProposalAll() {
+		List<Proposal> proposals = factory.getServicesFactory()
+				.getProposalService().findAll();
+		for (Proposal p : proposals) {
+			assertNotNull(p.getName());
+			assertNotNull(p.getContent());
+			assertNotNull(p.getMinVotes());
+			assertNotNull(p.getStatus());
+		}
+	}
+
+	@Test
+	public void testProposalFindById() {
+		Proposal p = factory.getServicesFactory().getProposalService()
+				.findById(1);
+		assertNotNull(p.getName());
+		assertNotNull(p.getContent());
+		assertNotNull(p.getMinVotes());
+		assertNotNull(p.getStatus());
+	}
+
+	@Test
+	public void testProposalFindByStatus() {
+		List<Proposal> proposals = factory.getServicesFactory()
+				.getProposalService().findByStatus(EstadosPropuesta.EnTramite);
+		for (Proposal p : proposals) {
+			assertNotNull(p.getName());
+			assertNotNull(p.getContent());
+			assertNotNull(p.getMinVotes());
+			assertNotNull(p.getStatus());
+		}
+
+	}
+
+	@Test
+	public void testProposalFindByCitizen() {
+		factory.getServicesFactory().getProposalService().save(proposal);
+		Commentary com = new Commentary(c, proposal, "Prueba");
+		factory.getPersistenceFactory().newCommentaryRepository().save(com);
+		Proposal p = factory.getServicesFactory().getProposalService()
+				.findByCitizen(c.getDni());
+		assertNotNull(p.getName());
+		assertNotNull(p.getContent());
+		assertNotNull(p.getMinVotes());
+		assertNotNull(p.getStatus());
+		factory.getPersistenceFactory().newCommentaryRepository().delete(com);
+		factory.getPersistenceFactory().newProposalRepository()
+				.delete(proposal);
+	}
+
+	@Test
+	public void testProposaldelete() {
+		numProposals = (int) factory.getPersistenceFactory()
+				.newProposalRepository().count();
+		factory.getPersistenceFactory().newProposalRepository()
+				.delete(proposal);
+		assertEquals(numProposals, factory.getPersistenceFactory()
+				.newProposalRepository().count());
+	}
+
 }

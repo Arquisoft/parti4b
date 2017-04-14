@@ -6,8 +6,8 @@ import java.security.NoSuchAlgorithmException;
 import java.sql.Date;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.util.List;
-import org.junit.Before;
+import javax.annotation.PostConstruct;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +31,7 @@ public class CitizenTest {
 	private Calendar c1;
 	private int numCitizens;
 
-	@Before
+	@PostConstruct
 	public void inicializarTest()
 			throws NoSuchAlgorithmException, CitizenException {
 		c1 = GregorianCalendar.getInstance();
@@ -88,24 +88,6 @@ public class CitizenTest {
 		aux = usuario.getPassword();
 		usuario.setPassword("asdas");
 		assertNotEquals(aux, usuario.getPassword());
-	}
-
-	@Test
-	public void testCitizensAll() {
-		List<Citizen> citizens = factory.getServicesFactory()
-				.getCitizenService().findAll();
-		assertEquals(501, citizens.size());
-		for (Citizen c : citizens) {
-			assertNotNull(c.getApellidos());
-			assertNotNull(c.getDni());
-			assertNotNull(c.getEmail());
-			assertNotNull(c.getFechaNacimiento());
-			assertNotNull(c.getId());
-			assertNotNull(c.getNacionalidad());
-			assertNotNull(c.getNombre());
-			assertNotNull(c.getPassword());
-			assertNotNull(c.getResidencia());
-		}
 	}
 
 	@Test

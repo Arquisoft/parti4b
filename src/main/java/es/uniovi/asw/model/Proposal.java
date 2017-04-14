@@ -23,7 +23,7 @@ public class Proposal {
 	@NotNull
 	private String content;
 
-	@OneToMany(mappedBy = "proposal", fetch = FetchType.EAGER)
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "proposal", fetch = FetchType.EAGER)
 	private List<Commentary> comments = new ArrayList<>();
 
 	@NotNull
@@ -42,11 +42,11 @@ public class Proposal {
 	}
 
 	public Proposal(String name, String content, int minVotes) {
-		this.name = name;
-		this.content = content;
-		this.minVotes = minVotes;
-		this.status = EstadosPropuesta.EnTramite;
-		this.valoration = 0;
+		setName(name);
+		setContent(content);
+		setMinVotes(minVotes);
+		setStatus(status);
+		setValoration(valoration);
 	}
 
 	public EstadosPropuesta getStatus() {
@@ -135,6 +135,10 @@ public class Proposal {
 
 	public void setVotes(Set<Vote> votes) {
 		this.votes = votes;
+	}
+
+	public void setValoration(int valoration) {
+		this.valoration = valoration;
 	}
 
 	@Override
