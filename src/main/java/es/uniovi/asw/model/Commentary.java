@@ -51,6 +51,10 @@ public class Commentary {
 		Association.Comenta.link(citizen, this, proposal);
 	}
 
+	public Long getId() {
+		return id;
+	}
+
 	public String getContent() {
 		return content;
 	}

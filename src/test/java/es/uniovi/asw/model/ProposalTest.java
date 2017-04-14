@@ -97,7 +97,7 @@ public class ProposalTest {
 		assertNotNull(p.getContent());
 		assertNotNull(p.getMinVotes());
 		assertNotNull(p.getStatus());
-		factory.getPersistenceFactory().newCommentaryRepository().delete(com);
+		factory.getServicesFactory().getCommentaryService().delete(com);
 		factory.getPersistenceFactory().newProposalRepository()
 				.delete(proposal);
 	}

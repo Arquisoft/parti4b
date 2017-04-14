@@ -174,10 +174,6 @@ public class Citizen {
 	}
 
 	public Set<Commentary> getComentarios() {
-		return new HashSet<Commentary>(comentarios);
-	}
-
-	public Set<Commentary> _getComentarios() {
 		return comentarios;
 	}
 
@@ -194,10 +190,6 @@ public class Citizen {
 	}
 
 	public Set<Vote> getVotes() {
-		return new HashSet<Vote>(votes);
-	}
-
-	public Set<Vote> _getVotes() {
 		return votes;
 	}
 

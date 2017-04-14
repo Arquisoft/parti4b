@@ -23,7 +23,7 @@ public class Proposal {
 	@NotNull
 	private String content;
 
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "proposal", fetch = FetchType.EAGER)
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "proposal", fetch = FetchType.EAGER, orphanRemoval = true)
 	private List<Commentary> comments = new ArrayList<>();
 
 	@NotNull
@@ -126,10 +126,6 @@ public class Proposal {
 	}
 
 	public Set<Vote> getVotes() {
-		return new HashSet<Vote>(votes);
-	}
-
-	public Set<Vote> _getVotes() {
 		return votes;
 	}
 

@@ -17,18 +17,18 @@ public class Association {
 			commentary.setProposal(null);
 		}
 	}
-	
+
 	public static class Vota {
 		public static void link(Citizen citizen, Vote vote, Proposal proposal) {
 			vote.setCitizen(citizen);
 			vote.setProposal(proposal);
-			citizen._getVotes().add(vote);
-			proposal._getVotes().add(vote);
+			citizen.getVotes().add(vote);
+			proposal.getVotes().add(vote);
 		}
-		
+
 		public static void unlink(Vote vote) {
-			vote.getCitizen()._getVotes().remove(vote);
-			vote.getProposal()._getVotes().remove(vote);
+			vote.getCitizen().getVotes().remove(vote);
+			vote.getProposal().getVotes().remove(vote);
 			vote.setCitizen(null);
 			vote.setProposal(null);
 		}
