@@ -23,7 +23,8 @@ public class Proposal {
 	@NotNull
 	private String content;
 
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "proposal", fetch = FetchType.EAGER, orphanRemoval = true)
+	@OneToMany(cascade = { CascadeType.REFRESH,
+			CascadeType.REMOVE }, mappedBy = "proposal", fetch = FetchType.EAGER, orphanRemoval = true)
 	private List<Commentary> comments = new ArrayList<>();
 
 	@NotNull
