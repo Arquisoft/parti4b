@@ -45,8 +45,8 @@ public class Proposal {
 		setName(name);
 		setContent(content);
 		setMinVotes(minVotes);
-		setStatus(status);
-		setValoration(valoration);
+		setStatus(EstadosPropuesta.EnTramite);
+		setValoration(0);
 	}
 
 	public EstadosPropuesta getStatus() {
