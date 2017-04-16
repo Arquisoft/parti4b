@@ -15,8 +15,6 @@ public interface CommentaryService {
 
 	public Commentary findByCitizen(String dni);
 
-	void save(Commentary c);
-
 	public void save(Long idCitizen, Long idProposal, String message);
 
 	public List<Commentary> findByProposal(long id);

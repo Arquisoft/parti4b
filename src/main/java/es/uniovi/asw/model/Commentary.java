@@ -55,6 +55,10 @@ public class Commentary {
 		return id;
 	}
 
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	public String getContent() {
 		return content;
 	}
@@ -110,9 +114,9 @@ public class Commentary {
 
 	@Override
 	public String toString() {
-		return "Comentario [citizen=" + citizen + ", proposal=" + proposal
-				+ ", fechaCreacion=" + creationDate + ", valoracion="
-				+ valoration + ", contenido=" + content + ", estado=" + status
+		return "Commentary [id=" + id + ", citizen=" + citizen + ", proposal="
+				+ proposal + ", creationDate=" + creationDate + ", valoration="
+				+ valoration + ", content=" + content + ", status=" + status
 				+ "]";
 	}
 

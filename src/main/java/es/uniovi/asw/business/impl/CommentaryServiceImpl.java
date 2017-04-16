@@ -48,11 +48,6 @@ public class CommentaryServiceImpl implements CommentaryService {
 	}
 
 	@Override
-	public void save(Commentary commentary) {
-		comentarioRepository.save(commentary);
-	}
-
-	@Override
 	public void delete(Commentary commentary) {
 		Association.Comenta.unlink(commentary);
 		comentarioRepository.delete(commentary);

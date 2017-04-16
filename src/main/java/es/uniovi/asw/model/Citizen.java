@@ -48,11 +48,11 @@ public class Citizen {
 	private boolean isAdmin;
 
 	@OneToMany(cascade = { CascadeType.REFRESH,
-			CascadeType.REMOVE }, mappedBy = "citizen", fetch = FetchType.EAGER, orphanRemoval = true)
+			CascadeType.REMOVE }, mappedBy = "citizen", fetch = FetchType.EAGER)
 	private Set<Commentary> comentarios = new HashSet<Commentary>();
 
 	@OneToMany(cascade = { CascadeType.REFRESH,
-			CascadeType.REMOVE }, mappedBy = "citizen", fetch = FetchType.EAGER, orphanRemoval = true)
+			CascadeType.REMOVE }, mappedBy = "citizen", fetch = FetchType.EAGER)
 	private Set<Vote> votes = new HashSet<Vote>();
 
 	Citizen() {
