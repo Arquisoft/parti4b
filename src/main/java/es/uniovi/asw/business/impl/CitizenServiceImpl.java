@@ -42,4 +42,10 @@ public class CitizenServiceImpl implements CitizenService {
 	public Citizen findLoggableUser(String name, String password) {
 		return citizenRepository.findLoggableUser(name, password);
 	}
+
+	@Override
+	public void delete(Citizen citizen) {
+		citizenRepository.delete(citizen);
+
+	}
 }

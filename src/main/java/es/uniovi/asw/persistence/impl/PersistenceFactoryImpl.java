@@ -4,6 +4,7 @@ import es.uniovi.asw.persistence.CitizenRepository;
 import es.uniovi.asw.persistence.CommentaryRepository;
 import es.uniovi.asw.persistence.PersistenceFactory;
 import es.uniovi.asw.persistence.ProposalRepository;
+import es.uniovi.asw.persistence.VoteRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -22,6 +23,9 @@ public class PersistenceFactoryImpl implements PersistenceFactory {
 	@Autowired
 	private CommentaryRepository commentaryRepository;
 
+	@Autowired
+	private VoteRepository voteRepository;
+
 	@Override
 	public CitizenRepository newCitizenRepository() {
 		return citizenRepository;
@@ -35,5 +39,10 @@ public class PersistenceFactoryImpl implements PersistenceFactory {
 	@Override
 	public CommentaryRepository newCommentaryRepository() {
 		return commentaryRepository;
+	}
+
+	@Override
+	public VoteRepository newVoteRepository() {
+		return voteRepository;
 	}
 }

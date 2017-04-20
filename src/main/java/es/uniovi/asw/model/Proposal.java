@@ -23,10 +23,6 @@ public class Proposal {
 	@NotNull
 	private String content;
 
-	@OneToMany(cascade = { CascadeType.REFRESH,
-			CascadeType.REMOVE }, mappedBy = "proposal", fetch = FetchType.EAGER, orphanRemoval = true)
-	private List<Commentary> comments = new ArrayList<>();
-
 	@NotNull
 	private int valoration;
 
@@ -36,7 +32,12 @@ public class Proposal {
 	@Enumerated(EnumType.STRING)
 	private EstadosPropuesta status;
 
-	@OneToMany(mappedBy = "proposal", fetch = FetchType.EAGER)
+	@OneToMany(cascade = { CascadeType.REFRESH,
+			CascadeType.REMOVE }, mappedBy = "proposal", fetch = FetchType.EAGER)
+	private List<Commentary> comments = new ArrayList<>();
+
+	@OneToMany(cascade = { CascadeType.REFRESH,
+			CascadeType.REMOVE }, mappedBy = "proposal", fetch = FetchType.EAGER)
 	private Set<Vote> votes = new HashSet<Vote>();
 
 	public Proposal() {
@@ -114,12 +115,26 @@ public class Proposal {
 		this.id = id;
 	}
 
-	public void positiveVote() {
+	public boolean positiveVote(Citizen citizen) {
+		if (comprobarVotacion(citizen))
+			return false;
 		this.valoration++;
+		return true;
 	}
 
-	public void negativeVote() {
+	public boolean negativeVote(Citizen citizen) {
+		if (comprobarVotacion(citizen))
+			return false;
 		this.valoration--;
+		return true;
+	}
+
+	private boolean comprobarVotacion(Citizen citizen) {
+		for (Vote v : votes)
+			if (v.getCitizen().equals(citizen))
+				return true;
+		votes.add(new Vote(citizen, this));
+		return false;
 	}
 
 	public void insertComment(Commentary comment) {

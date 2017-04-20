@@ -9,4 +9,6 @@ public interface ServicesFactory {
 	public ProposalService getProposalService();
 
 	public CommentaryService getCommentaryService();
+
+	public VoteService getVoteService();
 }

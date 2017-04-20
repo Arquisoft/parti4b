@@ -6,6 +6,7 @@ import es.uniovi.asw.business.CitizenService;
 import es.uniovi.asw.business.CommentaryService;
 import es.uniovi.asw.business.ProposalService;
 import es.uniovi.asw.business.ServicesFactory;
+import es.uniovi.asw.business.VoteService;
 
 @Service
 public class ServicesFactoryImpl implements ServicesFactory {
@@ -18,6 +19,9 @@ public class ServicesFactoryImpl implements ServicesFactory {
 
 	@Autowired
 	private CommentaryServiceImpl commentaryService;
+
+	@Autowired
+	private VoteServiceImpl voteService;
 
 	@Override
 	public CitizenService getCitizenService() {
@@ -32,5 +36,10 @@ public class ServicesFactoryImpl implements ServicesFactory {
 	@Override
 	public CommentaryService getCommentaryService() {
 		return commentaryService;
+	}
+
+	@Override
+	public VoteService getVoteService() {
+		return voteService;
 	}
 }

@@ -301,13 +301,17 @@ public class MainController {
 		if (usuario != null) {
 			Proposal propuesta = factory.getServicesFactory()
 					.getProposalService().findById(Long.parseLong(idPropuesta));
-			propuesta.positiveVote();
-
+			if (!propuesta.positiveVote(usuario)) {
+				kafkaProducer.send("user", "Ya ha votado el usuario");
+				return fail();
+			} else {
+				factory.getServicesFactory().getVoteService()
+						.save(usuario.getId(), propuesta.getId());
+			}
 			if (propuesta.getValoration() >= propuesta.getMinVotes()) {
 				propuesta.setStatus(EstadosPropuesta.Aceptada);
 			}
 
-			factory.getServicesFactory().getProposalService().update(propuesta);
 			List<Proposal> proposals = factory.getServicesFactory()
 					.getProposalService()
 					.findByStatus(EstadosPropuesta.EnTramite);
@@ -326,7 +330,13 @@ public class MainController {
 		if (usuario != null) {
 			Proposal propuesta = factory.getServicesFactory()
 					.getProposalService().findById(Long.parseLong(idPropuesta));
-			propuesta.negativeVote();
+			if (!propuesta.negativeVote(usuario)) {
+				kafkaProducer.send("user", "Ya ha votado el usuario");
+				return fail();
+			} else {
+				factory.getServicesFactory().getVoteService()
+						.save(usuario.getId(), propuesta.getId());
+			}
 			factory.getServicesFactory().getProposalService().update(propuesta);
 			List<Proposal> proposals = factory.getServicesFactory()
 					.getProposalService()

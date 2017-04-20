@@ -17,4 +17,6 @@ public interface CitizenService {
 	public Citizen findLoggableUser(String dni, String password);
 
 	public int count();
+
+	public void delete(Citizen citizen);
 }

@@ -4,7 +4,6 @@ import java.io.*;
 import java.util.GregorianCalendar;
 
 import es.uniovi.asw.model.exception.CitizenException;
-import es.uniovi.asw.util.FactoryCarpetas;
 
 /**
  * Clase encargar de documentar y guardar todas las excepciones ocurridas con el
@@ -23,7 +22,7 @@ public class WreportP implements WriteReport {
 		if (error == null)
 			throw new CitizenException(
 					"El error a guardar en el fichero Log no puede ser null.");
-		new FactoryCarpetas().crearCarpeta("Log");
+		crearCarpeta("Log");
 		try {
 			String mensajeLog = "(";
 			mensajeLog += GregorianCalendar.getInstance().getTime() + ") -> ";
@@ -36,6 +35,14 @@ public class WreportP implements WriteReport {
 			throw new CitizenException(ioe.getLocalizedMessage());
 		}
 
+	}
+
+	public void crearCarpeta(String nombreCarpeta) {
+		String nombre = "" + nombreCarpeta;
+		File file = new File(nombre);
+		if (!file.exists()) {
+			file.mkdir();
+		}
 	}
 
 }

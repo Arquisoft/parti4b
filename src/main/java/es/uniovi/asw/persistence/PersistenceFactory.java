@@ -7,4 +7,6 @@ public interface PersistenceFactory {
 	public ProposalRepository newProposalRepository();
 
 	public CommentaryRepository newCommentaryRepository();
+
+	public VoteRepository newVoteRepository();
 }

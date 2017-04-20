@@ -96,15 +96,17 @@ public class CitizenTest {
 			int id = Util.generarAleatorio(numCitizens);
 			Citizen c = factory.getServicesFactory().getCitizenService()
 					.findById(id);
-			assertNotNull(c.getApellidos());
-			assertNotNull(c.getDni());
-			assertNotNull(c.getEmail());
-			assertNotNull(c.getFechaNacimiento());
-			assertNotNull(c.getId());
-			assertNotNull(c.getNacionalidad());
-			assertNotNull(c.getNombre());
-			assertNotNull(c.getPassword());
-			assertNotNull(c.getResidencia());
+			if (c != null) {
+				assertNotNull(c.getApellidos());
+				assertNotNull(c.getDni());
+				assertNotNull(c.getEmail());
+				assertNotNull(c.getFechaNacimiento());
+				assertNotNull(c.getId());
+				assertNotNull(c.getNacionalidad());
+				assertNotNull(c.getNombre());
+				assertNotNull(c.getPassword());
+				assertNotNull(c.getResidencia());
+			}
 		}
 	}
 

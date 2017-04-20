@@ -38,7 +38,6 @@ public class ProposalServiceImpl implements ProposalService {
 	@Override
 	public void update(Proposal propuesta) {
 		propuestaRepository.save(propuesta);
-
 	}
 
 	@Override
