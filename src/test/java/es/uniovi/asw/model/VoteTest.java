@@ -82,12 +82,13 @@ public class VoteTest {
 	public void testModificarVotos()
 			throws NoSuchAlgorithmException, CitizenException {
 		vote = new Vote(usuario, proposal);
+		vote.setId((long) 1);
 		Calendar c1 = GregorianCalendar.getInstance();
 		Citizen citizen = new Citizen("", "", "",
 				new Date(c1.getTimeInMillis() - 10000), "", "", "");
 		Vote vote2 = new Vote(citizen, proposal);
-		assertNotEquals(vote.getVotingDate(), vote2.getVotingDate());
-		assertTrue(vote.equals(vote2));
+		vote2.setId((long) 2);
+		assertFalse(vote.equals(vote2));
 		assertNotEquals(vote.toString(), vote2.toString());
 	}
 
