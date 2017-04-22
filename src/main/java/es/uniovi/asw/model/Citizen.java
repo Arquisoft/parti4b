@@ -4,6 +4,8 @@ import es.uniovi.asw.model.exception.CitizenException;
 import es.uniovi.asw.model.util.EncryptMD5;
 
 import java.security.NoSuchAlgorithmException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -179,10 +181,6 @@ public class Citizen {
 		return comentarios;
 	}
 
-	public void setComentarios(Set<Commentary> comentarios) {
-		this.comentarios = comentarios;
-	}
-
 	public boolean isAdmin() {
 		return isAdmin;
 	}
@@ -195,19 +193,14 @@ public class Citizen {
 		return votes;
 	}
 
-	public void setVotes(Set<Vote> votes) {
-		this.votes = votes;
-	}
-
 	@Override
 	public String toString() {
-		return "Citizen [id=" + id + ", nombre=" + nombre + ", apellidos="
-				+ apellidos + ", email=" + email + ", fechaNacimiento="
-				+ fechaNacimiento + ", residencia=" + residencia
-				+ ", nacionalidad=" + nacionalidad + ", dni=" + dni
-				+ ", password=" + password + ", isAdmin=" + isAdmin
-				+ ", comentarios=" + comentarios.size() + ", votes="
-				+ votes.size() + "]";
+		DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+		String reportDate = df.format(fechaNacimiento);
+		return "Citizen [nombre=" + nombre + ", apellidos=" + apellidos
+				+ ", email=" + email + ", fechaNacimiento=" + reportDate
+				+ ", residencia=" + residencia + ", nacionalidad="
+				+ nacionalidad + ", dni=" + dni + ", isAdmin=" + isAdmin + "]";
 	}
 
 	@Override

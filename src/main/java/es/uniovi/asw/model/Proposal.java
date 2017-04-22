@@ -137,16 +137,8 @@ public class Proposal {
 		return false;
 	}
 
-	public void insertComment(Commentary comment) {
-		this.comments.add(comment);
-	}
-
 	public Set<Vote> getVotes() {
 		return votes;
-	}
-
-	public void setVotes(Set<Vote> votes) {
-		this.votes = votes;
 	}
 
 	public void setValoration(int valoration) {
@@ -155,8 +147,9 @@ public class Proposal {
 
 	@Override
 	public String toString() {
-		String cadena = "La propuesta: '" + name + "' tiene un total de "
-				+ valoration + " votos y " + comments.size() + " comments.\n";
+		String cadena = "La propuesta: '" + getName() + "' tiene un total de "
+				+ getValoration() + " votos y " + getComments().size()
+				+ " comments.\n";
 		return cadena;
 	}
 

@@ -3,7 +3,7 @@ package es.uniovi.asw.model;
 import static org.junit.Assert.*;
 
 import java.security.NoSuchAlgorithmException;
-import java.sql.Date;
+import java.util.Date;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import javax.annotation.PostConstruct;
@@ -30,6 +30,7 @@ public class CitizenTest {
 	private Citizen usuario;
 	private Calendar c1;
 	private int numCitizens;
+	private String aux;
 
 	@PostConstruct
 	public void inicializarTest()
@@ -56,7 +57,7 @@ public class CitizenTest {
 		usuario.setId((long) 852);
 		assertNotEquals(id, usuario.getId());
 
-		String aux = usuario.getNombre();
+		aux = usuario.getNombre();
 		usuario.setNombre("asdas");
 		assertNotEquals(aux, usuario.getNombre());
 
@@ -64,6 +65,10 @@ public class CitizenTest {
 		usuario.setApellidos("asdas");
 		assertNotEquals(aux, usuario.getApellidos());
 
+	}
+
+	@Test
+	public void testModificarCitizen2() throws CitizenException {
 		aux = usuario.getEmail();
 		usuario.setEmail("asdas");
 		assertNotEquals(aux, usuario.getEmail());
@@ -76,7 +81,11 @@ public class CitizenTest {
 		aux = usuario.getResidencia();
 		usuario.setResidencia("asdas");
 		assertNotEquals(aux, usuario.getResidencia());
+	}
 
+	@Test
+	public void testModificarCitizen3()
+			throws NoSuchAlgorithmException, CitizenException {
 		aux = usuario.getNacionalidad();
 		usuario.setNacionalidad("asdas");
 		assertNotEquals(aux, usuario.getNacionalidad());
@@ -88,6 +97,36 @@ public class CitizenTest {
 		aux = usuario.getPassword();
 		usuario.setPassword("asdas");
 		assertNotEquals(aux, usuario.getPassword());
+
+		Citizen citizen = new Citizen("", "", "",
+				new Date(c1.getTimeInMillis()), "", "", "");
+		citizen.setId((long) 1);
+		assertFalse(citizen.equals(usuario));
+	}
+
+	@Test
+	public void testModificarCitizen4() {
+		try {
+			c1.set(Calendar.YEAR, 2088);
+			usuario.setFechaNacimiento(new Date(c1.getTimeInMillis()));
+		} catch (Exception e) {
+			assertEquals(CitizenException.class, e.getClass());
+			assertEquals(e.getMessage(),
+					"La fecha de nacimiento es posterior al dia actual.");
+		}
+		try {
+			c1.set(Calendar.YEAR, 2088);
+			usuario.setFechaNacimiento(null);
+		} catch (Exception e) {
+			assertEquals(CitizenException.class, e.getClass());
+			assertEquals(e.getMessage(),
+					"La fecha de nacimiento no puede ser null.");
+		}
+		assertEquals(
+				"Citizen [nombre=a, apellidos=b b, email=c@gmail.com, "
+						+ "fechaNacimiento=01/01/1988, residencia=residencia, "
+						+ "nacionalidad=nacionalidad, dni=dni, isAdmin=false]",
+				usuario.toString());
 	}
 
 	@Test

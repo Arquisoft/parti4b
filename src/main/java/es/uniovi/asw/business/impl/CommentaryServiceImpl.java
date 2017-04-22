@@ -6,6 +6,7 @@ import es.uniovi.asw.model.Association;
 import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.model.Commentary;
 import es.uniovi.asw.model.Proposal;
+import es.uniovi.asw.model.exception.CitizenException;
 import es.uniovi.asw.persistence.CommentaryRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +39,7 @@ public class CommentaryServiceImpl implements CommentaryService {
 
 	@Override
 	// Métodos @Transactional debe ir en @Service
-	public void save(Long idCitizen, Long idProposal, String message) {
+	public void save(Long idCitizen, Long idProposal, String message) throws CitizenException {
 		Citizen citizen = factories.getServicesFactory().getCitizenService()
 				.findById(idCitizen);
 		Proposal proposal = factories.getServicesFactory().getProposalService()

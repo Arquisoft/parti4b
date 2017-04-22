@@ -15,6 +15,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import es.uniovi.asw.Application;
 import es.uniovi.asw.conf.Factories;
+import es.uniovi.asw.model.exception.CitizenException;
+import es.uniovi.asw.model.types.status.EstadosComentario;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = Application.class)
@@ -39,7 +41,7 @@ public class CommentTest {
 	}
 
 	@Test
-	public void testCommentsSave() {
+	public void testCommentsSave() throws CitizenException {
 		Commentary c = new Commentary(usuario, propuesta, "mensaje");
 		factories.getPersistenceFactory().newCommentaryRepository().save(c);
 		assertEquals(numComments + 1, factories.getPersistenceFactory()
@@ -54,6 +56,31 @@ public class CommentTest {
 		for (Commentary c : comentarios) {
 			assertNotNull(c.getContent());
 		}
+	}
+
+	@Test
+	public void testCheckComment() throws CitizenException {
+		Commentary commentary;
+		try {
+			commentary = new Commentary(null, null, "");
+		} catch (Exception e) {
+			assertEquals(e.getClass(), CitizenException.class);
+			assertEquals(e.getMessage(), "Citizen is null");
+		}
+
+		try {
+			commentary = new Commentary(new Citizen(), null, "");
+		} catch (Exception e) {
+			assertEquals(e.getClass(), CitizenException.class);
+			assertEquals(e.getMessage(), "Proposal is null");
+		}
+
+		commentary = new Commentary(usuario, propuesta, "mensaje");
+		Commentary c = new Commentary(usuario, propuesta, "");
+		assertNotEquals(commentary.toString(), c.toString());
+		assertEquals(commentary.getEstado(), EstadosComentario.Correcto);
+		commentary.censurarComentario();
+		assertEquals(commentary.getEstado(), EstadosComentario.Censurado);
 	}
 
 }

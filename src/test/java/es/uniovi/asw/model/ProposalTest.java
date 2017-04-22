@@ -87,7 +87,7 @@ public class ProposalTest {
 	}
 
 	@Test
-	public void testProposalFindByCitizen() {
+	public void testProposalFindByCitizen() throws CitizenException {
 		factory.getServicesFactory().getProposalService().save(proposal);
 		Commentary com = new Commentary(c, proposal, "Prueba");
 		factory.getPersistenceFactory().newCommentaryRepository().save(com);
@@ -110,6 +110,32 @@ public class ProposalTest {
 				.delete(proposal);
 		assertEquals(numProposals, factory.getPersistenceFactory()
 				.newProposalRepository().count());
+	}
+
+	@Test
+	public void testProposalStates() throws CitizenException {
+		proposal.acceptProposal();
+		assertEquals(proposal.getStatus(), EstadosPropuesta.Aceptada);
+		proposal.cancelProposal();
+		assertEquals(proposal.getStatus(), EstadosPropuesta.Anulada);
+		proposal.restoreEstadoPropuesta();
+		assertEquals(proposal.getStatus(), EstadosPropuesta.EnTramite);
+		proposal.refuseProposal();
+		assertEquals(proposal.getStatus(), EstadosPropuesta.Rechazada);
+	}
+
+	@Test
+	public void testProposalInsert() throws CitizenException {
+		int count = proposal.getComments().size();
+		new Commentary(c, proposal, "");
+		assertEquals(count + 1, proposal.getComments().size());
+	}
+
+	@Test
+	public void testProposalEquals() throws CitizenException {
+		Proposal p = new Proposal("", "", 12345);
+		p.setId((long) 1);
+		assertNotEquals(p, proposal);
 	}
 
 }

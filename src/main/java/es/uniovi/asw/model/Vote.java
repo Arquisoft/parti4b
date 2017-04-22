@@ -1,5 +1,7 @@
 package es.uniovi.asw.model;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -71,11 +73,7 @@ public class Vote {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((citizen == null) ? 0 : citizen.hashCode());
-		result = prime * result
-				+ ((proposal == null) ? 0 : proposal.hashCode());
-		result = prime * result
-				+ ((votingDate == null) ? 0 : votingDate.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
 
@@ -88,28 +86,20 @@ public class Vote {
 		if (getClass() != obj.getClass())
 			return false;
 		Vote other = (Vote) obj;
-		if (citizen == null) {
-			if (other.citizen != null)
+		if (id == null) {
+			if (other.id != null)
 				return false;
-		} else if (!citizen.equals(other.citizen))
-			return false;
-		if (proposal == null) {
-			if (other.proposal != null)
-				return false;
-		} else if (!proposal.equals(other.proposal))
-			return false;
-		if (votingDate == null) {
-			if (other.votingDate != null)
-				return false;
-		} else if (!votingDate.equals(other.votingDate))
+		} else if (!id.equals(other.id))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
+		DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+		String reportDate = df.format(votingDate);
 		return "Vote [citizen=" + citizen + ", proposal=" + proposal
-				+ ", votingDate=" + votingDate + "]";
+				+ ", votingDate=" + reportDate + "]";
 	}
 
 }

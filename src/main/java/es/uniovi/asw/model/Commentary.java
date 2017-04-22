@@ -1,5 +1,7 @@
 package es.uniovi.asw.model;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -38,11 +40,12 @@ public class Commentary {
 	Commentary() {
 	}
 
-	public Commentary(Citizen citizen, Proposal proposal, String content) {
-		if (citizen.equals(null))
-			new CitizenException("Citizen is null");
-		if (proposal.equals(null))
-			new CitizenException("Proposal is null");
+	public Commentary(Citizen citizen, Proposal proposal, String content)
+			throws CitizenException {
+		if (citizen == null)
+			throw new CitizenException("Citizen is null");
+		if (proposal == null)
+			throw new CitizenException("Proposal is null");
 		Calendar calendar = GregorianCalendar.getInstance();
 		setCreationDate(new Date(calendar.getTimeInMillis()));
 		setContent(content);
@@ -53,10 +56,6 @@ public class Commentary {
 
 	public Long getId() {
 		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public String getContent() {
@@ -84,8 +83,8 @@ public class Commentary {
 		this.status = status;
 	}
 
-	public void censurarComentario(Commentary comment) {
-		comment.setEstado(EstadosComentario.Censurado);
+	public void censurarComentario() {
+		setEstado(EstadosComentario.Censurado);
 	}
 
 	public Proposal getProposal() {
@@ -114,10 +113,12 @@ public class Commentary {
 
 	@Override
 	public String toString() {
-		return "Commentary [id=" + id + ", citizen=" + citizen + ", proposal="
-				+ proposal + ", creationDate=" + creationDate + ", valoration="
-				+ valoration + ", content=" + content + ", status=" + status
-				+ "]";
+		DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+		String reportDate = df.format(getCreationDate());
+		return "Commentary [citizen=" + getCitizen() + ", proposal="
+				+ getProposal() + ", creationDate=" + reportDate
+				+ ", valoration=" + getValoracion() + ", content="
+				+ getContent() + ", status=" + getEstado() + "]";
 	}
 
 	@Override

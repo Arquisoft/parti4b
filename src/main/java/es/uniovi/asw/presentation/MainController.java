@@ -17,6 +17,7 @@ import es.uniovi.asw.conf.Factories;
 import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.model.Commentary;
 import es.uniovi.asw.model.Proposal;
+import es.uniovi.asw.model.exception.CitizenException;
 import es.uniovi.asw.model.types.status.EstadosComentario;
 import es.uniovi.asw.model.types.status.EstadosPropuesta;
 import es.uniovi.asw.producers.KafkaProducer;
@@ -214,7 +215,8 @@ public class MainController {
 
 	// Cuando guardamos el comentario
 	@RequestMapping(path = "/salvarComment", method = RequestMethod.POST)
-	public ModelAndView salvarComment(@RequestParam("comment") String comment) {
+	public ModelAndView salvarComment(@RequestParam("comment") String comment)
+			throws CitizenException {
 		if (idPropuesta != null && usuario != null) {
 			System.out.println(comment + " \nid de la propuesta: "
 					+ Long.toString(idPropuesta));

@@ -60,6 +60,7 @@ public class VoteTest {
 		factories.getPersistenceFactory().newVoteRepository().save(vote);
 		assertEquals(numVotes + 1,
 				factories.getPersistenceFactory().newVoteRepository().count());
+		Association.Vota.unlink(vote);
 		factories.getPersistenceFactory().newVoteRepository().delete(vote);
 	}
 
@@ -75,6 +76,19 @@ public class VoteTest {
 		assertTrue(proposal.negativeVote(usuario));
 		assertFalse(proposal.positiveVote(usuario));
 		proposal.getVotes().remove(vote);
+	}
+
+	@Test
+	public void testModificarVotos()
+			throws NoSuchAlgorithmException, CitizenException {
+		vote = new Vote(usuario, proposal);
+		Calendar c1 = GregorianCalendar.getInstance();
+		Citizen citizen = new Citizen("", "", "",
+				new Date(c1.getTimeInMillis() - 10000), "", "", "");
+		Vote vote2 = new Vote(citizen, proposal);
+		assertNotEquals(vote.getVotingDate(), vote2.getVotingDate());
+		assertTrue(vote.equals(vote2));
+		assertNotEquals(vote.toString(), vote2.toString());
 	}
 
 }
