@@ -5,15 +5,20 @@
 </head>
 <body>
 	<nav th:replace="plantillas/header :: menuAdmin"></nav>
-	<h1>Propuestas Rechazadas</h1>
+	
+	<div class="panel panel-primary">
+	  <div class="panel-heading">
+	    <h3 class="panel-title"><b>PROPUESTAS RECHAZADAS</b></h3>
+	  </div>
+	</div>
 
-	<h3 th:if="${hidden}">Todavia no se ha rechazado ninguna
-		propuesta.</h3>
+	<h3 th:if="${hidden}">En estos momentos no hay propuestas rechazadas.</h3>
+	
 	<table th:if="${not hidden}" class="table table-striped table-hover ">
 		<thead>
 			<tr class="info">
 				<th>Propuestas</th>
-				<th>Descripción</th>
+				<th>DescripciÃ³n</th>
 				<th>Estado</th>
 			</tr>
 		</thead>

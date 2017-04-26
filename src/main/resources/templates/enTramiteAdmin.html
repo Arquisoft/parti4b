@@ -3,9 +3,14 @@
 <head th:replace="plantillas/header :: head"></head>
 <body>
 	<nav th:replace="plantillas/header :: menuAdmin"></nav>
-	<h1 id="propuestas">Propuestas en trámite</h1>
+	
+	<div class="panel panel-primary">
+	  <div class="panel-heading">
+	    <h3 class="panel-title"><b>EN TRÁMITE</b></h3>
+	  </div>
+	</div>
 
-	<h3 th:if="${hidden}">Todavia no se creo ninguna propuesta.</h3>
+	<h3 th:if="${hidden}">En estos momentos no hay propuestas en trámite.</h3>
 
 	<table id="tablaPropuestasEnTramite" th:if="${not hidden}"
 		class="table table-striped table-hover ">
@@ -14,9 +19,9 @@
 				<th>Propuestas</th>
 				<th>Votos actuales</th>
 				<th>Votos para ser aceptada</th>
-				<th>Opcion</th>
+				<th>Opción</th>
 				<th>Comentarios</th>
-				<th>Modificar Número Mínimo de votos</th>
+				<th>Modificar Número Máximo de votos</th>
 			</tr>
 		</thead>
 		<tr th:each="proposal:${proposals}" class="active">

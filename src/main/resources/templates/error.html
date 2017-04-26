@@ -2,10 +2,24 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8"></meta>
-<title>Insert title here</title>
+<title>Página de error</title>
+<link rel='stylesheet'
+	href='webjars/bootstrap/3.2.0/css/bootstrap.min.css' />
 </head>
 <body>
-	<div th:replace="plantillas/header :: cabecera"></div>
-	<h3>Algo inexperado sucedio. Tu sesion ha sido eliminada</h3>
+
+	<br/>
+
+	<div class="alert alert-dismissible alert-danger">
+
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+
+		<h2>ERROR!</h2><br/>
+		<p>Ha ocurrido un error. Tu sesión ha finalizado.</p><br/>
+
+		<a href="/" class="btn btn-success">IR A INICIO</a>
+
+	</div>
+
 </body>
 </html>

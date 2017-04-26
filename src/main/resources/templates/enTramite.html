@@ -5,9 +5,14 @@
 </head>
 <body>
 	<nav th:replace="plantillas/header :: menuUser"></nav>
-	<h1>Propuestas en trámite</h1>
+	
+	<div class="panel panel-primary">
+	  <div class="panel-heading">
+	    <h3 class="panel-title"><b>EN TRÁMITE</b></h3>
+	  </div>
+	</div>
 
-	<h3 th:if="${hidden}">Todavia no se creo ninguna propuesta.</h3>
+	<h3 th:if="${hidden}">En estos momentos no hay propuestas en trámite.</h3>
 	<table th:if="${not hidden}" class="table table-striped table-hover ">
 		<thead>
 			<tr class="info">
