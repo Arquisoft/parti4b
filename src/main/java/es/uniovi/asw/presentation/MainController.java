@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Controller;
 //import org.springframework.ui.Model;
 //import org.springframework.web.bind.annotation.ModelAttribute;
@@ -20,6 +21,7 @@ import es.uniovi.asw.model.Proposal;
 import es.uniovi.asw.model.exception.CitizenException;
 import es.uniovi.asw.model.types.status.EstadosComentario;
 import es.uniovi.asw.model.types.status.EstadosPropuesta;
+import es.uniovi.asw.model.types.topics.Topics;
 import es.uniovi.asw.producers.KafkaProducer;
 import es.uniovi.asw.model.ImprimeDatosComment;
 
@@ -268,6 +270,7 @@ public class MainController {
 	}
 
 	@RequestMapping("/nuevaPropuesta")
+	@KafkaListener(topics = Topics.NEW_COMMENT)
 	public ModelAndView nuevaPropuesta() {
 		if (usuario != null) {
 			kafkaProducer.send("admin", "Sección para crear propuestas");
@@ -298,6 +301,7 @@ public class MainController {
 	}
 
 	@RequestMapping(path = "/votarPositivo", method = RequestMethod.GET)
+	@KafkaListener(topics = Topics.VOTE_HAS_CREATED)
 	public ModelAndView votarPositivo(
 			@RequestParam("idPropuesta") String idPropuesta) {
 		if (usuario != null) {
@@ -317,16 +321,17 @@ public class MainController {
 			List<Proposal> proposals = factory.getServicesFactory()
 					.getProposalService()
 					.findByStatus(EstadosPropuesta.EnTramite);
-			kafkaProducer.send("user", "Voto positivo");
+			kafkaProducer.send("user", "Voto realizado");
 			return new ModelAndView("usuario").addObject("proposals",
 					proposals);
 		} else {
-			kafkaProducer.send("user", "Error al votar positivo");
+			kafkaProducer.send("user", "Error al votar");
 			return fail();
 		}
 	}
 
 	@RequestMapping(path = "/votarNegativo", method = RequestMethod.GET)
+	@KafkaListener(topics = Topics.VOTE_HAS_CREATED)
 	public ModelAndView votarNegativo(
 			@RequestParam("idPropuesta") String idPropuesta) {
 		if (usuario != null) {
@@ -343,11 +348,11 @@ public class MainController {
 			List<Proposal> proposals = factory.getServicesFactory()
 					.getProposalService()
 					.findByStatus(EstadosPropuesta.EnTramite);
-			kafkaProducer.send("user", "Voto negativo");
+			kafkaProducer.send("user", "Voto realizado");
 			return new ModelAndView("usuario").addObject("proposals",
 					proposals);
 		} else {
-			kafkaProducer.send("user", "Error al votar negativo");
+			kafkaProducer.send("user", "Error al votar");
 			return fail();
 		}
 	}
