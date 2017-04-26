@@ -43,7 +43,8 @@ public class CommentTest {
 	@Test
 	public void testCommentsSave() throws CitizenException {
 		Commentary c = new Commentary(usuario, propuesta, "mensaje");
-		factories.getPersistenceFactory().newCommentaryRepository().save(c);
+		factories.getServicesFactory().getCommentaryService()
+				.save(usuario.getId(), propuesta.getId(), c.getContent());
 		assertEquals(numComments + 1, factories.getPersistenceFactory()
 				.newCommentaryRepository().count());
 		factories.getServicesFactory().getCommentaryService().delete(c);
