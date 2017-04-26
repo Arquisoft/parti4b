@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<head th:replace="plantillas/header :: head"></head>
-	</head>
-	<body>
-		<header th:replace="plantillas/header :: menuAdmin"></header>
-		<h1>Propuestas Rechazadas</h1>
-		
-		<h3 th:if="${hidden}">Todavia no se ha rechazado ninguna propuesta.</h3>
-		<table th:if="${not hidden}">
-				<thead>
-					<tr>
-						<th>Propuestas </th>						
-						<th>Descripción </th>
-						<th>Estado</th>
-					</tr>
-				</thead>
-				<tr th:each="proposal:${proposals}">
-					<td th:text="${proposal.name}"></td>
-					<td th:text="${proposal.content}"></td>
-					<td th:text="${proposal.status}"></td>
-				</tr>
-			</table>
-		
-	</body>
+<head>
+<head th:replace="plantillas/header :: head"></head>
+</head>
+<body>
+	<nav th:replace="plantillas/header :: menuAdmin"></nav>
+	<h1>Propuestas Rechazadas</h1>
+
+	<h3 th:if="${hidden}">Todavia no se ha rechazado ninguna
+		propuesta.</h3>
+	<table th:if="${not hidden}" class="table table-striped table-hover ">
+		<thead>
+			<tr class="info">
+				<th>Propuestas</th>
+				<th>Descripción</th>
+				<th>Estado</th>
+			</tr>
+		</thead>
+		<tr th:each="proposal:${proposals}" class="active">
+			<td th:text="${proposal.name}"></td>
+			<td th:text="${proposal.content}"></td>
+			<td th:text="${proposal.status}"></td>
+		</tr>
+	</table>
+
+</body>
 </html>

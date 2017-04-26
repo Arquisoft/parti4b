@@ -2,50 +2,94 @@
 <html xmlns:th="http://www.thymeleaf.org">
 	<head th:fragment="head">
 		<meta charset="UTF-8" />
-		<link href="../static/css/menu.css"
-		          th:href="@{/css/menu.css}"
-	          rel="stylesheet" />
+		
+		<link rel='stylesheet' href='webjars/bootstrap/3.2.0/css/bootstrap.min.css' />
+		
 	</head>
 	<body>
-		<div class="header" th:fragment="cabecera">
-			<h1><a href="/">Home</a></h1>
-		</div>
-
-		<header class="header" th:fragment="menuAdmin">
-		<h1 id="administrador">Administrador</h1>
-             <nav class="top_menu">
-                <ul>
-                	<li><a id ="inicio" href="/usuario">Inicio</a></li>
-                    <li><a id ="propuestasTramite" href="/propuestasTramite">Propuestas en trámite</a></li>
-                    <li><a id ="propuestasAceptadas" href="/propuestasAceptadas">Propuestas aceptadas</a></li>
-                    <li><a id ="propuestasRechazadas" href="/propuestasRechazadas">Propuestas rechazadas</a></li>
-                    <li><a id ="Salir" href="/">Salir</a></li>
-                </ul>
-            </nav>
-        </header>
-        
-        <header class="header" th:fragment="menuUser">
+		
+	<nav class="navbar navbar-default" th:fragment="menuUser">
+	  <div class="container-fluid">
+	      <a class="navbar-brand" href="/usuario">Menú - Usuario</a>
+	    </div>
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	         <li><a th:href="@{/nuevaPropuesta}">Nueva propuesta</a></li>
+             <li><a href="/propuestasTramite">Propuestas en trámite</a></li>
+             <li><a href="/propuestasAceptadas">Propuestas aceptadas</a></li>
+             <li><a href="/">Salir</a></li>
+	      </ul>
+	    </div>
+	</nav>
+	
+	<nav class="navbar navbar-default" th:fragment="menuAdmin">
+	  <div class="container-fluid">
+	      <a class="navbar-brand" href="/usuario">Menú - Administrador</a>
+	    </div>
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	         <li><a id ="propuestasTramite" href="/propuestasTramite">Propuestas en trámite</a></li>
+             <li><a id ="propuestasAceptadas" href="/propuestasAceptadas">Propuestas aceptadas</a></li>
+             <li><a id ="propuestasRechazadas" href="/propuestasRechazadas">Propuestas rechazadas</a></li>
+             <li><a id ="Salir" href="/">Salir</a></li>
+	      </ul>
+	    </div>
+	</nav>
+	
+	<nav class="navbar navbar-default" th:fragment="menuUserVer">
+	  <div class="container-fluid">
+	      <a class="navbar-brand" href="/usuario">Menú - Usuario</a>
+	    </div>
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	        <li><a th:href="@{/crearComment(id=${id})}">Crear comentario</a></li>
+            <li><a href="/propuestasTramite">Propuestas en trámite</a></li>
+            <li><a href="/propuestasAceptadas">Propuestas aceptadas</a></li>
+            <li><a href="/">Salir</a></li>
+	      </ul>
+	    </div>
+	</nav>
+		
+	<div class="header" th:fragment="cabecera">
+		<h1><a href="/">Home</a></h1>
+	</div>
+<!-- 
+	<header class="header" th:fragment="menuAdmin">
+	<h1 id="administrador">Administrador</h1>
             <nav class="top_menu">
-                <ul>
-                	<li><a href="/usuario">Inicio</a></li>
-                    <li><a th:href="@{/nuevaPropuesta}">Nueva propuesta</a></li>
-                    <li><a href="/propuestasTramite">Propuestas en trámite</a></li>
-                    <li><a href="/propuestasAceptadas">Propuestas aceptadas</a></li>
-                    <li><a href="/">Salir</a></li>
-                </ul>
-            </nav>
-        </header>
-        
-        <header class="header" th:fragment="menuUserVer">
-            <nav class="top_menu">
-                <ul>
-                	<li><a href="/usuario">Inicio</a></li>
-                    <li><a th:href="@{/crearComment(id=${id})}">Crear comentario</a></li>
-                    <li><a href="/propuestasTramite">Propuestas en trámite</a></li>
-                    <li><a href="/propuestasAceptadas">Propuestas aceptadas</a></li>
-                    <li><a href="/">Salir</a></li>
-                </ul>
-            </nav>
-        </header>
+               <ul>
+               	<li><a id ="inicio" href="/usuario">Inicio</a></li>
+                   <li><a id ="propuestasTramite" href="/propuestasTramite">Propuestas en trámite</a></li>
+                   <li><a id ="propuestasAceptadas" href="/propuestasAceptadas">Propuestas aceptadas</a></li>
+                   <li><a id ="propuestasRechazadas" href="/propuestasRechazadas">Propuestas rechazadas</a></li>
+                   <li><a id ="Salir" href="/">Salir</a></li>
+               </ul>
+           </nav>
+       </header>
+       
+       <header class="header" th:fragment="menuUser">
+           <nav class="top_menu">
+               <ul>
+               	<li><a href="/usuario">Inicio</a></li>
+                   <li><a th:href="@{/nuevaPropuesta}">Nueva propuesta</a></li>
+                   <li><a href="/propuestasTramite">Propuestas en trámite</a></li>
+                   <li><a href="/propuestasAceptadas">Propuestas aceptadas</a></li>
+                   <li><a href="/">Salir</a></li>
+               </ul>
+           </nav>
+       </header>
+       
+       <header class="header" th:fragment="menuUserVer">
+           <nav class="top_menu">
+               <ul>
+               	<li><a href="/usuario">Inicio</a></li>
+                   <li><a th:href="@{/crearComment(id=${id})}">Crear comentario</a></li>
+                   <li><a href="/propuestasTramite">Propuestas en trámite</a></li>
+                   <li><a href="/propuestasAceptadas">Propuestas aceptadas</a></li>
+                   <li><a href="/">Salir</a></li>
+               </ul>
+           </nav>
+       </header>
+       -->
 	</body>
 </html>

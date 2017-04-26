@@ -1,15 +1,36 @@
 <html xmlns:th="http://www.thymeleaf.org">
-	<head th:replace="plantillas/header :: head"></head>
-	<body>
-		<header th:replace="plantillas/header :: menuUserVer"></header>
-		<form th:action="@{/salvarComment}" method="POST">
-		    <label for="comment">Introduce tu comentario: </label>
-		    <br/>
-		    <textarea name="comment" cols="100" rows="20">
-		    </textarea>
-		    <br/>
-		    <input type="submit" value="comentar" />
+<head th:replace="plantillas/header :: head"></head>
+<body>
+	<nav th:replace="plantillas/header :: menuUserVer"></nav>
+
+	<div class="container">
+
+		<form class="form-horizontal" id="form" th:action="@{/salvarComment}"
+			method="POST">
+			<fieldset>
+				<legend>Introducir comentario</legend>
+				<div class="form-group">
+					<label for="comment" class="col-lg-2 control-label" id="comment">Comentario</label>
+
+					<div class="col-lg-10">
+						<textarea class="form-control" rows="3" id="comment"
+							name="comment"></textarea>
+						<span class="help-block">Por favor, procura que tu
+							comentario no contenga palabras inapropiadas. Será moderado.</span>
+					</div>
+
+				</div>
+
+				<div class="form-group">
+					<div class="col-lg-10 col-lg-offset-2">
+						<button type="reset" class="btn btn-default">Limpiar</button>
+						<button type="submit" class="btn btn-primary" id="comentar">Comentar</button>
+					</div>
+				</div>
+			</fieldset>
 		</form>
-		
-	</body>
+
+	</div>
+
+</body>
 </html>
