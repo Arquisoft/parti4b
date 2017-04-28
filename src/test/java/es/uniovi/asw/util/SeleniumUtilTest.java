@@ -30,8 +30,6 @@ public class SeleniumUtilTest {
 	}
 
 	public void comprobarCabeceraAdmin() {
-		comprobarNumElemetos("header", "./*", 2);
-		comprobarTexto("administrador", "Administrador");
 		assertTrue(isElementPresent(By.id("inicio")));
 		assertTrue(isElementPresent(By.id("propuestasTramite")));
 		assertTrue(isElementPresent(By.id("propuestasAceptadas")));

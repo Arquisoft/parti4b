@@ -19,20 +19,20 @@ import es.uniovi.asw.util.*;
 public class PruebaSteps {
 	private SeleniumUtilTest su = new SeleniumUtilTest();
 	private WebDriver driver = su.getDriver();
-	private String baseUrl = String.format("http://localhost:8080/");
+	private String baseUrl = String.format("http://localhost:8080");
 
 	@Given("^the user is on the login page$")
 	public void theUserIsOnTheLoginPage() throws Throwable {
 		driver.get(baseUrl + "/");
-		su.comprobarTexto("titulo", "Participation System");
+		su.comprobarTexto("titulo", "PARTICIPATION SYSTEM 4b");
 		assertTrue(su.isElementPresent(By.id("dniLabel")));
 		assertTrue(su.isElementPresent(By.id("dni")));
 		assertTrue(su.isElementPresent(By.id("passwordLabel")));
 		assertTrue(su.isElementPresent(By.id("password")));
 		assertTrue(su.isElementPresent(By.id("login")));
-		su.comprobarNumElemetos("body", "./*", 2);
-		su.comprobarNumElemetos("form", "./*", 7);
-		su.comprobarNumElemetos("form", "./input", 3);
+		assertTrue(su.isElementPresent(By.id("limpiar")));
+		su.comprobarNumElemetos("body", "./*", 3);
+		su.comprobarNumElemetos("fieldset", "./*", 4);
 	}
 
 	@Given("^the user is logger on as admin$")
@@ -62,7 +62,7 @@ public class PruebaSteps {
 			throws Throwable {
 		su.comprobarCabeceraAdmin();
 		su.comprobarNumElemetos("body", "./*", 3);
-		su.comprobarTexto("propuestas", "Propuestas en trámite");
+		su.comprobarTexto("propuestas", "EN TRÁMITE");
 		WebElement tabla = driver
 				.findElement(By.id("tablaPropuestasEnTramite"));
 		assertNotNull(tabla);
