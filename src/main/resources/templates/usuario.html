@@ -3,6 +3,16 @@
 <body>
 	<nav th:replace="plantillas/header :: menuUser"></nav>
 
+	<div class="alert alert-dismissible alert-warning"
+		th:if="${hiddenFalse}">
+		<h4 th:text="${mensaje}"></h4>
+	</div>
+
+	<div class="alert alert-dismissible alert-success"
+		th:if="${hiddenTrue}">
+		<h4 th:text="${mensaje}"></h4>
+	</div>
+
 	<table class="table table-striped table-hover ">
 		<thead>
 			<tr class="info">

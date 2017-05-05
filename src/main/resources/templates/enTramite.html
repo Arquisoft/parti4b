@@ -5,14 +5,27 @@
 </head>
 <body>
 	<nav th:replace="plantillas/header :: menuUser"></nav>
-	
+
 	<div class="panel panel-primary">
-	  <div class="panel-heading">
-	    <h3 class="panel-title"><b>EN TRÁMITE</b></h3>
-	  </div>
+		<div class="panel-heading">
+			<h3 class="panel-title">
+				<b>EN TRÁMITE</b>
+			</h3>
+		</div>
 	</div>
 
-	<h3 th:if="${hidden}">En estos momentos no hay propuestas en trámite.</h3>
+	<div class="alert alert-dismissible alert-warning"
+		th:if="${hiddenFalse}">
+		<h4 th:text="${mensaje}"></h4>
+	</div>
+
+	<div class="alert alert-dismissible alert-success"
+		th:if="${hiddenTrue}">
+		<h4 th:text="${mensaje}"></h4>
+	</div>
+
+	<h3 th:if="${hidden}">En estos momentos no hay propuestas en
+		trámite.</h3>
 	<table th:if="${not hidden}" class="table table-striped table-hover ">
 		<thead>
 			<tr class="info">
@@ -26,8 +39,8 @@
 			<td th:text="${proposal.name}"></td>
 			<td th:text="${proposal.content}"></td>
 			<td><a th:href="@{/votarPositivo(idPropuesta=${proposal.id})}"><img
-					src="../static/images/voteY.JPG" th:src="@{/images/voteY.JPG}" /></a> <a
-				th:href="@{/votarNegativo(idPropuesta=${proposal.id})}"><img
+					src="../static/images/voteY.JPG" th:src="@{/images/voteY.JPG}" /></a>
+				<a th:href="@{/votarNegativo(idPropuesta=${proposal.id})}"><img
 					src="../static/images/voteN.JPG" th:src="@{/images/voteN.JPG}" /></a></td>
 			<td><a th:href="@{/comment(id=${proposal.id})}"
 				class="btn btn-link">Ver</a></td>

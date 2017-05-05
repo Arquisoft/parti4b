@@ -271,9 +271,14 @@ public class MainController {
 		if (usuario != null) {
 			Proposal propuesta = factory.getServicesFactory().getProposalService()
 					.findById(Long.parseLong(idPropuesta));
+
+			List<Proposal> proposals = factory.getServicesFactory().getProposalService()
+					.findByStatus(EstadosPropuesta.EnTramite);
+
 			if (!propuesta.positiveVote(usuario)) {
 				kafkaProducer.send("user", "Ya ha votado el usuario");
-				return fail();
+				return new ModelAndView("usuario").addObject("proposals", proposals).addObject("hiddenFalse", true)
+						.addObject("mensaje", "El usuario ya ha votado esta propuesta");
 			} else {
 				factory.getServicesFactory().getVoteService().save(usuario.getId(), propuesta.getId());
 			}
@@ -281,10 +286,9 @@ public class MainController {
 				propuesta.setStatus(EstadosPropuesta.Aceptada);
 			}
 
-			List<Proposal> proposals = factory.getServicesFactory().getProposalService()
-					.findByStatus(EstadosPropuesta.EnTramite);
 			kafkaProducer.send("user", "Voto realizado");
-			return new ModelAndView("usuario").addObject("proposals", proposals);
+			return new ModelAndView("usuario").addObject("proposals", proposals).addObject("hiddenTrue", true)
+					.addObject("mensaje", "Voto realizado correctamente");
 		} else {
 			kafkaProducer.send("user", "Error al votar");
 			return fail();
@@ -297,17 +301,21 @@ public class MainController {
 		if (usuario != null) {
 			Proposal propuesta = factory.getServicesFactory().getProposalService()
 					.findById(Long.parseLong(idPropuesta));
+			List<Proposal> proposals = factory.getServicesFactory().getProposalService()
+					.findByStatus(EstadosPropuesta.EnTramite);
+
 			if (!propuesta.negativeVote(usuario)) {
 				kafkaProducer.send("user", "Ya ha votado el usuario");
-				return fail();
+				return new ModelAndView("usuario").addObject("proposals", proposals).addObject("hiddenFalse", true)
+						.addObject("mensaje", "El usuario ya ha votado esta propuesta");
 			} else {
 				factory.getServicesFactory().getVoteService().save(usuario.getId(), propuesta.getId());
 			}
 			factory.getServicesFactory().getProposalService().update(propuesta);
-			List<Proposal> proposals = factory.getServicesFactory().getProposalService()
-					.findByStatus(EstadosPropuesta.EnTramite);
+
 			kafkaProducer.send("user", "Voto realizado");
-			return new ModelAndView("usuario").addObject("proposals", proposals);
+			return new ModelAndView("usuario").addObject("proposals", proposals).addObject("hiddenTrue", true)
+					.addObject("mensaje", "Voto realizado correctamente");
 		} else {
 			kafkaProducer.send("user", "Error al votar");
 			return fail();
@@ -474,7 +482,7 @@ public class MainController {
 	public ModelAndView getKeyWords() {
 
 		if (usuario != null) {
-			
+
 			System.out.println("1");
 
 			if (keyWords.size() < 1) {

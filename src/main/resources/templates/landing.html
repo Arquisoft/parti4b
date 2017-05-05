@@ -18,7 +18,7 @@
 					<label for="DNI" class="col-lg-2 control-label" id="dniLabel">DNI:</label>
 					<div class="col-lg-10">
 						<input type="text" class="form-control" id="dni" name="dni"
-							placeholder="DNI" />
+							placeholder="DNI" required="required"/>
 					</div>
 				</div>
 
@@ -42,7 +42,9 @@
 
 	</div>
 
-	<h4 th:if="${hidden}" th:text="${mensaje}"></h4>
+	<div class="alert alert-dismissible alert-warning" th:if="${hidden}" >
+	  <h4 th:text="${mensaje}"></h4>
+	 </div>	
 
 </body>
 </html>
