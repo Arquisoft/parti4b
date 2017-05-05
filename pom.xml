@@ -133,8 +133,6 @@
 		    </exclusions>
 		</dependency>
 	</dependencies>
-
-	<!-- Dependencias Kafka todavia no funcionan bien -->
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -220,7 +218,7 @@
 					<!-- MainClass in mainfest make a executable jar -->
 					<archive>
 						<manifest>
-							<mainClass>es.uniovi.asw.LoadUsers</mainClass>
+							<mainClass>es.uniovi.asw.parti4b</mainClass>
 						</manifest>
 					</archive>
 
