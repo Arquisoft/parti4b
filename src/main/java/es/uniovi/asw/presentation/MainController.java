@@ -22,7 +22,7 @@ import es.uniovi.asw.model.exception.CitizenException;
 import es.uniovi.asw.model.types.status.EstadosComentario;
 import es.uniovi.asw.model.types.status.EstadosPropuesta;
 import es.uniovi.asw.model.types.topics.Topics;
-import es.uniovi.asw.producers.KafkaProducer;
+import es.uniovi.asw.streamKafka.producers.KafkaProducer;
 import es.uniovi.asw.model.ImprimeDatosComment;
 
 /**

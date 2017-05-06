@@ -1,4 +1,4 @@
-package es.uniovi.asw.producers;
+package es.uniovi.asw.streamKafka.producers;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
