@@ -1,9 +1,5 @@
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="plantillas/header :: head">
-<link
-	href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
-	rel="stylesheet" />
-</head>
+<head th:replace="plantillas/header :: head"></head>
 <body>
 	<nav th:replace="plantillas/header :: menuUser"></nav>
 
@@ -30,13 +26,13 @@
 			<td th:text="${proposal.name}"></td>
 			<td th:text="${proposal.content}"></td>
 			<td><a th:href="@{/votarPositivo(idPropuesta=${proposal.id})}"><img
-					src="../static/images/voteY.JPG" th:src="@{/images/voteY.JPG}" /></a>
-				<a th:href="@{/votarNegativo(idPropuesta=${proposal.id})}"><img
+					src="../static/images/voteY.JPG" th:src="@{/images/voteY.JPG}" /></a> <a
+				th:href="@{/votarNegativo(idPropuesta=${proposal.id})}"><img
 					src="../static/images/voteN.JPG" th:src="@{/images/voteN.JPG}" /></a></td>
 			<td><a class="btn btn-link"
 				th:href="@{/comment(id=${proposal.id})}">Ver</a></td>
 		</tr>
 	</table>
-
+	
 </body>
 </html>

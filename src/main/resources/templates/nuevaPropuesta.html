@@ -2,37 +2,31 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <head th:replace="plantillas/header :: head"></head>
-<link
-	href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
-	rel="stylesheet" />
 </head>
 <body>
 	<nav th:replace="plantillas/header :: menuUser"></nav>
-
+		
 	<div class="container">
 
-		<form class="form-horizontal" id="form" th:action="@{/crearPropuesta}"
+		<form class="form-horizontal" id="form" th:action="@{/crearPropuesta}" 
 			method="POST">
 			<fieldset>
 				<legend>Nueva propuesta</legend>
-
+				
 				<div class="form-group">
-					<label for="Nombre" class="col-lg-2 control-label" id="nombre">Nombre
-						de la propuesta:</label>
+					<label for="Nombre" class="col-lg-2 control-label" id="nombre">Nombre de la propuesta:</label>
 					<div class="col-lg-10">
 						<input type="text" class="form-control" id="nombre" name="nombre"
 							placeholder="nombre" />
 					</div>
 				</div>
-
+				
 				<div class="form-group">
-					<label for="contenido" class="col-lg-2 control-label"
-						id="contenido">Contenido</label>
+					<label for="contenido" class="col-lg-2 control-label" id="contenido">Contenido</label>
 					<div class="col-lg-10">
 						<textarea class="form-control" rows="3" id="contenido"
 							name="contenido"></textarea>
-						<span class="help-block">Por favor, redacte su propuesta de
-							forma clara y concisa antes de enviarla.</span>
+						<span class="help-block">Por favor, redacte su propuesta de forma clara y concisa antes de enviarla.</span>
 					</div>
 				</div>
 
@@ -46,9 +40,9 @@
 		</form>
 
 	</div>
-
-
-
+	
+	
+	
 
 </body>
 </html>
