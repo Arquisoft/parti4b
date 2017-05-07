@@ -1,15 +1,30 @@
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="plantillas/header :: head"></head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<head th:replace="plantillas/header :: head">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous"/>
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous"/>
+
+<!-- Latest compiled and minified JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+</head>
 <body>
 
 	<div class="page-header">
 		<h1 id="titulo">PARTICIPATION SYSTEM 4b</h1>
 	</div>
-
 	<br />
-
 	<div class="container">
-
 		<form class="form-horizontal" id="form" th:action="@{/login}"
 			method="POST">
 			<fieldset>
@@ -18,7 +33,7 @@
 					<label for="DNI" class="col-lg-2 control-label" id="dniLabel">DNI:</label>
 					<div class="col-lg-10">
 						<input type="text" class="form-control" id="dni" name="dni"
-							placeholder="DNI" required="required"/>
+							placeholder="DNI" required="required" />
 					</div>
 				</div>
 
@@ -42,9 +57,9 @@
 
 	</div>
 
-	<div class="alert alert-dismissible alert-warning" th:if="${hidden}" >
-	  <h4 th:text="${mensaje}"></h4>
-	 </div>	
+	<div class="alert alert-dismissible alert-warning" th:if="${hidden}">
+		<h4 th:text="${mensaje}"></h4>
+	</div>
 
 </body>
 </html>

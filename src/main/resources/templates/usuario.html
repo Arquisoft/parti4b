@@ -1,5 +1,23 @@
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="plantillas/header :: head"></head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<head th:replace="plantillas/header :: head">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous" />
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous" />
+
+<!-- Latest compiled and minified JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+</head>
 <body>
 	<nav th:replace="plantillas/header :: menuUser"></nav>
 
@@ -26,13 +44,13 @@
 			<td th:text="${proposal.name}"></td>
 			<td th:text="${proposal.content}"></td>
 			<td><a th:href="@{/votarPositivo(idPropuesta=${proposal.id})}"><img
-					src="../static/images/voteY.JPG" th:src="@{/images/voteY.JPG}" /></a> <a
-				th:href="@{/votarNegativo(idPropuesta=${proposal.id})}"><img
+					src="../static/images/voteY.JPG" th:src="@{/images/voteY.JPG}" /></a>
+				<a th:href="@{/votarNegativo(idPropuesta=${proposal.id})}"><img
 					src="../static/images/voteN.JPG" th:src="@{/images/voteN.JPG}" /></a></td>
 			<td><a class="btn btn-link"
 				th:href="@{/comment(id=${proposal.id})}">Ver</a></td>
 		</tr>
 	</table>
-	
+
 </body>
 </html>
