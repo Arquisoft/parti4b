@@ -144,6 +144,12 @@
 			<artifactId>selenium-htmlunit-driver</artifactId>
 			<version>2.52.0</version>
 		</dependency>
+		<dependency>
+			<groupId>com.heroku.agent</groupId>
+			<artifactId>heroku-javaagent</artifactId>
+			<version>1.5</version>
+			<scope>runtime</scope>
+		</dependency>
 	</dependencies>
 
 	<dependencyManagement>
