@@ -1,0 +1,1222 @@
+2017-05-07T15:45:47.202899+00:00 app[web.1]: 	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+2017-05-07T15:45:47.202900+00:00 app[web.1]: 	sasl.kerberos.min.time.before.relogin = 60000
+2017-05-07T15:45:47.202900+00:00 app[web.1]: 	sasl.kerberos.principal.to.local.rules = [DEFAULT]
+2017-05-07T15:45:47.202901+00:00 app[web.1]: 	sasl.kerberos.service.name = null
+2017-05-07T15:45:47.202908+00:00 app[web.1]: 	sasl.kerberos.ticket.renew.jitter = 0.05
+2017-05-07T15:45:47.202909+00:00 app[web.1]: 	sasl.kerberos.ticket.renew.window.factor = 0.8
+2017-05-07T15:45:47.202910+00:00 app[web.1]: 	sasl.mechanism.inter.broker.protocol = GSSAPI
+2017-05-07T15:45:47.202910+00:00 app[web.1]: 	security.inter.broker.protocol = PLAINTEXT
+2017-05-07T15:45:47.202911+00:00 app[web.1]: 	socket.receive.buffer.bytes = 102400
+2017-05-07T15:45:47.202912+00:00 app[web.1]: 	socket.request.max.bytes = 104857600
+2017-05-07T15:45:47.202912+00:00 app[web.1]: 	socket.send.buffer.bytes = 102400
+2017-05-07T15:45:47.202913+00:00 app[web.1]: 	ssl.cipher.suites = null
+2017-05-07T15:45:47.202913+00:00 app[web.1]: 	ssl.client.auth = none
+2017-05-07T15:45:47.202914+00:00 app[web.1]: 	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+2017-05-07T15:45:47.202915+00:00 app[web.1]: 	ssl.endpoint.identification.algorithm = null
+2017-05-07T15:45:47.202915+00:00 app[web.1]: 	ssl.key.password = null
+2017-05-07T15:45:47.202916+00:00 app[web.1]: 	ssl.keymanager.algorithm = SunX509
+2017-05-07T15:45:47.202916+00:00 app[web.1]: 	ssl.keystore.location = null
+2017-05-07T15:45:47.202917+00:00 app[web.1]: 	ssl.keystore.password = null
+2017-05-07T15:45:47.202917+00:00 app[web.1]: 	ssl.keystore.type = JKS
+2017-05-07T15:45:47.202918+00:00 app[web.1]: 	ssl.protocol = TLS
+2017-05-07T15:45:47.202918+00:00 app[web.1]: 	ssl.provider = null
+2017-05-07T15:45:47.202919+00:00 app[web.1]: 	ssl.secure.random.implementation = null
+2017-05-07T15:45:47.202919+00:00 app[web.1]: 	ssl.trustmanager.algorithm = PKIX
+2017-05-07T15:45:47.202921+00:00 app[web.1]: 	ssl.truststore.password = null
+2017-05-07T15:45:47.202920+00:00 app[web.1]: 	ssl.truststore.location = null
+2017-05-07T15:45:47.202921+00:00 app[web.1]: 	ssl.truststore.type = JKS
+2017-05-07T15:45:47.202922+00:00 app[web.1]: 	unclean.leader.election.enable = true
+2017-05-07T15:45:47.202923+00:00 app[web.1]: 	zookeeper.connect = localhost:2181
+2017-05-07T15:45:47.202923+00:00 app[web.1]: 	zookeeper.connection.timeout.ms = 6000
+2017-05-07T15:45:47.202924+00:00 app[web.1]: 	zookeeper.session.timeout.ms = 6000
+2017-05-07T15:45:47.202925+00:00 app[web.1]: 	zookeeper.set.acl = false
+2017-05-07T15:45:47.202925+00:00 app[web.1]: 	zookeeper.sync.time.ms = 2000
+2017-05-07T15:45:47.202926+00:00 app[web.1]:  (kafka.server.KafkaConfig)
+2017-05-07T15:45:47.271422+00:00 app[web.1]: [2017-05-07 15:45:47,271] INFO starting (kafka.server.KafkaServer)
+2017-05-07T15:45:47.274391+00:00 app[web.1]: [2017-05-07 15:45:47,274] INFO Connecting to zookeeper on localhost:2181 (kafka.server.KafkaServer)
+2017-05-07T15:45:47.292695+00:00 app[web.1]: [2017-05-07 15:45:47,292] INFO Starting ZkClient event thread. (org.I0Itec.zkclient.ZkEventThread)
+2017-05-07T15:45:47.300073+00:00 app[web.1]: [2017-05-07 15:45:47,299] INFO Client environment:zookeeper.version=3.4.9-1757313, built on 08/23/2016 06:50 GMT (org.apache.zookeeper.ZooKeeper)
+2017-05-07T15:45:47.300110+00:00 app[web.1]: [2017-05-07 15:45:47,300] INFO Client environment:host.name=be01bdbc-bd74-422c-944d-996056300173.prvt.dyno.rt.heroku.com (org.apache.zookeeper.ZooKeeper)
+2017-05-07T15:45:47.300152+00:00 app[web.1]: [2017-05-07 15:45:47,300] INFO Client environment:java.version=1.8.0_121-cedar14 (org.apache.zookeeper.ZooKeeper)
+2017-05-07T15:45:47.300208+00:00 app[web.1]: [2017-05-07 15:45:47,300] INFO Client environment:java.vendor=Oracle Corporation (org.apache.zookeeper.ZooKeeper)
+2017-05-07T15:45:47.300237+00:00 app[web.1]: [2017-05-07 15:45:47,300] INFO Client environment:java.home=/app/.jdk/jre (org.apache.zookeeper.ZooKeeper)
+2017-05-07T15:45:47.300668+00:00 app[web.1]: [2017-05-07 15:45:47,300] INFO Client environment:java.io.tmpdir=/tmp (org.apache.zookeeper.ZooKeeper)
+2017-05-07T15:45:47.300711+00:00 app[web.1]: [2017-05-07 15:45:47,300] INFO Client environment:java.compiler=<NA> (org.apache.zookeeper.ZooKeeper)
+2017-05-07T15:45:47.300629+00:00 app[web.1]: [2017-05-07 15:45:47,300] INFO Client environment:java.library.path=/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib (org.apache.zookeeper.ZooKeeper)
+2017-05-07T15:45:47.300805+00:00 app[web.1]: [2017-05-07 15:45:47,300] INFO Client environment:os.arch=amd64 (org.apache.zookeeper.ZooKeeper)
+2017-05-07T15:45:47.300756+00:00 app[web.1]: [2017-05-07 15:45:47,300] INFO Client environment:os.name=Linux (org.apache.zookeeper.ZooKeeper)
+2017-05-07T15:45:47.300911+00:00 app[web.1]: [2017-05-07 15:45:47,300] INFO Client environment:user.name=u6072 (org.apache.zookeeper.ZooKeeper)
+2017-05-07T15:45:47.300860+00:00 app[web.1]: [2017-05-07 15:45:47,300] INFO Client environment:os.version=3.13.0-112-generic (org.apache.zookeeper.ZooKeeper)
+2017-05-07T15:45:47.329267+00:00 app[web.1]: [2017-05-07 15:45:47,329] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+2017-05-07T15:45:47.332729+00:00 app[web.1]: [2017-05-07 15:45:47,332] INFO Waiting for keeper state SyncConnected (org.I0Itec.zkclient.ZkClient)
+2017-05-07T15:45:47.338337+00:00 app[web.1]: [2017-05-07 15:45:47,338] INFO Socket connection established to localhost/127.0.0.1:2181, initiating session (org.apache.zookeeper.ClientCnxn)
+2017-05-07T15:45:47.339759+00:00 app[web.1]: [2017-05-07 15:45:47,339] INFO Accepted socket connection from /127.0.0.1:43074 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+2017-05-07T15:45:47.300966+00:00 app[web.1]: [2017-05-07 15:45:47,300] INFO Client environment:user.home=/app (org.apache.zookeeper.ZooKeeper)
+2017-05-07T15:45:47.300999+00:00 app[web.1]: [2017-05-07 15:45:47,300] INFO Client environment:user.dir=/app/kafka (org.apache.zookeeper.ZooKeeper)
+2017-05-07T15:45:47.300554+00:00 app[web.1]: [2017-05-07 15:45:47,300] INFO Client environment:java.class.path=:/app/kafka/bin/../libs/aopalliance-repackaged-2.5.0-b05.jar:/app/kafka/bin/../libs/argparse4j-0.7.0.jar:/app/kafka/bin/../libs/connect-api-0.10.2.0.jar:/app/kafka/bin/../libs/connect-file-0.10.2.0.jar:/app/kafka/bin/../libs/connect-json-0.10.2.0.jar:/app/kafka/bin/../libs/connect-runtime-0.10.2.0.jar:/app/kafka/bin/../libs/connect-transforms-0.10.2.0.jar:/app/kafka/bin/../libs/guava-18.0.jar:/app/kafka/bin/../libs/hk2-api-2.5.0-b05.jar:/app/kafka/bin/../libs/hk2-locator-2.5.0-b05.jar:/app/kafka/bin/../libs/hk2-utils-2.5.0-b05.jar:/app/kafka/bin/../libs/jackson-annotations-2.8.0.jar:/app/kafka/bin/../libs/jackson-annotations-2.8.5.jar:/app/kafka/bin/../libs/jackson-core-2.8.5.jar:/app/kafka/bin/../libs/jackson-databind-2.8.5.jar:/app/kafka/bin/../libs/jackson-jaxrs-base-2.8.5.jar:/app/kafka/bin/../libs/jackson-jaxrs-json-provider-2.8.5.jar:/app/kafka/bin/../libs/jackson-module-jaxb-annotations-2.8.5.jar:/app/kafka/bin/../libs/javassist-3.20.0-GA.jar:/app/kafka/bin/../libs/javax.annotation-api-1.2.jar:/app/kafka/bin/../libs/javax.inject-1.jar:/app/kafka/bin/../libs/javax.inject-2.5.0-b05.jar:/app/kafka/bin/../libs/javax.servlet-api-3.1.0.jar:/app/kafka/bin/../libs/javax.ws.rs-api-2.0.1.jar:/app/kafka/bin/../libs/jersey-client-2.24.jar:/app/kafka/bin/../libs/jersey-common-2.24.jar:/app/kafka/bin/../libs/jersey-container-servlet-2.24.jar:/app/kafka/bin/../libs/jersey-container-servlet-core-2.24.jar:/app/kafka/bin/../libs/jersey-guava-2.24.jar:/app/kafka/bin/../libs/jersey-media-jaxb-2.24.jar:/app/kafka/bin/../libs/jersey-server-2.24.jar:/app/kafka/bin/../libs/jetty-continuation-9.2.15.v20160210.jar:/app/kafka/bin/../libs/jetty-http-9.2.15.v20160210.jar:/app/kafka/bin/../libs/jetty-io-9.2.15.v20160210.jar:/app/kafka/bin/../libs/jetty-security-9.2.15.v20160210.jar:/app/kafka/bin/../libs/jetty-server-9.2.15.v20160210.jar:/app/kafka/bin/../libs/jetty-servlet-9.2.15.v20160210.jar:/app/kafka/bin/../libs/jetty-servlets-9.2.15.v20160210.jar:/app/kafka/bin/../libs/jetty-util-9.2.15.v20160210.jar:/app/kafka/bin/../libs/jopt-simple-5.0.3.jar:/app/kafka/bin/../libs/kafka-clients-0.10.2.0.jar:/app/kafka/bin/../libs/kafka-log4j-appender-0.10.2.0.jar:/app/kafka/bin/../libs/kafka-streams-0.10.2.0.jar:/app/kafka/bin/../libs/kafka-streams-examples-0.10.2.0.jar:/app/kafka/bin/../libs/kafka-tools-0.10.2.0.jar:/app/kafka/bin/../libs/kafka_2.11-0.10.2.0-sources.jar:/app/kafka/bin/../libs/kafka_2.11-0.10.2.0-test-sources.jar:/app/kafka/bin/../libs/kafka_2.11-0.10.2.0.jar:/app/kafka/bin/../libs/log4j-1.2.17.jar:/app/kafka/bin/../libs/lz4-1.3.0.jar:/app/kafka/bin/../libs/metrics-core-2.2.0.jar:/app/kafka/bin/../libs/osgi-resource-locator-1.0.1.jar:/app/kafka/bin/../libs/reflections-0.9.10.jar:/app/kafka/bin/../libs/rocksdbjni-5.0.1.jar:/app/kafka/bin/../libs/scala-library-2.11.8.jar:/app/kafka/bin/../libs/scala-parser-combinators_2.11-1.0.4.jar:/app/kafka/bin/../libs/slf4j-api-1.7.21.jar:/app/kafka/bin/../libs/slf4j-log4j12-1.7.21.jar:/app/kafka/bin/../libs/snappy-java-1.1.2.6.jar:/app/kafka/bin/../libs/validation-api-1.1.0.Final.jar:/app/kafka/bin/../libs/zkclient-0.10.jar:/app/kafka/bin/../libs/zookeeper-3.4.9.jar (org.apache.zookeeper.ZooKeeper)
+2017-05-07T15:45:47.301713+00:00 app[web.1]: [2017-05-07 15:45:47,301] INFO Initiating client connection, connectString=localhost:2181 sessionTimeout=6000 watcher=org.I0Itec.zkclient.ZkClient@40ef3420 (org.apache.zookeeper.ZooKeeper)
+2017-05-07T15:45:47.360761+00:00 app[web.1]: [2017-05-07 15:45:47,360] INFO Creating new log file: log.1 (org.apache.zookeeper.server.persistence.FileTxnLog)
+2017-05-07T15:45:47.378061+00:00 app[web.1]: [2017-05-07 15:45:47,377] INFO Established session 0x15be396655d0000 with negotiated timeout 6000 for client /127.0.0.1:43074 (org.apache.zookeeper.server.ZooKeeperServer)
+2017-05-07T15:45:47.381421+00:00 app[web.1]: [2017-05-07 15:45:47,381] INFO Session establishment complete on server localhost/127.0.0.1:2181, sessionid = 0x15be396655d0000, negotiated timeout = 6000 (org.apache.zookeeper.ClientCnxn)
+2017-05-07T15:45:47.354104+00:00 app[web.1]: [2017-05-07 15:45:47,353] INFO Client attempting to establish new session at /127.0.0.1:43074 (org.apache.zookeeper.server.ZooKeeperServer)
+2017-05-07T15:45:47.383568+00:00 app[web.1]: [2017-05-07 15:45:47,383] INFO zookeeper state changed (SyncConnected) (org.I0Itec.zkclient.ZkClient)
+2017-05-07T15:45:47.460259+00:00 app[web.1]: [2017-05-07 15:45:47,460] INFO Got user-level KeeperException when processing sessionid:0x15be396655d0000 type:create cxid:0x5 zxid:0x3 txntype:-1 reqpath:n/a Error Path:/brokers Error:KeeperErrorCode = NoNode for /brokers (org.apache.zookeeper.server.PrepRequestProcessor)
+2017-05-07T15:45:47.499141+00:00 app[web.1]: [2017-05-07 15:45:47,498] INFO Got user-level KeeperException when processing sessionid:0x15be396655d0000 type:create cxid:0xb zxid:0x7 txntype:-1 reqpath:n/a Error Path:/config Error:KeeperErrorCode = NoNode for /config (org.apache.zookeeper.server.PrepRequestProcessor)
+2017-05-07T15:45:47.526844+00:00 app[web.1]: [2017-05-07 15:45:47,526] INFO Got user-level KeeperException when processing sessionid:0x15be396655d0000 type:create cxid:0x13 zxid:0xc txntype:-1 reqpath:n/a Error Path:/admin Error:KeeperErrorCode = NoNode for /admin (org.apache.zookeeper.server.PrepRequestProcessor)
+2017-05-07T15:45:47.619490+00:00 app[web.1]: [2017-05-07 15:45:47,619] INFO Got user-level KeeperException when processing sessionid:0x15be396655d0000 type:create cxid:0x1b zxid:0x11 txntype:-1 reqpath:n/a Error Path:/cluster Error:KeeperErrorCode = NoNode for /cluster (org.apache.zookeeper.server.PrepRequestProcessor)
+2017-05-07T15:45:47.625928+00:00 app[web.1]: [2017-05-07 15:45:47,625] INFO Cluster ID = XiC2aFhCQ4qRZ1J0EjUMHA (kafka.server.KafkaServer)
+2017-05-07T15:45:47.634426+00:00 app[web.1]: [2017-05-07 15:45:47,634] WARN No meta.properties file under dir /tmp/kafka-logs/meta.properties (kafka.server.BrokerMetadataCheckpoint)
+2017-05-07T15:45:47.666088+00:00 app[web.1]: [2017-05-07 15:45:47,665] INFO [ThrottledRequestReaper-Fetch], Starting  (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+2017-05-07T15:45:47.672008+00:00 app[web.1]: [2017-05-07 15:45:47,671] INFO [ThrottledRequestReaper-Produce], Starting  (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+2017-05-07T15:45:47.716580+00:00 app[web.1]: [2017-05-07 15:45:47,716] INFO Log directory '/tmp/kafka-logs' not found, creating it. (kafka.log.LogManager)
+2017-05-07T15:45:47.735354+00:00 app[web.1]: [2017-05-07 15:45:47,735] INFO Loading logs. (kafka.log.LogManager)
+2017-05-07T15:45:47.745883+00:00 app[web.1]: [2017-05-07 15:45:47,745] INFO Logs loading complete in 10 ms. (kafka.log.LogManager)
+2017-05-07T15:45:47.906814+00:00 app[web.1]: [2017-05-07 15:45:47,906] INFO Starting log cleanup with a period of 300000 ms. (kafka.log.LogManager)
+2017-05-07T15:45:47.909603+00:00 app[web.1]: [2017-05-07 15:45:47,909] INFO Starting log flusher with a default period of 9223372036854775807 ms. (kafka.log.LogManager)
+2017-05-07T15:45:47.994492+00:00 app[web.1]: [2017-05-07 15:45:47,994] INFO Awaiting socket connections on 0.0.0.0:9092. (kafka.network.Acceptor)
+2017-05-07T15:45:48.003434+00:00 app[web.1]: [2017-05-07 15:45:48,003] INFO [Socket Server on Broker 0], Started 1 acceptor threads (kafka.network.SocketServer)
+2017-05-07T15:45:48.026735+00:00 app[web.1]: [2017-05-07 15:45:48,026] INFO [ExpirationReaper-0], Starting  (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+2017-05-07T15:45:48.028124+00:00 app[web.1]: [2017-05-07 15:45:48,027] INFO [ExpirationReaper-0], Starting  (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+2017-05-07T15:45:48.075624+00:00 app[web.1]: [2017-05-07 15:45:48,075] INFO Creating /controller (is it secure? false) (kafka.utils.ZKCheckedEphemeral)
+2017-05-07T15:45:48.085045+00:00 app[web.1]: [2017-05-07 15:45:48,084] INFO Result of znode creation is: OK (kafka.utils.ZKCheckedEphemeral)
+2017-05-07T15:45:48.085628+00:00 app[web.1]: [2017-05-07 15:45:48,085] INFO 0 successfully elected as leader (kafka.server.ZookeeperLeaderElector)
+2017-05-07T15:45:48.092118+00:00 app[web.1]: [2017-05-07 15:45:48,091] INFO Got user-level KeeperException when processing sessionid:0x15be396655d0000 type:setData cxid:0x25 zxid:0x15 txntype:-1 reqpath:n/a Error Path:/controller_epoch Error:KeeperErrorCode = NoNode for /controller_epoch (org.apache.zookeeper.server.PrepRequestProcessor)
+2017-05-07T15:45:48.209110+00:00 app[web.1]: [2017-05-07 15:45:48,208] INFO Got user-level KeeperException when processing sessionid:0x15be396655d0000 type:delete cxid:0x36 zxid:0x17 txntype:-1 reqpath:n/a Error Path:/admin/preferred_replica_election Error:KeeperErrorCode = NoNode for /admin/preferred_replica_election (org.apache.zookeeper.server.PrepRequestProcessor)
+2017-05-07T15:45:48.218114+00:00 app[web.1]: [2017-05-07 15:45:48,217] INFO [ExpirationReaper-0], Starting  (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+2017-05-07T15:45:48.234723+00:00 app[web.1]: [2017-05-07 15:45:48,234] INFO [ExpirationReaper-0], Starting  (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+2017-05-07T15:45:48.240227+00:00 app[web.1]: [2017-05-07 15:45:48,240] INFO [ExpirationReaper-0], Starting  (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+2017-05-07T15:45:48.266431+00:00 app[web.1]: [2017-05-07 15:45:48,266] INFO [GroupCoordinator 0]: Starting up. (kafka.coordinator.GroupCoordinator)
+2017-05-07T15:45:48.275750+00:00 app[web.1]: [2017-05-07 15:45:48,275] INFO [GroupCoordinator 0]: Startup complete. (kafka.coordinator.GroupCoordinator)
+2017-05-07T15:45:48.277789+00:00 app[web.1]: [2017-05-07 15:45:48,277] INFO [Group Metadata Manager on Broker 0]: Removed 0 expired offsets in 1 milliseconds. (kafka.coordinator.GroupMetadataManager)
+2017-05-07T15:45:48.310002+00:00 app[web.1]: [2017-05-07 15:45:48,309] INFO Will not load MX4J, mx4j-tools.jar is not in the classpath (kafka.utils.Mx4jLoader$)
+2017-05-07T15:45:48.380305+00:00 app[web.1]: [2017-05-07 15:45:48,380] INFO Creating /brokers/ids/0 (is it secure? false) (kafka.utils.ZKCheckedEphemeral)
+2017-05-07T15:45:48.387526+00:00 app[web.1]: [2017-05-07 15:45:48,387] INFO Got user-level KeeperException when processing sessionid:0x15be396655d0000 type:create cxid:0x41 zxid:0x18 txntype:-1 reqpath:n/a Error Path:/brokers Error:KeeperErrorCode = NodeExists for /brokers (org.apache.zookeeper.server.PrepRequestProcessor)
+2017-05-07T15:45:48.389146+00:00 app[web.1]: [2017-05-07 15:45:48,389] INFO Got user-level KeeperException when processing sessionid:0x15be396655d0000 type:create cxid:0x42 zxid:0x19 txntype:-1 reqpath:n/a Error Path:/brokers/ids Error:KeeperErrorCode = NodeExists for /brokers/ids (org.apache.zookeeper.server.PrepRequestProcessor)
+2017-05-07T15:45:48.394346+00:00 app[web.1]: [2017-05-07 15:45:48,394] INFO Result of znode creation is: OK (kafka.utils.ZKCheckedEphemeral)
+2017-05-07T15:45:48.395939+00:00 app[web.1]: [2017-05-07 15:45:48,395] INFO Registered broker 0 at path /brokers/ids/0 with addresses: EndPoint(be01bdbc-bd74-422c-944d-996056300173.prvt.dyno.rt.heroku.com,9092,ListenerName(PLAINTEXT),PLAINTEXT) (kafka.utils.ZkUtils)
+2017-05-07T15:45:48.405773+00:00 app[web.1]: [2017-05-07 15:45:48,405] WARN No meta.properties file under dir /tmp/kafka-logs/meta.properties (kafka.server.BrokerMetadataCheckpoint)
+2017-05-07T15:45:48.416824+00:00 app[web.1]: [2017-05-07 15:45:48,416] INFO New leader is 0 (kafka.server.ZookeeperLeaderElector$LeaderChangeListener)
+2017-05-07T15:45:48.442075+00:00 app[web.1]: [2017-05-07 15:45:48,441] INFO Kafka version : 0.10.2.0 (org.apache.kafka.common.utils.AppInfoParser)
+2017-05-07T15:45:48.442171+00:00 app[web.1]: [2017-05-07 15:45:48,442] INFO Kafka commitId : 576d93a8dc0cf421 (org.apache.kafka.common.utils.AppInfoParser)
+2017-05-07T15:45:48.443837+00:00 app[web.1]: [2017-05-07 15:45:48,443] INFO [Kafka Server 0], started (kafka.server.KafkaServer)
+2017-05-07T15:45:55.187336+00:00 app[web.1]: Picked up JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8
+2017-05-07T15:45:55.653514+00:00 app[web.1]: SLF4J: Class path contains multiple SLF4J bindings.
+2017-05-07T15:45:55.655587+00:00 app[web.1]: SLF4J: Found binding in [jar:file:/app/target/parti4b-0.0.1.jar!/BOOT-INF/lib/logback-classic-1.1.9.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+2017-05-07T15:45:55.655646+00:00 app[web.1]: SLF4J: Found binding in [jar:file:/app/target/parti4b-0.0.1.jar!/BOOT-INF/lib/slf4j-log4j12-1.7.22.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+2017-05-07T15:45:55.655707+00:00 app[web.1]: SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+2017-05-07T15:45:55.842775+00:00 app[web.1]: SLF4J: Actual binding is of type [ch.qos.logback.classic.util.ContextSelectorStaticBinder]
+2017-05-07T15:45:58.132405+00:00 app[web.1]: 2017-05-07 15:45:58.122  INFO 570 --- [           main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@20fa23c1: startup date [Sun May 07 15:45:58 UTC 2017]; root of context hierarchy
+2017-05-07T15:45:59.327939+00:00 app[web.1]: 2017-05-07 15:45:59.327  INFO 570 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'configurationPropertiesRebinderAutoConfiguration' of type [class org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$60d59c46] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-05-07T15:45:59.982247+00:00 app[web.1]: 
+2017-05-07T15:45:59.982280+00:00 app[web.1]:   .   ____          _            __ _ _
+2017-05-07T15:45:59.982560+00:00 app[web.1]:  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+2017-05-07T15:45:59.982561+00:00 app[web.1]: ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+2017-05-07T15:45:59.982562+00:00 app[web.1]:  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+2017-05-07T15:45:59.982563+00:00 app[web.1]:   '  |____| .__|_| |_|_| |_\__, | / / / /
+2017-05-07T15:45:59.982563+00:00 app[web.1]:  =========|_|==============|___/=/_/_/_/
+2017-05-07T15:45:59.983308+00:00 app[web.1]:  :: Spring Boot ::        (v1.4.4.RELEASE)
+2017-05-07T15:45:59.983349+00:00 app[web.1]: 
+2017-05-07T15:46:00.026375+00:00 app[web.1]: 2017-05-07 15:46:00.026  INFO 570 --- [           main] es.uniovi.asw.Application                : No active profile set, falling back to default profiles: default
+2017-05-07T15:46:00.075565+00:00 app[web.1]: 2017-05-07 15:46:00.075  INFO 570 --- [           main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@224edc67: startup date [Sun May 07 15:46:00 UTC 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@20fa23c1
+2017-05-07T15:46:04.580048+00:00 app[web.1]: 2017-05-07 15:46:04.579  INFO 570 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'kafkaListenerContainerFactory' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=kafkaProducerFactory; factoryMethodName=kafkaListenerContainerFactory; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [es/uniovi/asw/streamkafka/producers/KafkaProducerFactory.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=kafkaListenerFactory; factoryMethodName=kafkaListenerContainerFactory; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [es/uniovi/asw/streamkafka/consumer/KafkaListenerFactory.class]]
+2017-05-07T15:46:04.580836+00:00 app[web.1]: 2017-05-07 15:46:04.580  INFO 570 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'consumerFactory' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=kafkaProducerFactory; factoryMethodName=consumerFactory; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [es/uniovi/asw/streamkafka/producers/KafkaProducerFactory.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=kafkaListenerFactory; factoryMethodName=consumerFactory; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [es/uniovi/asw/streamkafka/consumer/KafkaListenerFactory.class]]
+2017-05-07T15:46:04.585165+00:00 app[web.1]: 2017-05-07 15:46:04.584  INFO 570 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'consumerConfigs' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=kafkaProducerFactory; factoryMethodName=consumerConfigs; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [es/uniovi/asw/streamkafka/producers/KafkaProducerFactory.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=kafkaListenerFactory; factoryMethodName=consumerConfigs; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [es/uniovi/asw/streamkafka/consumer/KafkaListenerFactory.class]]
+2017-05-07T15:46:05.248045+00:00 app[web.1]: 2017-05-07 15:46:05.247  INFO 570 --- [           main] o.s.b.f.config.PropertiesFactoryBean     : Loading properties file from URL [jar:file:/app/target/parti4b-0.0.1.jar!/BOOT-INF/lib/spring-integration-core-4.3.7.RELEASE.jar!/META-INF/spring.integration.default.properties]
+2017-05-07T15:46:05.255651+00:00 app[web.1]: 2017-05-07 15:46:05.255  INFO 570 --- [           main] o.s.i.config.IntegrationRegistrar        : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2017-05-07T15:46:05.696350+00:00 app[web.1]: 2017-05-07 15:46:05.696  INFO 570 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'managementServletContext' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.actuate.autoconfigure.EndpointWebMvcHypermediaManagementContextConfiguration; factoryMethodName=managementServletContext; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/actuate/autoconfigure/EndpointWebMvcHypermediaManagementContextConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.actuate.autoconfigure.EndpointWebMvcAutoConfiguration; factoryMethodName=managementServletContext; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/actuate/autoconfigure/EndpointWebMvcAutoConfiguration.class]]
+2017-05-07T15:46:06.179158+00:00 app[web.1]: 2017-05-07 15:46:06.178  WARN 570 --- [           main] o.s.c.a.ConfigurationClassPostProcessor  : Cannot enhance @Configuration bean definition 'refreshScope' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2017-05-07T15:46:06.691006+00:00 app[web.1]: 2017-05-07 15:46:06.690  INFO 570 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1a47a5c8-1f8f-3d39-9947-895665fcbe15
+2017-05-07T15:46:06.800683+00:00 app[web.1]: 2017-05-07 15:46:06.800  INFO 570 --- [           main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2017-05-07T15:46:06.807448+00:00 app[web.1]: 2017-05-07 15:46:06.807  INFO 570 --- [           main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2017-05-07T15:46:06.977538+00:00 app[web.1]: 2017-05-07 15:46:06.977  INFO 570 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [class org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$186daacc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-05-07T15:46:07.236105+00:00 app[web.1]: 2017-05-07 15:46:07.235  INFO 570 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$44bb9949] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-05-07T15:46:07.614448+00:00 app[web.1]: 2017-05-07 15:46:07.614  INFO 570 --- [           main] o.s.b.f.config.PropertiesFactoryBean     : Loading properties file from URL [jar:file:/app/target/parti4b-0.0.1.jar!/BOOT-INF/lib/spring-integration-core-4.3.7.RELEASE.jar!/META-INF/spring.integration.default.properties]
+2017-05-07T15:46:07.614883+00:00 app[web.1]: 2017-05-07 15:46:07.614  INFO 570 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationGlobalProperties' of type [class org.springframework.beans.factory.config.PropertiesFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-05-07T15:46:07.636276+00:00 app[web.1]: 2017-05-07 15:46:07.632  INFO 570 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationGlobalProperties' of type [class java.util.Properties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-05-07T15:46:07.774618+00:00 app[web.1]: 2017-05-07 15:46:07.774  INFO 570 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [class org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$60d59c46] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-05-07T15:46:07.794444+00:00 app[web.1]: 2017-05-07 15:46:07.794  INFO 570 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.stream.config.BindingServiceConfiguration$PostProcessorConfiguration' of type [class org.springframework.cloud.stream.config.BindingServiceConfiguration$PostProcessorConfiguration$$EnhancerBySpringCGLIB$$683374e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-05-07T15:46:07.674897+00:00 heroku[web.1]: source=web.1 dyno=heroku.68088157.be01bdbc-bd74-422c-944d-996056300173 sample#load_avg_1m=1.65
+2017-05-07T15:46:07.674998+00:00 heroku[web.1]: source=web.1 dyno=heroku.68088157.be01bdbc-bd74-422c-944d-996056300173 sample#memory_total=560.61MB sample#memory_rss=478.91MB sample#memory_cache=0.08MB sample#memory_swap=81.61MB sample#memory_pgpgin=252304pages sample#memory_pgpgout=130192pages sample#memory_quota=512.00MB
+2017-05-07T15:46:07.675616+00:00 heroku[web.1]: Process running mem=560M(109.5%)
+2017-05-07T15:46:07.675672+00:00 heroku[web.1]: Error R14 (Memory quota exceeded)
+2017-05-07T15:46:09.540817+00:00 app[web.1]: 2017-05-07 15:46:09.540  INFO 570 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 33270 (http)
+2017-05-07T15:46:09.625755+00:00 app[web.1]: 2017-05-07 15:46:09.625  INFO 570 --- [           main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2017-05-07T15:46:09.631833+00:00 app[web.1]: 2017-05-07 15:46:09.631  INFO 570 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.11
+2017-05-07T15:46:09.937764+00:00 app[web.1]: 2017-05-07 15:46:09.936  INFO 570 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-05-07T15:46:09.938225+00:00 app[web.1]: 2017-05-07 15:46:09.938  INFO 570 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 9862 ms
+2017-05-07T15:46:12.251760+00:00 app[web.1]: 2017-05-07 15:46:12.250  INFO 570 --- [ost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-05-07T15:46:12.272678+00:00 app[web.1]: 2017-05-07 15:46:12.271  INFO 570 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'metricsFilter' to: [/*]
+2017-05-07T15:46:12.273479+00:00 app[web.1]: 2017-05-07 15:46:12.273  INFO 570 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-05-07T15:46:12.274427+00:00 app[web.1]: 2017-05-07 15:46:12.274  INFO 570 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-05-07T15:46:12.274786+00:00 app[web.1]: 2017-05-07 15:46:12.274  INFO 570 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-05-07T15:46:12.275362+00:00 app[web.1]: 2017-05-07 15:46:12.274  INFO 570 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-05-07T15:46:12.276748+00:00 app[web.1]: 2017-05-07 15:46:12.275  INFO 570 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webRequestLoggingFilter' to: [/*]
+2017-05-07T15:46:12.277023+00:00 app[web.1]: 2017-05-07 15:46:12.276  INFO 570 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'applicationContextIdFilter' to: [/*]
+2017-05-07T15:46:16.915996+00:00 heroku[web.1]: Restarting
+2017-05-07T15:46:19.580609+00:00 app[web.1]: 2017-05-07 15:46:19.580  INFO 570 --- [           main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-05-07T15:46:19.662264+00:00 app[web.1]: 2017-05-07 15:46:19.655  INFO 570 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+2017-05-07T15:46:19.662268+00:00 app[web.1]: 	name: default
+2017-05-07T15:46:19.662269+00:00 app[web.1]: 	...]
+2017-05-07T15:46:20.527354+00:00 app[web.1]: 2017-05-07 15:46:20.526  INFO 570 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.11.Final}
+2017-05-07T15:46:20.546378+00:00 app[web.1]: 2017-05-07 15:46:20.545  INFO 570 --- [           main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-05-07T15:46:20.569306+00:00 app[web.1]: 2017-05-07 15:46:20.552  INFO 570 --- [           main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2017-05-07T15:46:20.763788+00:00 app[web.1]: 2017-05-07 15:46:20.763  INFO 570 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-05-07T15:46:22.286424+00:00 heroku[web.1]: Starting process with command `sh Prueba.sh`
+2017-05-07T15:46:23.679537+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2017-05-07T15:46:24.049928+00:00 heroku[web.1]: Process exited with status 143
+2017-05-07T15:46:24.519602+00:00 app[web.1]: --2017-05-07 15:46:24--  http://apache.rediris.es/kafka/0.10.2.0/kafka_2.11-0.10.2.0.tgz
+2017-05-07T15:46:24.912645+00:00 app[web.1]: Resolving apache.rediris.es (apache.rediris.es)... 130.206.1.5
+2017-05-07T15:46:25.008542+00:00 app[web.1]: Connecting to apache.rediris.es (apache.rediris.es)|130.206.1.5|:80... connected.
+2017-05-07T15:46:25.112755+00:00 app[web.1]: HTTP request sent, awaiting response... 200 OK
+2017-05-07T15:46:25.112884+00:00 app[web.1]: Length: 37630750 (36M) [application/x-gzip]
+2017-05-07T15:46:25.112914+00:00 app[web.1]: Saving to: 'kafka.tgz'
+2017-05-07T15:46:25.161427+00:00 app[web.1]: 
+2017-05-07T15:46:25.468480+00:00 app[web.1]:      0K .......... .......... .......... .......... ..........  0%  142K 4m19s
+2017-05-07T15:46:25.563687+00:00 app[web.1]:     50K .......... .......... .......... .......... ..........  0%  512K 2m45s
+2017-05-07T15:46:25.568657+00:00 app[web.1]:    100K .......... .......... .......... .......... ..........  0% 9.68M 1m51s
+2017-05-07T15:46:25.662239+00:00 app[web.1]:    150K .......... .......... .......... .......... ..........  0%  535K 1m40s
+2017-05-07T15:46:25.672616+00:00 app[web.1]:    200K .......... .......... .......... .......... ..........  0% 4.69M 82s
+2017-05-07T15:46:25.703046+00:00 app[web.1]:    250K .......... .......... .......... .......... ..........  0% 1.60M 72s
+2017-05-07T15:46:25.760981+00:00 app[web.1]:    300K .......... .......... .......... .......... ..........  0%  864K 67s
+2017-05-07T15:46:25.767249+00:00 app[web.1]:    350K .......... .......... .......... .......... ..........  1% 7.78M 59s
+2017-05-07T15:46:25.777452+00:00 app[web.1]:    400K .......... .......... .......... .......... ..........  1% 5.11M 54s
+2017-05-07T15:46:25.801188+00:00 app[web.1]:    450K .......... .......... .......... .......... ..........  1% 2.01M 50s
+2017-05-07T15:46:25.806256+00:00 app[web.1]:    500K .......... .......... .......... .......... ..........  1% 9.63M 46s
+2017-05-07T15:46:25.865151+00:00 app[web.1]:    550K .......... .......... .......... .......... ..........  1%  849K 45s
+2017-05-07T15:46:25.885266+00:00 app[web.1]:    600K .......... .......... .......... .......... ..........  1% 2.43M 43s
+2017-05-07T15:46:25.886334+00:00 app[web.1]:    650K .......... .......... .......... .......... ..........  1% 43.5M 40s
+2017-05-07T15:46:25.886621+00:00 app[web.1]:    700K .......... .......... .......... .......... ..........  2%  166M 37s
+2017-05-07T15:46:25.926900+00:00 app[web.1]:    750K .......... .......... .......... .......... ..........  2% 1.21M 37s
+2017-05-07T15:46:25.928502+00:00 app[web.1]:    800K .......... .......... .......... .......... ..........  2% 29.6M 34s
+2017-05-07T15:46:25.997165+00:00 app[web.1]:    850K .......... .......... .......... .......... ..........  2%  728K 35s
+2017-05-07T15:46:25.997448+00:00 app[web.1]:    900K .......... .......... .......... .......... ..........  2%  172M 33s
+2017-05-07T15:46:25.999592+00:00 app[web.1]:    950K .......... .......... .......... .......... ..........  2% 22.6M 32s
+2017-05-07T15:46:26.065908+00:00 app[web.1]:   1000K .......... .......... .......... .......... ..........  2%  754K 32s
+2017-05-07T15:46:26.066216+00:00 app[web.1]:   1050K .......... .......... .......... .......... ..........  2%  139M 31s
+2017-05-07T15:46:26.066453+00:00 app[web.1]:   1100K .......... .......... .......... .......... ..........  3%  201M 30s
+2017-05-07T15:46:26.092526+00:00 app[web.1]:   1150K .......... .......... .......... .......... ..........  3% 1.88M 29s
+2017-05-07T15:46:26.093663+00:00 app[web.1]:   1200K .......... .......... .......... .......... ..........  3% 42.6M 28s
+2017-05-07T15:46:26.123544+00:00 app[web.1]:   1250K .......... .......... .......... .......... ..........  3% 1.63M 28s
+2017-05-07T15:46:26.125320+00:00 app[web.1]:   1300K .......... .......... .......... .......... ..........  3% 27.5M 27s
+2017-05-07T15:46:26.126397+00:00 app[web.1]:   1350K .......... .......... .......... .......... ..........  3% 51.1M 26s
+2017-05-07T15:46:26.205506+00:00 app[web.1]:   1400K .......... .......... .......... .......... ..........  3%  632K 27s
+2017-05-07T15:46:26.206077+00:00 app[web.1]:   1450K .......... .......... .......... .......... ..........  4% 73.3M 26s
+2017-05-07T15:46:26.240458+00:00 app[web.1]:   1500K .......... .......... .......... .......... ..........  4% 1.42M 26s
+2017-05-07T15:46:26.240718+00:00 app[web.1]:   1550K .......... .......... .......... .......... ..........  4%  155M 25s
+2017-05-07T15:46:26.241098+00:00 app[web.1]:   1600K .......... .......... .......... .......... ..........  4%  125M 24s
+2017-05-07T15:46:26.259566+00:00 app[web.1]:   1650K .......... .......... .......... .......... ..........  4% 2.64M 24s
+2017-05-07T15:46:26.264908+00:00 app[web.1]:   1700K .......... .......... .......... .......... ..........  4%  247M 23s
+2017-05-07T15:46:26.265228+00:00 app[web.1]:   1750K .......... .......... .......... .......... ..........  4% 8.96M 22s
+2017-05-07T15:46:26.265538+00:00 app[web.1]:   1800K .......... .......... .......... .......... ..........  5%  155M 22s
+2017-05-07T15:46:26.265791+00:00 app[web.1]:   1850K .......... .......... .......... .......... ..........  5%  192M 21s
+2017-05-07T15:46:26.266082+00:00 app[web.1]:   1900K .......... .......... .......... .......... ..........  5%  187M 21s
+2017-05-07T15:46:26.268081+00:00 app[web.1]:   1950K .......... .......... .......... .......... ..........  5% 65.5M 20s
+2017-05-07T15:46:26.302499+00:00 app[web.1]:   2000K .......... .......... .......... .......... ..........  5% 1.37M 20s
+2017-05-07T15:46:26.302771+00:00 app[web.1]:   2050K .......... .......... .......... .......... ..........  5%  168M 20s
+2017-05-07T15:46:26.304085+00:00 app[web.1]:   2100K .......... .......... .......... .......... ..........  5% 37.3M 19s
+2017-05-07T15:46:26.340702+00:00 app[web.1]:   2150K .......... .......... .......... .......... ..........  5% 1.33M 19s
+2017-05-07T15:46:26.341009+00:00 app[web.1]:   2200K .......... .......... .......... .......... ..........  6%  170M 19s
+2017-05-07T15:46:26.341257+00:00 app[web.1]:   2250K .......... .......... .......... .......... ..........  6%  163M 18s
+2017-05-07T15:46:26.360620+00:00 app[web.1]:   2300K .......... .......... .......... .......... ..........  6% 2.52M 18s
+2017-05-07T15:46:26.360877+00:00 app[web.1]:   2350K .......... .......... .......... .......... ..........  6%  192M 18s
+2017-05-07T15:46:26.384503+00:00 app[web.1]:   2400K .......... .......... .......... .......... ..........  6% 2.07M 18s
+2017-05-07T15:46:26.388275+00:00 app[web.1]:   2450K .......... .......... .......... .......... ..........  6% 13.0M 17s
+2017-05-07T15:46:26.388560+00:00 app[web.1]:   2500K .......... .......... .......... .......... ..........  6%  160M 17s
+2017-05-07T15:46:26.424319+00:00 app[web.1]:   2550K .......... .......... .......... .......... ..........  7% 1.37M 17s
+2017-05-07T15:46:26.426673+00:00 app[web.1]:   2600K .......... .......... .......... .......... ..........  7% 20.2M 17s
+2017-05-07T15:46:26.470587+00:00 app[web.1]:   2650K .......... .......... .......... .......... ..........  7% 1.11M 17s
+2017-05-07T15:46:26.471238+00:00 app[web.1]:   2700K .......... .......... .......... .......... ..........  7% 75.0M 17s
+2017-05-07T15:46:26.471874+00:00 app[web.1]:   2750K .......... .......... .......... .......... ..........  7% 89.5M 16s
+2017-05-07T15:46:26.531578+00:00 app[web.1]:   2800K .......... .......... .......... .......... ..........  7%  836K 17s
+2017-05-07T15:46:26.531818+00:00 app[web.1]:   2850K .......... .......... .......... .......... ..........  7%  197M 17s
+2017-05-07T15:46:26.587957+00:00 app[web.1]:   2900K .......... .......... .......... .......... ..........  8%  891K 17s
+2017-05-07T15:46:26.589432+00:00 app[web.1]:   2950K .......... .......... .......... .......... ..........  8% 32.9M 17s
+2017-05-07T15:46:26.590355+00:00 app[web.1]:   3000K .......... .......... .......... .......... ..........  8% 51.2M 16s
+2017-05-07T15:46:26.623363+00:00 app[web.1]:   3050K .......... .......... .......... .......... ..........  8% 1.48M 16s
+2017-05-07T15:46:26.624731+00:00 app[web.1]:   3100K .......... .......... .......... .......... ..........  8% 34.7M 16s
+2017-05-07T15:46:26.637858+00:00 app[web.1]:   3150K .......... .......... .......... .......... ..........  8%  137M 16s
+2017-05-07T15:46:26.639044+00:00 app[web.1]:   3200K .......... .......... .......... .......... ..........  8% 3.50M 16s
+2017-05-07T15:46:26.640727+00:00 app[web.1]:   3250K .......... .......... .......... .......... ..........  8% 29.5M 15s
+2017-05-07T15:46:26.664224+00:00 app[web.1]:   3300K .......... .......... .......... .......... ..........  9% 2.09M 15s
+2017-05-07T15:46:26.666034+00:00 app[web.1]:   3350K .......... .......... .......... .......... ..........  9% 26.0M 15s
+2017-05-07T15:46:26.667591+00:00 app[web.1]:   3400K .......... .......... .......... .......... ..........  9% 32.6M 15s
+2017-05-07T15:46:26.710571+00:00 app[web.1]:   3450K .......... .......... .......... .......... ..........  9% 1.14M 15s
+2017-05-07T15:46:26.712012+00:00 app[web.1]:   3500K .......... .......... .......... .......... ..........  9% 31.5M 15s
+2017-05-07T15:46:26.736865+00:00 app[web.1]:   3550K .......... .......... .......... .......... ..........  9% 1.97M 15s
+2017-05-07T15:46:26.737763+00:00 app[web.1]:   3600K .......... .......... .......... .......... ..........  9% 49.3M 15s
+2017-05-07T15:46:26.738634+00:00 app[web.1]:   3650K .......... .......... .......... .......... .......... 10% 57.1M 15s
+2017-05-07T15:46:26.749530+00:00 app[web.1]:   3700K .......... .......... .......... .......... .......... 10% 4.44M 14s
+2017-05-07T15:46:26.749829+00:00 app[web.1]:   3750K .......... .......... .......... .......... .......... 10%  212M 14s
+2017-05-07T15:46:26.780657+00:00 app[web.1]:   3800K .......... .......... .......... .......... .......... 10% 1.58M 14s
+2017-05-07T15:46:26.780936+00:00 app[web.1]:   3850K .......... .......... .......... .......... .......... 10%  164M 14s
+2017-05-07T15:46:26.783287+00:00 app[web.1]:   3900K .......... .......... .......... .......... .......... 10% 20.8M 14s
+2017-05-07T15:46:26.786943+00:00 app[web.1]:   3950K .......... .......... .......... .......... .......... 10% 13.5M 14s
+2017-05-07T15:46:26.788714+00:00 app[web.1]:   4000K .......... .......... .......... .......... .......... 11% 26.8M 14s
+2017-05-07T15:46:26.789057+00:00 app[web.1]:   4050K .......... .......... .......... .......... .......... 11%  145M 13s
+2017-05-07T15:46:26.789366+00:00 app[web.1]:   4100K .......... .......... .......... .......... .......... 11%  158M 13s
+2017-05-07T15:46:26.789698+00:00 app[web.1]:   4150K .......... .......... .......... .......... .......... 11%  164M 13s
+2017-05-07T15:46:26.794162+00:00 app[web.1]:   4200K .......... .......... .......... .......... .......... 11% 10.8M 13s
+2017-05-07T15:46:26.794451+00:00 app[web.1]:   4250K .......... .......... .......... .......... .......... 11%  172M 13s
+2017-05-07T15:46:26.794755+00:00 app[web.1]:   4300K .......... .......... .......... .......... .......... 11%  157M 13s
+2017-05-07T15:46:26.810615+00:00 app[web.1]:   4350K .......... .......... .......... .......... .......... 11% 3.09M 12s
+2017-05-07T15:46:26.812251+00:00 app[web.1]:   4400K .......... .......... .......... .......... .......... 12% 28.9M 12s
+2017-05-07T15:46:26.918600+00:00 app[web.1]:   4450K .......... .......... .......... .......... .......... 12%  470K 13s
+2017-05-07T15:46:26.918827+00:00 app[web.1]:   4500K .......... .......... .......... .......... .......... 12%  193M 13s
+2017-05-07T15:46:26.919085+00:00 app[web.1]:   4550K .......... .......... .......... .......... .......... 12%  221M 13s
+2017-05-07T15:46:26.967702+00:00 app[web.1]:   4600K .......... .......... .......... .......... .......... 12% 1.00M 13s
+2017-05-07T15:46:26.969636+00:00 app[web.1]:   4650K .......... .......... .......... .......... .......... 12% 26.7M 13s
+2017-05-07T15:46:26.999367+00:00 app[web.1]:   4700K .......... .......... .......... .......... .......... 12% 1.64M 13s
+2017-05-07T15:46:27.001156+00:00 app[web.1]:   4750K .......... .......... .......... .......... .......... 13% 27.4M 13s
+2017-05-07T15:46:27.001696+00:00 app[web.1]:   4800K .......... .......... .......... .......... .......... 13% 90.3M 12s
+2017-05-07T15:46:27.026713+00:00 app[web.1]:   4850K .......... .......... .......... .......... .......... 13% 1.95M 12s
+2017-05-07T15:46:27.026881+00:00 app[web.1]:   4900K .......... .......... .......... .......... .......... 13%  284M 12s
+2017-05-07T15:46:27.060542+00:00 app[web.1]:   4950K .......... .......... .......... .......... .......... 13% 1.45M 12s
+2017-05-07T15:46:27.060750+00:00 app[web.1]:   5000K .......... .......... .......... .......... .......... 13%  177M 12s
+2017-05-07T15:46:27.060917+00:00 app[web.1]:   5050K .......... .......... .......... .......... .......... 13%  290M 12s
+2017-05-07T15:46:27.085886+00:00 app[web.1]:   5100K .......... .......... .......... .......... .......... 14% 1.96M 12s
+2017-05-07T15:46:27.087121+00:00 app[web.1]:   5150K .......... .......... .......... .......... .......... 14% 39.2M 12s
+2017-05-07T15:46:27.120655+00:00 app[web.1]:   5200K .......... .......... .......... .......... .......... 14% 1.46M 12s
+2017-05-07T15:46:27.122110+00:00 app[web.1]:   5250K .......... .......... .......... .......... .......... 14% 33.2M 12s
+2017-05-07T15:46:27.123198+00:00 app[web.1]:   5300K .......... .......... .......... .......... .......... 14% 44.9M 12s
+2017-05-07T15:46:27.156849+00:00 app[web.1]:   5350K .......... .......... .......... .......... .......... 14% 1.45M 12s
+2017-05-07T15:46:27.157074+00:00 app[web.1]:   5400K .......... .......... .......... .......... .......... 14%  182M 12s
+2017-05-07T15:46:27.157425+00:00 app[web.1]:   5450K .......... .......... .......... .......... .......... 14%  136M 12s
+2017-05-07T15:46:27.222668+00:00 app[web.1]:   5500K .......... .......... .......... .......... .......... 15%  767K 12s
+2017-05-07T15:46:27.224149+00:00 app[web.1]:   5550K .......... .......... .......... .......... .......... 15% 31.9M 12s
+2017-05-07T15:46:27.253181+00:00 app[web.1]:   5600K .......... .......... .......... .......... .......... 15% 1.68M 12s
+2017-05-07T15:46:27.254296+00:00 app[web.1]:   5650K .......... .......... .......... .......... .......... 15% 43.7M 12s
+2017-05-07T15:46:27.255387+00:00 app[web.1]:   5700K .......... .......... .......... .......... .......... 15%  101M 12s
+2017-05-07T15:46:27.262695+00:00 app[web.1]:   5750K .......... .......... .......... .......... .......... 15% 6.51M 11s
+2017-05-07T15:46:27.263125+00:00 app[web.1]:   5800K .......... .......... .......... .......... .......... 15% 58.0M 11s
+2017-05-07T15:46:27.307895+00:00 app[web.1]:   5850K .......... .......... .......... .......... .......... 16% 1.09M 11s
+2017-05-07T15:46:27.308126+00:00 app[web.1]:   5900K .......... .......... .......... .......... .......... 16%  199M 11s
+2017-05-07T15:46:27.308368+00:00 app[web.1]:   5950K .......... .......... .......... .......... .......... 16%  233M 11s
+2017-05-07T15:46:27.352919+00:00 app[web.1]:   6000K .......... .......... .......... .......... .......... 16% 1.10M 11s
+2017-05-07T15:46:27.353196+00:00 app[web.1]:   6050K .......... .......... .......... .......... .......... 16%  176M 11s
+2017-05-07T15:46:27.401072+00:00 app[web.1]:   6100K .......... .......... .......... .......... .......... 16% 1.02M 11s
+2017-05-07T15:46:27.401379+00:00 app[web.1]:   6150K .......... .......... .......... .......... .......... 16%  166M 11s
+2017-05-07T15:46:27.402730+00:00 app[web.1]:   6200K .......... .......... .......... .......... .......... 17% 35.0M 11s
+2017-05-07T15:46:27.506141+00:00 app[web.1]:   6250K .......... .......... .......... .......... .......... 17%  485K 12s
+2017-05-07T15:46:27.509595+00:00 app[web.1]:   6300K .......... .......... .......... .......... .......... 17% 12.9M 11s
+2017-05-07T15:46:27.571269+00:00 app[web.1]:   6350K .......... .......... .......... .......... .......... 17% 59.6M 11s
+2017-05-07T15:46:27.571918+00:00 app[web.1]:   6400K .......... .......... .......... .......... .......... 17%  813K 12s
+2017-05-07T15:46:27.578471+00:00 app[web.1]:   6450K .......... .......... .......... .......... .......... 17% 7.46M 11s
+2017-05-07T15:46:27.664230+00:00 app[web.1]:   6500K .......... .......... .......... .......... .......... 17%  583K 12s
+2017-05-07T15:46:27.665782+00:00 app[web.1]:   6550K .......... .......... .......... .......... .......... 17% 44.4M 12s
+2017-05-07T15:46:27.666854+00:00 app[web.1]:   6600K .......... .......... .......... .......... .......... 18% 31.1M 12s
+2017-05-07T15:46:27.769268+00:00 app[web.1]:   6650K .......... .......... .......... .......... .......... 18%  489K 12s
+2017-05-07T15:46:27.771628+00:00 app[web.1]:   6700K .......... .......... .......... .......... .......... 18% 37.4M 12s
+2017-05-07T15:46:27.828294+00:00 app[web.1]:   6750K .......... .......... .......... .......... .......... 18%  866K 12s
+2017-05-07T15:46:27.828572+00:00 app[web.1]:   6800K .......... .......... .......... .......... .......... 18%  140M 12s
+2017-05-07T15:46:27.828962+00:00 app[web.1]:   6850K .......... .......... .......... .......... .......... 18%  124M 12s
+2017-05-07T15:46:27.885958+00:00 app[web.1]:   6900K .......... .......... .......... .......... .......... 18%  878K 12s
+2017-05-07T15:46:27.887694+00:00 app[web.1]:   6950K .......... .......... .......... .......... .......... 19% 28.0M 12s
+2017-05-07T15:46:27.925614+00:00 app[web.1]:   7000K .......... .......... .......... .......... .......... 19% 1.29M 12s
+2017-05-07T15:46:27.927945+00:00 app[web.1]:   7050K .......... .......... .......... .......... .......... 19% 21.2M 12s
+2017-05-07T15:46:27.930021+00:00 app[web.1]:   7100K .......... .......... .......... .......... .......... 19% 24.0M 12s
+2017-05-07T15:46:27.972712+00:00 app[web.1]:   7150K .......... .......... .......... .......... .......... 19% 1.14M 12s
+2017-05-07T15:46:27.973643+00:00 app[web.1]:   7200K .......... .......... .......... .......... .......... 19% 50.3M 12s
+2017-05-07T15:46:28.016969+00:00 app[web.1]:   7250K .......... .......... .......... .......... .......... 19% 1.14M 12s
+2017-05-07T15:46:28.017716+00:00 app[web.1]:   7300K .......... .......... .......... .......... .......... 20% 43.0M 12s
+2017-05-07T15:46:28.018900+00:00 app[web.1]:   7350K .......... .......... .......... .......... .......... 20% 42.9M 12s
+2017-05-07T15:46:28.057649+00:00 app[web.1]:   7400K .......... .......... .......... .......... .......... 20% 1.26M 12s
+2017-05-07T15:46:28.059214+00:00 app[web.1]:   7450K .......... .......... .......... .......... .......... 20% 32.7M 11s
+2017-05-07T15:46:28.059652+00:00 app[web.1]:   7500K .......... .......... .......... .......... .......... 20% 93.9M 11s
+2017-05-07T15:46:28.096691+00:00 app[web.1]:   7550K .......... .......... .......... .......... .......... 20% 1.33M 11s
+2017-05-07T15:46:28.097705+00:00 app[web.1]:   7600K .......... .......... .......... .......... .......... 20% 41.9M 11s
+2017-05-07T15:46:28.149613+00:00 app[web.1]:   7650K .......... .......... .......... .......... .......... 20%  962K 11s
+2017-05-07T15:46:28.149875+00:00 app[web.1]:   7700K .......... .......... .......... .......... .......... 21%  179M 11s
+2017-05-07T15:46:28.150167+00:00 app[web.1]:   7750K .......... .......... .......... .......... .......... 21%  201M 11s
+2017-05-07T15:46:28.182044+00:00 app[web.1]:   7800K .......... .......... .......... .......... .......... 21% 1.53M 11s
+2017-05-07T15:46:28.182284+00:00 app[web.1]:   7850K .......... .......... .......... .......... .......... 21%  210M 11s
+2017-05-07T15:46:28.224453+00:00 app[web.1]:   7900K .......... .......... .......... .......... .......... 21% 1.16M 11s
+2017-05-07T15:46:28.224937+00:00 app[web.1]:   7950K .......... .......... .......... .......... .......... 21% 97.2M 11s
+2017-05-07T15:46:28.225273+00:00 app[web.1]:   8000K .......... .......... .......... .......... .......... 21%  131M 11s
+2017-05-07T15:46:28.293095+00:00 app[web.1]:   8050K .......... .......... .......... .......... .......... 22%  744K 11s
+2017-05-07T15:46:28.294358+00:00 app[web.1]:   8100K .......... .......... .......... .......... .......... 22% 27.2M 11s
+2017-05-07T15:46:28.380241+00:00 app[web.1]:   8150K .......... .......... .......... .......... .......... 22%  589K 11s
+2017-05-07T15:46:28.382843+00:00 app[web.1]:   8200K .......... .......... .......... .......... .......... 22% 14.1M 11s
+2017-05-07T15:46:28.390115+00:00 app[web.1]:   8250K .......... .......... .......... .......... .......... 22% 6.54M 11s
+2017-05-07T15:46:28.450823+00:00 app[web.1]:   8300K .......... .......... .......... .......... .......... 22%  827K 11s
+2017-05-07T15:46:28.453817+00:00 app[web.1]:   8350K .......... .......... .......... .......... .......... 22% 16.7M 11s
+2017-05-07T15:46:28.457903+00:00 app[web.1]:   8400K .......... .......... .......... .......... .......... 22% 12.5M 11s
+2017-05-07T15:46:28.460567+00:00 app[web.1]:   8450K .......... .......... .......... .......... .......... 23% 17.1M 11s
+2017-05-07T15:46:28.462736+00:00 app[web.1]:   8500K .......... .......... .......... .......... .......... 23% 20.1M 11s
+2017-05-07T15:46:28.465619+00:00 app[web.1]:   8550K .......... .......... .......... .......... .......... 23% 17.3M 11s
+2017-05-07T15:46:28.476240+00:00 app[web.1]:   8600K .......... .......... .......... .......... .......... 23% 4.57M 11s
+2017-05-07T15:46:28.481687+00:00 app[web.1]:   8650K .......... .......... .......... .......... .......... 23% 8.97M 11s
+2017-05-07T15:46:28.482776+00:00 app[web.1]:   8700K .......... .......... .......... .......... .......... 23% 46.0M 11s
+2017-05-07T15:46:28.488535+00:00 app[web.1]:   8750K .......... .......... .......... .......... .......... 23% 69.0M 11s
+2017-05-07T15:46:28.510921+00:00 app[web.1]:   8800K .......... .......... .......... .......... .......... 24% 1.78M 11s
+2017-05-07T15:46:28.511622+00:00 app[web.1]:   8850K .......... .......... .......... .......... .......... 24% 69.9M 11s
+2017-05-07T15:46:28.513073+00:00 app[web.1]:   8900K .......... .......... .......... .......... .......... 24% 34.0M 11s
+2017-05-07T15:46:28.577503+00:00 app[web.1]:   8950K .......... .......... .......... .......... .......... 24%  777K 11s
+2017-05-07T15:46:28.578230+00:00 app[web.1]:   9000K .......... .......... .......... .......... .......... 24% 59.8M 11s
+2017-05-07T15:46:28.609227+00:00 app[web.1]:   9050K .......... .......... .......... .......... .......... 24% 1.59M 11s
+2017-05-07T15:46:28.610106+00:00 app[web.1]:   9100K .......... .......... .......... .......... .......... 24% 45.0M 11s
+2017-05-07T15:46:28.610561+00:00 app[web.1]:   9150K .......... .......... .......... .......... .......... 25%  110M 10s
+2017-05-07T15:46:28.642399+00:00 app[web.1]:   9200K .......... .......... .......... .......... .......... 25% 1.54M 10s
+2017-05-07T15:46:28.643590+00:00 app[web.1]:   9250K .......... .......... .......... .......... .......... 25% 34.1M 10s
+2017-05-07T15:46:28.697756+00:00 app[web.1]:   9300K .......... .......... .......... .......... .......... 25%  923K 11s
+2017-05-07T15:46:28.698082+00:00 app[web.1]:   9350K .......... .......... .......... .......... .......... 25%  167M 10s
+2017-05-07T15:46:28.698337+00:00 app[web.1]:   9400K .......... .......... .......... .......... .......... 25%  158M 10s
+2017-05-07T15:46:28.751504+00:00 app[web.1]:   9450K .......... .......... .......... .......... .......... 25%  942K 10s
+2017-05-07T15:46:28.751840+00:00 app[web.1]:   9500K .......... .......... .......... .......... .......... 25%  121M 10s
+2017-05-07T15:46:28.791893+00:00 app[web.1]:   9550K .......... .......... .......... .......... .......... 26%  172M 10s
+2017-05-07T15:46:28.792155+00:00 app[web.1]:   9600K .......... .......... .......... .......... .......... 26% 1.22M 10s
+2017-05-07T15:46:28.792468+00:00 app[web.1]:   9650K .......... .......... .......... .......... .......... 26%  157M 10s
+2017-05-07T15:46:28.809211+00:00 app[web.1]:   9700K .......... .......... .......... .......... .......... 26% 2.93M 10s
+2017-05-07T15:46:28.810160+00:00 app[web.1]:   9750K .......... .......... .......... .......... .......... 26% 53.7M 10s
+2017-05-07T15:46:28.811550+00:00 app[web.1]:   9800K .......... .......... .......... .......... .......... 26% 32.6M 10s
+2017-05-07T15:46:28.879559+00:00 app[web.1]:   9850K .......... .......... .......... .......... .......... 26%  736K 10s
+2017-05-07T15:46:28.886440+00:00 app[web.1]:   9900K .......... .......... .......... .......... .......... 27% 7.12M 10s
+2017-05-07T15:46:28.911649+00:00 app[web.1]:   9950K .......... .......... .......... .......... .......... 27% 1.93M 10s
+2017-05-07T15:46:28.911910+00:00 app[web.1]:  10000K .......... .......... .......... .......... .......... 27%  153M 10s
+2017-05-07T15:46:28.912189+00:00 app[web.1]:  10050K .......... .......... .......... .......... .......... 27%  186M 10s
+2017-05-07T15:46:28.925630+00:00 app[web.1]:  10100K .......... .......... .......... .......... .......... 27% 3.74M 10s
+2017-05-07T15:46:28.926941+00:00 app[web.1]:  10150K .......... .......... .......... .......... .......... 27% 29.5M 10s
+2017-05-07T15:46:28.984524+00:00 app[web.1]:  10200K .......... .......... .......... .......... .......... 27%  868K 10s
+2017-05-07T15:46:28.984792+00:00 app[web.1]:  10250K .......... .......... .......... .......... .......... 28%  162M 10s
+2017-05-07T15:46:28.985034+00:00 app[web.1]:  10300K .......... .......... .......... .......... .......... 28%  207M 10s
+2017-05-07T15:46:29.003402+00:00 app[web.1]:  10350K .......... .......... .......... .......... .......... 28% 2.67M 10s
+2017-05-07T15:46:29.003685+00:00 app[web.1]:  10400K .......... .......... .......... .......... .......... 28%  146M 10s
+2017-05-07T15:46:29.038516+00:00 app[web.1]:  10450K .......... .......... .......... .......... .......... 28% 1.40M 10s
+2017-05-07T15:46:29.038787+00:00 app[web.1]:  10500K .......... .......... .......... .......... .......... 28%  155M 10s
+2017-05-07T15:46:29.039100+00:00 app[web.1]:  10550K .......... .......... .......... .......... .......... 28%  183M 10s
+2017-05-07T15:46:29.069251+00:00 app[web.1]:  10600K .......... .......... .......... .......... .......... 28% 1.62M 10s
+2017-05-07T15:46:29.069521+00:00 app[web.1]:  10650K .......... .......... .......... .......... .......... 29%  175M 10s
+2017-05-07T15:46:29.069783+00:00 app[web.1]:  10700K .......... .......... .......... .......... .......... 29%  186M 10s
+2017-05-07T15:46:29.108820+00:00 app[web.1]:  10750K .......... .......... .......... .......... .......... 29% 1.25M 10s
+2017-05-07T15:46:29.109083+00:00 app[web.1]:  10800K .......... .......... .......... .......... .......... 29%  153M 10s
+2017-05-07T15:46:29.136823+00:00 app[web.1]:  10850K .......... .......... .......... .......... .......... 29% 1.76M 10s
+2017-05-07T15:46:29.137098+00:00 app[web.1]:  10900K .......... .......... .......... .......... .......... 29%  178M 9s
+2017-05-07T15:46:29.137381+00:00 app[web.1]:  10950K .......... .......... .......... .......... .......... 29%  189M 9s
+2017-05-07T15:46:29.179905+00:00 app[web.1]:  11000K .......... .......... .......... .......... .......... 30% 1.15M 9s
+2017-05-07T15:46:29.180156+00:00 app[web.1]:  11050K .......... .......... .......... .......... .......... 30%  174M 9s
+2017-05-07T15:46:29.219730+00:00 app[web.1]:  11100K .......... .......... .......... .......... .......... 30% 1.23M 9s
+2017-05-07T15:46:29.220041+00:00 app[web.1]:  11150K .......... .......... .......... .......... .......... 30%  162M 9s
+2017-05-07T15:46:29.224856+00:00 app[web.1]:  11200K .......... .......... .......... .......... .......... 30%  141M 9s
+2017-05-07T15:46:29.257313+00:00 app[web.1]:  11250K .......... .......... .......... .......... .......... 30% 1.32M 9s
+2017-05-07T15:46:29.257593+00:00 app[web.1]:  11300K .......... .......... .......... .......... .......... 30%  166M 9s
+2017-05-07T15:46:29.319276+00:00 app[web.1]:  11350K .......... .......... .......... .......... .......... 31%  812K 9s
+2017-05-07T15:46:29.319549+00:00 app[web.1]:  11400K .......... .......... .......... .......... .......... 31%  136M 9s
+2017-05-07T15:46:29.319834+00:00 app[web.1]:  11450K .......... .......... .......... .......... .......... 31%  171M 9s
+2017-05-07T15:46:29.338139+00:00 app[web.1]:  11500K .......... .......... .......... .......... .......... 31% 2.67M 9s
+2017-05-07T15:46:29.338554+00:00 app[web.1]:  11550K .......... .......... .......... .......... .......... 31%  185M 9s
+2017-05-07T15:46:29.380455+00:00 app[web.1]:  11600K .......... .......... .......... .......... .......... 31% 1.33M 9s
+2017-05-07T15:46:29.385052+00:00 app[web.1]:  11650K .......... .......... .......... .......... .......... 31% 4.94M 9s
+2017-05-07T15:46:29.385710+00:00 app[web.1]:  11700K .......... .......... .......... .......... .......... 31% 70.6M 9s
+2017-05-07T15:46:29.434663+00:00 app[web.1]:  11750K .......... .......... .......... .......... .......... 32% 1022K 9s
+2017-05-07T15:46:29.434934+00:00 app[web.1]:  11800K .......... .......... .......... .......... .......... 32%  126M 9s
+2017-05-07T15:46:29.435212+00:00 app[web.1]:  11850K .......... .......... .......... .......... .......... 32%  173M 9s
+2017-05-07T15:46:29.460766+00:00 app[web.1]:  11900K .......... .......... .......... .......... .......... 32% 1.91M 9s
+2017-05-07T15:46:29.461106+00:00 app[web.1]:  11950K .......... .......... .......... .......... .......... 32%  183M 9s
+2017-05-07T15:46:29.498196+00:00 app[web.1]:  12000K .......... .......... .......... .......... .......... 32% 1.32M 9s
+2017-05-07T15:46:29.499712+00:00 app[web.1]:  12050K .......... .......... .......... .......... .......... 32% 30.8M 9s
+2017-05-07T15:46:29.500693+00:00 app[web.1]:  12100K .......... .......... .......... .......... .......... 33% 52.4M 9s
+2017-05-07T15:46:29.596005+00:00 app[web.1]:  12150K .......... .......... .......... .......... .......... 33%  524K 9s
+2017-05-07T15:46:29.607339+00:00 app[web.1]:  12200K .......... .......... .......... .......... .......... 33% 4.29M 9s
+2017-05-07T15:46:29.607634+00:00 app[web.1]:  12250K .......... .......... .......... .......... .......... 33%  163M 9s
+2017-05-07T15:46:29.607938+00:00 app[web.1]:  12300K .......... .......... .......... .......... .......... 33%  166M 9s
+2017-05-07T15:46:29.608307+00:00 app[web.1]:  12350K .......... .......... .......... .......... .......... 33%  163M 9s
+2017-05-07T15:46:29.640385+00:00 app[web.1]:  12400K .......... .......... .......... .......... .......... 33% 1.64M 9s
+2017-05-07T15:46:29.640387+00:00 app[web.1]:  12450K .......... .......... .......... .......... .......... 34%  119M 9s
+2017-05-07T15:46:29.661083+00:00 app[web.1]:  12500K .......... .......... .......... .......... .......... 34% 2.16M 9s
+2017-05-07T15:46:29.663189+00:00 app[web.1]:  12550K .......... .......... .......... .......... .......... 34% 24.5M 9s
+2017-05-07T15:46:29.663937+00:00 app[web.1]:  12600K .......... .......... .......... .......... .......... 34% 72.0M 9s
+2017-05-07T15:46:29.704456+00:00 app[web.1]:  12650K .......... .......... .......... .......... .......... 34% 1.20M 9s
+2017-05-07T15:46:29.706515+00:00 app[web.1]:  12700K .......... .......... .......... .......... .......... 34% 24.0M 9s
+2017-05-07T15:46:29.737510+00:00 app[web.1]:  12750K .......... .......... .......... .......... .......... 34% 58.0M 9s
+2017-05-07T15:46:29.739217+00:00 app[web.1]:  12800K .......... .......... .......... .......... .......... 34% 1.53M 9s
+2017-05-07T15:46:29.739593+00:00 app[web.1]:  12850K .......... .......... .......... .......... .......... 35%  130M 9s
+2017-05-07T15:46:29.815405+00:00 app[web.1]:  12900K .......... .......... .......... .......... .......... 35%  659K 9s
+2017-05-07T15:46:29.823645+00:00 app[web.1]:  12950K .......... .......... .......... .......... .......... 35% 6.01M 9s
+2017-05-07T15:46:29.825849+00:00 app[web.1]:  13000K .......... .......... .......... .......... .......... 35% 21.1M 9s
+2017-05-07T15:46:29.835139+00:00 app[web.1]:  13050K .......... .......... .......... .......... .......... 35% 5.29M 9s
+2017-05-07T15:46:29.836106+00:00 app[web.1]:  13100K .......... .......... .......... .......... .......... 35% 49.5M 8s
+2017-05-07T15:46:29.969268+00:00 app[web.1]:  13150K .......... .......... .......... .......... .......... 35%  376K 9s
+2017-05-07T15:46:29.969516+00:00 app[web.1]:  13200K .......... .......... .......... .......... .......... 36%  161M 9s
+2017-05-07T15:46:29.969766+00:00 app[web.1]:  13250K .......... .......... .......... .......... .......... 36%  198M 9s
+2017-05-07T15:46:30.041865+00:00 app[web.1]:  13300K .......... .......... .......... .......... .......... 36%  695K 9s
+2017-05-07T15:46:30.043170+00:00 app[web.1]:  13350K .......... .......... .......... .......... .......... 36% 42.1M 9s
+2017-05-07T15:46:30.086315+00:00 app[web.1]:  13400K .......... .......... .......... .......... .......... 36% 1.13M 9s
+2017-05-07T15:46:30.087300+00:00 app[web.1]:  13450K .......... .......... .......... .......... .......... 36% 49.6M 9s
+2017-05-07T15:46:30.090601+00:00 app[web.1]:  13500K .......... .......... .......... .......... .......... 36% 14.6M 9s
+2017-05-07T15:46:30.109020+00:00 app[web.1]:  13550K .......... .......... .......... .......... .......... 37% 2.66M 9s
+2017-05-07T15:46:30.109243+00:00 app[web.1]:  13600K .......... .......... .......... .......... .......... 37%  170M 8s
+2017-05-07T15:46:30.158470+00:00 app[web.1]:  13650K .......... .......... .......... .......... .......... 37% 1016K 8s
+2017-05-07T15:46:30.158760+00:00 app[web.1]:  13700K .......... .......... .......... .......... .......... 37%  156M 8s
+2017-05-07T15:46:30.159058+00:00 app[web.1]:  13750K .......... .......... .......... .......... .......... 37%  187M 8s
+2017-05-07T15:46:30.178324+00:00 app[web.1]:  13800K .......... .......... .......... .......... .......... 37% 2.53M 8s
+2017-05-07T15:46:30.179032+00:00 app[web.1]:  13850K .......... .......... .......... .......... .......... 37% 89.2M 8s
+2017-05-07T15:46:30.179927+00:00 app[web.1]:  13900K .......... .......... .......... .......... .......... 37% 47.2M 8s
+2017-05-07T15:46:30.190453+00:00 app[web.1]:  13950K .......... .......... .......... .......... .......... 38% 4.67M 8s
+2017-05-07T15:46:30.191310+00:00 app[web.1]:  14000K .......... .......... .......... .......... .......... 38% 52.8M 8s
+2017-05-07T15:46:30.221211+00:00 app[web.1]:  14050K .......... .......... .......... .......... .......... 38% 1.64M 8s
+2017-05-07T15:46:30.222232+00:00 app[web.1]:  14100K .......... .......... .......... .......... .......... 38% 49.2M 8s
+2017-05-07T15:46:30.223419+00:00 app[web.1]:  14150K .......... .......... .......... .......... .......... 38% 42.0M 8s
+2017-05-07T15:46:30.224669+00:00 app[web.1]:  14200K .......... .......... .......... .......... .......... 38% 36.0M 8s
+2017-05-07T15:46:30.225501+00:00 app[web.1]:  14250K .......... .......... .......... .......... .......... 38% 61.6M 8s
+2017-05-07T15:46:30.227342+00:00 app[web.1]:  14300K .......... .......... .......... .......... .......... 39% 26.8M 8s
+2017-05-07T15:46:30.228898+00:00 app[web.1]:  14350K .......... .......... .......... .......... .......... 39% 32.5M 8s
+2017-05-07T15:46:30.230287+00:00 app[web.1]:  14400K .......... .......... .......... .......... .......... 39% 33.5M 8s
+2017-05-07T15:46:30.232638+00:00 app[web.1]:  14450K .......... .......... .......... .......... .......... 39% 20.2M 8s
+2017-05-07T15:46:30.233744+00:00 app[web.1]:  14500K .......... .......... .......... .......... .......... 39% 47.4M 8s
+2017-05-07T15:46:30.235226+00:00 app[web.1]:  14550K .......... .......... .......... .......... .......... 39% 32.9M 8s
+2017-05-07T15:46:30.237691+00:00 app[web.1]:  14600K .......... .......... .......... .......... .......... 39% 20.9M 8s
+2017-05-07T15:46:30.238484+00:00 app[web.1]:  14650K .......... .......... .......... .......... .......... 40% 53.7M 8s
+2017-05-07T15:46:30.253577+00:00 app[web.1]:  14700K .......... .......... .......... .......... .......... 40% 3.31M 8s
+2017-05-07T15:46:30.257076+00:00 app[web.1]:  14750K .......... .......... .......... .......... .......... 40% 12.4M 8s
+2017-05-07T15:46:30.271868+00:00 app[web.1]:  14800K .......... .......... .......... .......... .......... 40% 3.30M 8s
+2017-05-07T15:46:30.275908+00:00 app[web.1]:  14850K .......... .......... .......... .......... .......... 40% 13.6M 8s
+2017-05-07T15:46:30.275910+00:00 app[web.1]:  14900K .......... .......... .......... .......... .......... 40%  125M 8s
+2017-05-07T15:46:30.311141+00:00 app[web.1]:  14950K .......... .......... .......... .......... .......... 40% 1.42M 8s
+2017-05-07T15:46:30.311144+00:00 app[web.1]:  15000K .......... .......... .......... .......... .......... 40%  202M 7s
+2017-05-07T15:46:30.312111+00:00 app[web.1]:  15050K .......... .......... .......... .......... .......... 41% 31.7M 7s
+2017-05-07T15:46:30.373556+00:00 app[web.1]:  15100K .......... .......... .......... .......... .......... 41%  818K 7s
+2017-05-07T15:46:30.376060+00:00 app[web.1]:  15150K .......... .......... .......... .......... .......... 41% 17.4M 7s
+2017-05-07T15:46:30.394438+00:00 app[web.1]:  15200K .......... .......... .......... .......... .......... 41% 2.66M 7s
+2017-05-07T15:46:30.394901+00:00 app[web.1]:  15250K .......... .......... .......... .......... .......... 41% 96.6M 7s
+2017-05-07T15:46:30.395132+00:00 app[web.1]:  15300K .......... .......... .......... .......... .......... 41%  207M 7s
+2017-05-07T15:46:30.420757+00:00 app[web.1]:  15350K .......... .......... .......... .......... .......... 41% 1.91M 7s
+2017-05-07T15:46:30.420993+00:00 app[web.1]:  15400K .......... .......... .......... .......... .......... 42%  177M 7s
+2017-05-07T15:46:30.444605+00:00 app[web.1]:  15450K .......... .......... .......... .......... .......... 42% 2.07M 7s
+2017-05-07T15:46:30.444851+00:00 app[web.1]:  15500K .......... .......... .......... .......... .......... 42%  188M 7s
+2017-05-07T15:46:30.445132+00:00 app[web.1]:  15550K .......... .......... .......... .......... .......... 42%  206M 7s
+2017-05-07T15:46:30.488783+00:00 app[web.1]:  15600K .......... .......... .......... .......... .......... 42% 1.12M 7s
+2017-05-07T15:46:30.489037+00:00 app[web.1]:  15650K .......... .......... .......... .......... .......... 42%  191M 7s
+2017-05-07T15:46:30.535602+00:00 app[web.1]:  15700K .......... .......... .......... .......... .......... 42% 1.06M 7s
+2017-05-07T15:46:30.538553+00:00 app[web.1]:  15750K .......... .......... .......... .......... .......... 42% 15.3M 7s
+2017-05-07T15:46:30.540227+00:00 app[web.1]:  15800K .......... .......... .......... .......... .......... 43% 24.4M 7s
+2017-05-07T15:46:30.551874+00:00 app[web.1]:  15850K .......... .......... .......... .......... .......... 43% 5.40M 7s
+2017-05-07T15:46:30.560836+00:00 app[web.1]:  15900K .......... .......... .......... .......... .......... 43% 4.22M 7s
+2017-05-07T15:46:30.588558+00:00 app[web.1]:  15950K .......... .......... .......... .......... .......... 43% 98.9M 7s
+2017-05-07T15:46:30.588823+00:00 app[web.1]:  16000K .......... .......... .......... .......... .......... 43% 1.78M 7s
+2017-05-07T15:46:30.589066+00:00 app[web.1]:  16050K .......... .......... .......... .......... .......... 43%  195M 7s
+2017-05-07T15:46:30.629657+00:00 app[web.1]:  16100K .......... .......... .......... .......... .......... 43% 1.20M 7s
+2017-05-07T15:46:30.629999+00:00 app[web.1]:  16150K .......... .......... .......... .......... .......... 44%  154M 7s
+2017-05-07T15:46:30.630272+00:00 app[web.1]:  16200K .......... .......... .......... .......... .......... 44%  155M 7s
+2017-05-07T15:46:30.657914+00:00 app[web.1]:  16250K .......... .......... .......... .......... .......... 44% 1.77M 7s
+2017-05-07T15:46:30.658197+00:00 app[web.1]:  16300K .......... .......... .......... .......... .......... 44%  155M 7s
+2017-05-07T15:46:30.688729+00:00 app[web.1]:  16350K .......... .......... .......... .......... .......... 44% 1.60M 7s
+2017-05-07T15:46:30.689033+00:00 app[web.1]:  16400K .......... .......... .......... .......... .......... 44%  131M 7s
+2017-05-07T15:46:30.689320+00:00 app[web.1]:  16450K .......... .......... .......... .......... .......... 44%  173M 7s
+2017-05-07T15:46:30.710174+00:00 app[web.1]:  16500K .......... .......... .......... .......... .......... 45% 2.34M 7s
+2017-05-07T15:46:30.710511+00:00 app[web.1]:  16550K .......... .......... .......... .......... .......... 45%  163M 7s
+2017-05-07T15:46:30.760751+00:00 app[web.1]:  16600K .......... .......... .......... .......... .......... 45%  995K 7s
+2017-05-07T15:46:30.761056+00:00 app[web.1]:  16650K .......... .......... .......... .......... .......... 45%  152M 7s
+2017-05-07T15:46:30.761358+00:00 app[web.1]:  16700K .......... .......... .......... .......... .......... 45%  164M 7s
+2017-05-07T15:46:30.805621+00:00 app[web.1]:  16750K .......... .......... .......... .......... .......... 45% 1.10M 7s
+2017-05-07T15:46:30.805902+00:00 app[web.1]:  16800K .......... .......... .......... .......... .......... 45%  141M 7s
+2017-05-07T15:46:30.840256+00:00 app[web.1]:  16850K .......... .......... .......... .......... .......... 45% 1.42M 7s
+2017-05-07T15:46:30.840590+00:00 app[web.1]:  16900K .......... .......... .......... .......... .......... 46%  140M 7s
+2017-05-07T15:46:30.840906+00:00 app[web.1]:  16950K .......... .......... .......... .......... .......... 46%  172M 7s
+2017-05-07T15:46:30.873207+00:00 app[web.1]:  17000K .......... .......... .......... .......... .......... 46% 1.51M 7s
+2017-05-07T15:46:30.876241+00:00 app[web.1]:  17050K .......... .......... .......... .......... .......... 46% 17.5M 7s
+2017-05-07T15:46:30.877473+00:00 app[web.1]:  17100K .......... .......... .......... .......... .......... 46% 39.4M 7s
+2017-05-07T15:46:30.921965+00:00 app[web.1]:  17150K .......... .......... .......... .......... .......... 46% 1.09M 7s
+2017-05-07T15:46:30.922191+00:00 app[web.1]:  17200K .......... .......... .......... .......... .......... 46%  124M 7s
+2017-05-07T15:46:30.945880+00:00 app[web.1]:  17250K .......... .......... .......... .......... .......... 47% 2.06M 7s
+2017-05-07T15:46:30.946166+00:00 app[web.1]:  17300K .......... .......... .......... .......... .......... 47%  162M 7s
+2017-05-07T15:46:30.946502+00:00 app[web.1]:  17350K .......... .......... .......... .......... .......... 47%  175M 6s
+2017-05-07T15:46:30.975340+00:00 app[web.1]:  17400K .......... .......... .......... .......... .......... 47% 1.69M 6s
+2017-05-07T15:46:30.975660+00:00 app[web.1]:  17450K .......... .......... .......... .......... .......... 47%  150M 6s
+2017-05-07T15:46:31.020994+00:00 app[web.1]:  17500K .......... .......... .......... .......... .......... 47% 1.08M 6s
+2017-05-07T15:46:31.022208+00:00 app[web.1]:  17550K .......... .......... .......... .......... .......... 47% 50.4M 6s
+2017-05-07T15:46:31.023260+00:00 app[web.1]:  17600K .......... .......... .......... .......... .......... 48% 36.8M 6s
+2017-05-07T15:46:31.044206+00:00 app[web.1]:  17650K .......... .......... .......... .......... .......... 48% 2.33M 6s
+2017-05-07T15:46:31.044509+00:00 app[web.1]:  17700K .......... .......... .......... .......... .......... 48%  158M 6s
+2017-05-07T15:46:31.057448+00:00 app[web.1]:  17750K .......... .......... .......... .......... .......... 48% 3.79M 6s
+2017-05-07T15:46:31.057712+00:00 app[web.1]:  17800K .......... .......... .......... .......... .......... 48%  145M 6s
+2017-05-07T15:46:31.057974+00:00 app[web.1]:  17850K .......... .......... .......... .......... .......... 48%  188M 6s
+2017-05-07T15:46:31.093382+00:00 app[web.1]:  17900K .......... .......... .......... .......... .......... 48% 1.38M 6s
+2017-05-07T15:46:31.093692+00:00 app[web.1]:  17950K .......... .......... .......... .......... .......... 48%  173M 6s
+2017-05-07T15:46:31.129373+00:00 app[web.1]:  18000K .......... .......... .......... .......... .......... 49% 1.37M 6s
+2017-05-07T15:46:31.129620+00:00 app[web.1]:  18050K .......... .......... .......... .......... .......... 49%  169M 6s
+2017-05-07T15:46:31.129849+00:00 app[web.1]:  18100K .......... .......... .......... .......... .......... 49%  212M 6s
+2017-05-07T15:46:31.181614+00:00 app[web.1]:  18150K .......... .......... .......... .......... .......... 49%  967K 6s
+2017-05-07T15:46:31.181873+00:00 app[web.1]:  18200K .......... .......... .......... .......... .......... 49%  148M 6s
+2017-05-07T15:46:31.182153+00:00 app[web.1]:  18250K .......... .......... .......... .......... .......... 49%  177M 6s
+2017-05-07T15:46:31.228888+00:00 app[web.1]:  18300K .......... .......... .......... .......... .......... 49% 1.05M 6s
+2017-05-07T15:46:31.229309+00:00 app[web.1]:  18350K .......... .......... .......... .......... .......... 50%  123M 6s
+2017-05-07T15:46:31.303139+00:00 app[web.1]:  18400K .......... .......... .......... .......... .......... 50%  677K 6s
+2017-05-07T15:46:31.303391+00:00 app[web.1]:  18450K .......... .......... .......... .......... .......... 50%  176M 6s
+2017-05-07T15:46:31.303652+00:00 app[web.1]:  18500K .......... .......... .......... .......... .......... 50%  186M 6s
+2017-05-07T15:46:31.323698+00:00 app[web.1]:  18550K .......... .......... .......... .......... .......... 50% 2.45M 6s
+2017-05-07T15:46:31.324690+00:00 app[web.1]:  18600K .......... .......... .......... .......... .......... 50% 44.2M 6s
+2017-05-07T15:46:31.413231+00:00 app[web.1]:  18650K .......... .......... .......... .......... .......... 50%  565K 6s
+2017-05-07T15:46:31.414766+00:00 app[web.1]:  18700K .......... .......... .......... .......... .......... 51% 31.4M 6s
+2017-05-07T15:46:31.416900+00:00 app[web.1]:  18750K .......... .......... .......... .......... .......... 51% 28.0M 6s
+2017-05-07T15:46:31.473081+00:00 app[web.1]:  18800K .......... .......... .......... .......... .......... 51%  883K 6s
+2017-05-07T15:46:31.476473+00:00 app[web.1]:  18850K .......... .......... .......... .......... .......... 51% 15.7M 6s
+2017-05-07T15:46:31.538703+00:00 app[web.1]:  18900K .......... .......... .......... .......... .......... 51%  801K 6s
+2017-05-07T15:46:31.539436+00:00 app[web.1]:  18950K .......... .......... .......... .......... .......... 51% 61.8M 6s
+2017-05-07T15:46:31.540263+00:00 app[web.1]:  19000K .......... .......... .......... .......... .......... 51% 61.3M 6s
+2017-05-07T15:46:31.579157+00:00 app[web.1]:  19050K .......... .......... .......... .......... .......... 51% 1.29M 6s
+2017-05-07T15:46:31.581256+00:00 app[web.1]:  19100K .......... .......... .......... .......... .......... 52% 15.8M 6s
+2017-05-07T15:46:31.595674+00:00 app[web.1]:  19150K .......... .......... .......... .......... .......... 52% 30.9M 6s
+2017-05-07T15:46:31.595677+00:00 app[web.1]:  19200K .......... .......... .......... .......... .......... 52% 4.20M 6s
+2017-05-07T15:46:31.595678+00:00 app[web.1]:  19250K .......... .......... .......... .......... .......... 52%  245M 6s
+2017-05-07T15:46:31.756310+00:00 app[web.1]:  19300K .......... .......... .......... .......... .......... 52%  309K 6s
+2017-05-07T15:46:31.758391+00:00 app[web.1]:  19350K .......... .......... .......... .......... .......... 52% 26.5M 6s
+2017-05-07T15:46:31.761849+00:00 app[web.1]:  19400K .......... .......... .......... .......... .......... 52% 14.6M 6s
+2017-05-07T15:46:31.801540+00:00 app[web.1]:  19450K .......... .......... .......... .......... .......... 53% 1.23M 6s
+2017-05-07T15:46:31.804839+00:00 app[web.1]:  19500K .......... .......... .......... .......... .......... 53% 15.7M 6s
+2017-05-07T15:46:31.857166+00:00 app[web.1]:  19550K .......... .......... .......... .......... .......... 53%  947K 6s
+2017-05-07T15:46:31.865197+00:00 app[web.1]:  19600K .......... .......... .......... .......... .......... 53% 5.99M 6s
+2017-05-07T15:46:31.867174+00:00 app[web.1]:  19650K .......... .......... .......... .......... .......... 53% 71.8M 6s
+2017-05-07T15:46:31.890609+00:00 app[web.1]:  19700K .......... .......... .......... .......... .......... 53% 2.21M 6s
+2017-05-07T15:46:31.900415+00:00 app[web.1]:  19750K .......... .......... .......... .......... .......... 53% 4.18M 6s
+2017-05-07T15:46:31.943084+00:00 app[web.1]:  19800K .......... .......... .......... .......... .......... 54% 1.13M 6s
+2017-05-07T15:46:31.946136+00:00 app[web.1]:  19850K .......... .......... .......... .......... .......... 54% 22.7M 6s
+2017-05-07T15:46:31.950784+00:00 app[web.1]:  19900K .......... .......... .......... .......... .......... 54% 9.48M 6s
+2017-05-07T15:46:31.984539+00:00 app[web.1]:  19950K .......... .......... .......... .......... .......... 54% 1.43M 6s
+2017-05-07T15:46:31.986246+00:00 app[web.1]:  20000K .......... .......... .......... .......... .......... 54% 25.4M 6s
+2017-05-07T15:46:32.003379+00:00 app[web.1]:  20050K .......... .......... .......... .......... .......... 54% 2.85M 6s
+2017-05-07T15:46:32.005883+00:00 app[web.1]:  20100K .......... .......... .......... .......... .......... 54% 21.7M 6s
+2017-05-07T15:46:32.007355+00:00 app[web.1]:  20150K .......... .......... .......... .......... .......... 54% 31.8M 6s
+2017-05-07T15:46:32.052636+00:00 app[web.1]:  20200K .......... .......... .......... .......... .......... 55% 1.07M 6s
+2017-05-07T15:46:32.053709+00:00 app[web.1]:  20250K .......... .......... .......... .......... .......... 55% 45.7M 6s
+2017-05-07T15:46:32.054875+00:00 app[web.1]:  20300K .......... .......... .......... .......... .......... 55% 42.7M 6s
+2017-05-07T15:46:32.089122+00:00 app[web.1]:  20350K .......... .......... .......... .......... .......... 55% 1.44M 6s
+2017-05-07T15:46:32.090861+00:00 app[web.1]:  20400K .......... .......... .......... .......... .......... 55% 23.1M 6s
+2017-05-07T15:46:32.139915+00:00 app[web.1]:  20450K .......... .......... .......... .......... .......... 55% 1019K 6s
+2017-05-07T15:46:32.141085+00:00 app[web.1]:  20500K .......... .......... .......... .......... .......... 55% 41.9M 6s
+2017-05-07T15:46:32.142209+00:00 app[web.1]:  20550K .......... .......... .......... .......... .......... 56% 45.5M 6s
+2017-05-07T15:46:32.211772+00:00 app[web.1]:  20600K .......... .......... .......... .......... .......... 56%  718K 6s
+2017-05-07T15:46:32.212832+00:00 app[web.1]:  20650K .......... .......... .......... .......... .......... 56% 44.1M 6s
+2017-05-07T15:46:32.228798+00:00 app[web.1]:  20700K .......... .......... .......... .......... .......... 56% 3.10M 5s
+2017-05-07T15:46:32.230006+00:00 app[web.1]:  20750K .......... .......... .......... .......... .......... 56% 36.3M 5s
+2017-05-07T15:46:32.231242+00:00 app[web.1]:  20800K .......... .......... .......... .......... .......... 56% 35.9M 5s
+2017-05-07T15:46:32.281049+00:00 app[web.1]:  20850K .......... .......... .......... .......... .......... 56% 1007K 5s
+2017-05-07T15:46:32.282967+00:00 app[web.1]:  20900K .......... .......... .......... .......... .......... 57% 30.0M 5s
+2017-05-07T15:46:32.307062+00:00 app[web.1]:  20950K .......... .......... .......... .......... .......... 57% 2.01M 5s
+2017-05-07T15:46:32.311326+00:00 app[web.1]:  21000K .......... .......... .......... .......... .......... 57% 11.4M 5s
+2017-05-07T15:46:32.315355+00:00 app[web.1]:  21050K .......... .......... .......... .......... .......... 57% 12.0M 5s
+2017-05-07T15:46:32.350989+00:00 app[web.1]:  21100K .......... .......... .......... .......... .......... 57% 1.39M 5s
+2017-05-07T15:46:32.356194+00:00 app[web.1]:  21150K .......... .......... .......... .......... .......... 57% 13.2M 5s
+2017-05-07T15:46:32.369972+00:00 app[web.1]:  21200K .......... .......... .......... .......... .......... 57% 3.17M 5s
+2017-05-07T15:46:32.371127+00:00 app[web.1]:  21250K .......... .......... .......... .......... .......... 57% 31.4M 5s
+2017-05-07T15:46:32.375635+00:00 app[web.1]:  21300K .......... .......... .......... .......... .......... 58% 10.9M 5s
+2017-05-07T15:46:32.427332+00:00 heroku[web.1]: source=web.1 dyno=heroku.68088157.d0ed4964-d9e4-40ca-aa64-f97017e40114 sample#memory_total=21.79MB sample#memory_rss=0.73MB sample#memory_cache=21.05MB sample#memory_swap=0.00MB sample#memory_pgpgin=6017pages sample#memory_pgpgout=440pages sample#memory_quota=512.00MB
+2017-05-07T15:46:32.392613+00:00 app[web.1]:  21350K .......... .......... .......... .......... .......... 58% 2.89M 5s
+2017-05-07T15:46:32.393320+00:00 app[web.1]:  21400K .......... .......... .......... .......... .......... 58% 61.2M 5s
+2017-05-07T15:46:32.394300+00:00 app[web.1]:  21450K .......... .......... .......... .......... .......... 58% 50.7M 5s
+2017-05-07T15:46:32.415009+00:00 app[web.1]:  21500K .......... .......... .......... .......... .......... 58% 2.36M 5s
+2017-05-07T15:46:32.416312+00:00 app[web.1]:  21550K .......... .......... .......... .......... .......... 58% 39.2M 5s
+2017-05-07T15:46:32.499667+00:00 app[web.1]:  21600K .......... .......... .......... .......... .......... 58%  599K 5s
+2017-05-07T15:46:32.501226+00:00 app[web.1]:  21650K .......... .......... .......... .......... .......... 59% 32.0M 5s
+2017-05-07T15:46:32.502514+00:00 app[web.1]:  21700K .......... .......... .......... .......... .......... 59% 38.8M 5s
+2017-05-07T15:46:32.579952+00:00 app[web.1]:  21750K .......... .......... .......... .......... .......... 59%  646K 5s
+2017-05-07T15:46:32.580210+00:00 app[web.1]:  21800K .......... .......... .......... .......... .......... 59%  154M 5s
+2017-05-07T15:46:32.589124+00:00 app[web.1]:  21850K .......... .......... .......... .......... .......... 59% 5.50M 5s
+2017-05-07T15:46:32.589932+00:00 app[web.1]:  21900K .......... .......... .......... .......... .......... 59% 62.9M 5s
+2017-05-07T15:46:32.590768+00:00 app[web.1]:  21950K .......... .......... .......... .......... .......... 59% 55.6M 5s
+2017-05-07T15:46:32.625364+00:00 app[web.1]:  22000K .......... .......... .......... .......... .......... 60% 1.41M 5s
+2017-05-07T15:46:32.626339+00:00 app[web.1]:  22050K .......... .......... .......... .......... .......... 60% 50.6M 5s
+2017-05-07T15:46:32.662327+00:00 app[web.1]:  22100K .......... .......... .......... .......... .......... 60% 1.36M 5s
+2017-05-07T15:46:32.663134+00:00 app[web.1]:  22150K .......... .......... .......... .......... .......... 60% 58.7M 5s
+2017-05-07T15:46:32.663421+00:00 app[web.1]:  22200K .......... .......... .......... .......... .......... 60%  140M 5s
+2017-05-07T15:46:32.753816+00:00 app[web.1]:  22250K .......... .......... .......... .......... .......... 60%  553K 5s
+2017-05-07T15:46:32.754105+00:00 app[web.1]:  22300K .......... .......... .......... .......... .......... 60%  184M 5s
+2017-05-07T15:46:32.802425+00:00 app[web.1]:  22350K .......... .......... .......... .......... .......... 60%  229M 5s
+2017-05-07T15:46:32.802432+00:00 app[web.1]:  22400K .......... .......... .......... .......... .......... 61% 1.01M 5s
+2017-05-07T15:46:32.802660+00:00 app[web.1]:  22450K .......... .......... .......... .......... .......... 61%  226M 5s
+2017-05-07T15:46:32.862692+00:00 app[web.1]:  22500K .......... .......... .......... .......... .......... 61%  833K 5s
+2017-05-07T15:46:32.863044+00:00 app[web.1]:  22550K .......... .......... .......... .......... .......... 61%  145M 5s
+2017-05-07T15:46:32.863285+00:00 app[web.1]:  22600K .......... .......... .......... .......... .......... 61%  174M 5s
+2017-05-07T15:46:32.908239+00:00 app[web.1]:  22650K .......... .......... .......... .......... .......... 61% 1.09M 5s
+2017-05-07T15:46:32.908854+00:00 app[web.1]:  22700K .......... .......... .......... .......... .......... 61% 79.2M 5s
+2017-05-07T15:46:32.928792+00:00 app[web.1]:  22750K .......... .......... .......... .......... .......... 62% 3.17M 5s
+2017-05-07T15:46:32.929570+00:00 app[web.1]:  22800K .......... .......... .......... .......... .......... 62% 9.17M 5s
+2017-05-07T15:46:32.930245+00:00 app[web.1]:  22850K .......... .......... .......... .......... .......... 62% 73.9M 5s
+2017-05-07T15:46:32.963412+00:00 app[web.1]:  22900K .......... .......... .......... .......... .......... 62% 1.47M 5s
+2017-05-07T15:46:32.964214+00:00 app[web.1]:  22950K .......... .......... .......... .......... .......... 62% 77.9M 5s
+2017-05-07T15:46:32.984085+00:00 app[web.1]:  23000K .......... .......... .......... .......... .......... 62% 2.43M 5s
+2017-05-07T15:46:32.984770+00:00 app[web.1]:  23050K .......... .......... .......... .......... .......... 62% 72.0M 5s
+2017-05-07T15:46:32.985391+00:00 app[web.1]:  23100K .......... .......... .......... .......... .......... 62% 80.2M 5s
+2017-05-07T15:46:32.992090+00:00 app[web.1]:  23150K .......... .......... .......... .......... .......... 63% 7.53M 5s
+2017-05-07T15:46:32.995298+00:00 app[web.1]:  23200K .......... .......... .......... .......... .......... 63% 14.2M 5s
+2017-05-07T15:46:33.013872+00:00 app[web.1]:  23250K .......... .......... .......... .......... .......... 63% 2.64M 5s
+2017-05-07T15:46:33.014225+00:00 app[web.1]:  23300K .......... .......... .......... .......... .......... 63%  123M 5s
+2017-05-07T15:46:33.014614+00:00 app[web.1]:  23350K .......... .......... .......... .......... .......... 63%  143M 5s
+2017-05-07T15:46:33.014944+00:00 app[web.1]:  23400K .......... .......... .......... .......... .......... 63%  119M 4s
+2017-05-07T15:46:33.015295+00:00 app[web.1]:  23450K .......... .......... .......... .......... .......... 63%  139M 4s
+2017-05-07T15:46:33.015637+00:00 app[web.1]:  23500K .......... .......... .......... .......... .......... 64%  144M 4s
+2017-05-07T15:46:33.019165+00:00 app[web.1]:  23550K .......... .......... .......... .......... .......... 64% 15.4M 4s
+2017-05-07T15:46:33.019492+00:00 app[web.1]:  23600K .......... .......... .......... .......... .......... 64% 70.3M 4s
+2017-05-07T15:46:33.054767+00:00 app[web.1]:  23650K .......... .......... .......... .......... .......... 64% 1.45M 4s
+2017-05-07T15:46:33.055041+00:00 app[web.1]:  23700K .......... .......... .......... .......... .......... 64% 27.0M 4s
+2017-05-07T15:46:33.055433+00:00 app[web.1]:  23750K .......... .......... .......... .......... .......... 64%  144M 4s
+2017-05-07T15:46:33.072931+00:00 app[web.1]:  23800K .......... .......... .......... .......... .......... 64% 2.81M 4s
+2017-05-07T15:46:33.073685+00:00 app[web.1]:  23850K .......... .......... .......... .......... .......... 65% 51.0M 4s
+2017-05-07T15:46:33.157357+00:00 app[web.1]:  23900K .......... .......... .......... .......... .......... 65%  598K 4s
+2017-05-07T15:46:33.399011+00:00 app[web.1]:  23950K .......... .......... .......... .......... .......... 65% 54.7M 4s
+2017-05-07T15:46:33.399491+00:00 app[web.1]:  24000K .......... .......... .......... .......... .......... 65%  207K 4s
+2017-05-07T15:46:33.436943+00:00 app[web.1]:  24050K .......... .......... .......... .......... .......... 65% 1.30M 4s
+2017-05-07T15:46:33.439724+00:00 app[web.1]:  24100K .......... .......... .......... .......... .......... 65% 20.4M 4s
+2017-05-07T15:46:33.453380+00:00 app[web.1]:  24150K .......... .......... .......... .......... .......... 65% 3.55M 4s
+2017-05-07T15:46:33.453673+00:00 app[web.1]:  24200K .......... .......... .......... .......... .......... 65% 88.0M 4s
+2017-05-07T15:46:33.453908+00:00 app[web.1]:  24250K .......... .......... .......... .......... .......... 66%  203M 4s
+2017-05-07T15:46:33.507489+00:00 app[web.1]:  24300K .......... .......... .......... .......... .......... 66%  933K 4s
+2017-05-07T15:46:33.508194+00:00 app[web.1]:  24350K .......... .......... .......... .......... .......... 66%  158M 4s
+2017-05-07T15:46:33.547819+00:00 app[web.1]:  24400K .......... .......... .......... .......... .......... 66% 1.22M 4s
+2017-05-07T15:46:33.548109+00:00 app[web.1]:  24450K .......... .......... .......... .......... .......... 66%  152M 4s
+2017-05-07T15:46:33.548416+00:00 app[web.1]:  24500K .......... .......... .......... .......... .......... 66%  180M 4s
+2017-05-07T15:46:33.573276+00:00 app[web.1]:  24550K .......... .......... .......... .......... .......... 66% 1.96M 4s
+2017-05-07T15:46:33.576520+00:00 app[web.1]:  24600K .......... .......... .......... .......... .......... 67% 14.9M 4s
+2017-05-07T15:46:33.576838+00:00 app[web.1]:  24650K .......... .......... .......... .......... .......... 67%  160M 4s
+2017-05-07T15:46:33.611137+00:00 app[web.1]:  24700K .......... .......... .......... .......... .......... 67% 1.42M 4s
+2017-05-07T15:46:33.611402+00:00 app[web.1]:  24750K .......... .......... .......... .......... .......... 67%  203M 4s
+2017-05-07T15:46:33.638065+00:00 app[web.1]:  24800K .......... .......... .......... .......... .......... 67% 1.83M 4s
+2017-05-07T15:46:33.638462+00:00 app[web.1]:  24850K .......... .......... .......... .......... .......... 67%  123M 4s
+2017-05-07T15:46:33.638844+00:00 app[web.1]:  24900K .......... .......... .......... .......... .......... 67%  171M 4s
+2017-05-07T15:46:33.680725+00:00 app[web.1]:  24950K .......... .......... .......... .......... .......... 68% 1.17M 4s
+2017-05-07T15:46:33.688896+00:00 app[web.1]:  25000K .......... .......... .......... .......... .......... 68% 5.94M 4s
+2017-05-07T15:46:33.717567+00:00 app[web.1]:  25050K .......... .......... .......... .......... .......... 68% 1.70M 4s
+2017-05-07T15:46:33.719471+00:00 app[web.1]:  25100K .......... .......... .......... .......... .......... 68% 25.5M 4s
+2017-05-07T15:46:33.721223+00:00 app[web.1]:  25150K .......... .......... .......... .......... .......... 68% 37.7M 4s
+2017-05-07T15:46:33.743042+00:00 app[web.1]:  25200K .......... .......... .......... .......... .......... 68% 2.20M 4s
+2017-05-07T15:46:33.744720+00:00 app[web.1]:  25250K .......... .......... .......... .......... .......... 68% 28.9M 4s
+2017-05-07T15:46:33.791200+00:00 app[web.1]:  25300K .......... .......... .......... .......... .......... 68% 1.06M 4s
+2017-05-07T15:46:33.793164+00:00 app[web.1]:  25350K .......... .......... .......... .......... .......... 69% 22.4M 4s
+2017-05-07T15:46:33.793935+00:00 app[web.1]:  25400K .......... .......... .......... .......... .......... 69% 52.4M 4s
+2017-05-07T15:46:33.842749+00:00 app[web.1]:  25450K .......... .......... .......... .......... .......... 69% 1.01M 4s
+2017-05-07T15:46:33.843709+00:00 app[web.1]:  25500K .......... .......... .......... .......... .......... 69% 31.4M 4s
+2017-05-07T15:46:33.860823+00:00 app[web.1]:  25550K .......... .......... .......... .......... .......... 69% 98.6M 4s
+2017-05-07T15:46:33.861582+00:00 app[web.1]:  25600K .......... .......... .......... .......... .......... 69% 2.83M 4s
+2017-05-07T15:46:33.868439+00:00 app[web.1]:  25650K .......... .......... .......... .......... .......... 69% 67.0M 4s
+2017-05-07T15:46:33.880566+00:00 app[web.1]:  25700K .......... .......... .......... .......... .......... 70% 2.66M 4s
+2017-05-07T15:46:33.880893+00:00 app[web.1]:  25750K .......... .......... .......... .......... .......... 70%  169M 4s
+2017-05-07T15:46:33.881530+00:00 app[web.1]:  25800K .......... .......... .......... .......... .......... 70% 71.1M 4s
+2017-05-07T15:46:33.907059+00:00 app[web.1]:  25850K .......... .......... .......... .......... .......... 70% 1.91M 4s
+2017-05-07T15:46:33.910649+00:00 app[web.1]:  25900K .......... .......... .......... .......... .......... 70% 13.8M 4s
+2017-05-07T15:46:33.935840+00:00 app[web.1]:  25950K .......... .......... .......... .......... .......... 70% 2.02M 4s
+2017-05-07T15:46:33.935856+00:00 app[web.1]:  26000K .......... .......... .......... .......... .......... 70%  149M 4s
+2017-05-07T15:46:33.936996+00:00 app[web.1]:  26050K .......... .......... .......... .......... .......... 71% 26.2M 4s
+2017-05-07T15:46:33.964736+00:00 app[web.1]:  26100K .......... .......... .......... .......... .......... 71% 1.76M 4s
+2017-05-07T15:46:33.965040+00:00 app[web.1]:  26150K .......... .......... .......... .......... .......... 71%  177M 4s
+2017-05-07T15:46:33.990853+00:00 app[web.1]:  26200K .......... .......... .......... .......... .......... 71% 1.89M 4s
+2017-05-07T15:46:33.992119+00:00 app[web.1]:  26250K .......... .......... .......... .......... .......... 71% 38.3M 4s
+2017-05-07T15:46:33.993423+00:00 app[web.1]:  26300K .......... .......... .......... .......... .......... 71% 52.2M 4s
+2017-05-07T15:46:34.060211+00:00 app[web.1]:  26350K .......... .......... .......... .......... .......... 71%  745K 4s
+2017-05-07T15:46:34.060483+00:00 app[web.1]:  26400K .......... .......... .......... .......... .......... 71%  146M 3s
+2017-05-07T15:46:34.107970+00:00 app[web.1]:  26450K .......... .......... .......... .......... .......... 72% 1.03M 3s
+2017-05-07T15:46:34.109983+00:00 app[web.1]:  26500K .......... .......... .......... .......... .......... 72% 23.9M 3s
+2017-05-07T15:46:34.111116+00:00 app[web.1]:  26550K .......... .......... .......... .......... .......... 72% 43.8M 3s
+2017-05-07T15:46:34.176719+00:00 app[web.1]:  26600K .......... .......... .......... .......... .......... 72%  762K 3s
+2017-05-07T15:46:34.178627+00:00 app[web.1]:  26650K .......... .......... .......... .......... .......... 72% 25.4M 3s
+2017-05-07T15:46:34.180977+00:00 app[web.1]:  26700K .......... .......... .......... .......... .......... 72% 20.7M 3s
+2017-05-07T15:46:34.201956+00:00 app[web.1]:  26750K .......... .......... .......... .......... .......... 72% 2.33M 3s
+2017-05-07T15:46:34.202811+00:00 app[web.1]:  26800K .......... .......... .......... .......... .......... 73% 56.1M 3s
+2017-05-07T15:46:34.234139+00:00 app[web.1]:  26850K .......... .......... .......... .......... .......... 73% 1.56M 3s
+2017-05-07T15:46:34.234403+00:00 app[web.1]:  26900K .......... .......... .......... .......... .......... 73%  154M 3s
+2017-05-07T15:46:34.234722+00:00 app[web.1]:  26950K .......... .......... .......... .......... .......... 73%  191M 3s
+2017-05-07T15:46:34.280730+00:00 app[web.1]:  27000K .......... .......... .......... .......... .......... 73% 1.06M 3s
+2017-05-07T15:46:34.281061+00:00 app[web.1]:  27050K .......... .......... .......... .......... .......... 73%  190M 3s
+2017-05-07T15:46:34.281249+00:00 app[web.1]:  27100K .......... .......... .......... .......... .......... 73%  181M 3s
+2017-05-07T15:46:34.281576+00:00 app[web.1]:  27150K .......... .......... .......... .......... .......... 74%  169M 3s
+2017-05-07T15:46:34.281843+00:00 app[web.1]:  27200K .......... .......... .......... .......... .......... 74%  155M 3s
+2017-05-07T15:46:34.327322+00:00 app[web.1]:  27250K .......... .......... .......... .......... .......... 74% 1.10M 3s
+2017-05-07T15:46:34.330195+00:00 app[web.1]:  27300K .......... .......... .......... .......... .......... 74%  223M 3s
+2017-05-07T15:46:34.333388+00:00 app[web.1]:  27350K .......... .......... .......... .......... .......... 74% 7.19M 3s
+2017-05-07T15:46:34.335175+00:00 app[web.1]:  27400K .......... .......... .......... .......... .......... 74% 27.3M 3s
+2017-05-07T15:46:34.335689+00:00 app[web.1]:  27450K .......... .......... .......... .......... .......... 74% 92.2M 3s
+2017-05-07T15:46:34.940588+00:00 app[web.1]:  27500K .......... .......... .......... .......... .......... 74% 82.7K 3s
+2017-05-07T15:46:34.941330+00:00 app[web.1]:  27550K .......... .......... .......... .......... .......... 75% 81.1M 3s
+2017-05-07T15:46:34.981085+00:00 app[web.1]:  27600K .......... .......... .......... .......... .......... 75% 1.22M 3s
+2017-05-07T15:46:34.981678+00:00 app[web.1]:  27650K .......... .......... .......... .......... .......... 75% 80.3M 3s
+2017-05-07T15:46:34.982020+00:00 app[web.1]:  27700K .......... .......... .......... .......... .......... 75%  146M 3s
+2017-05-07T15:46:34.997554+00:00 app[web.1]:  27750K .......... .......... .......... .......... .......... 75% 3.15M 3s
+2017-05-07T15:46:34.997831+00:00 app[web.1]:  27800K .......... .......... .......... .......... .......... 75%  152M 3s
+2017-05-07T15:46:34.999057+00:00 app[web.1]:  27850K .......... .......... .......... .......... .......... 75% 39.9M 3s
+2017-05-07T15:46:34.999300+00:00 app[web.1]:  27900K .......... .......... .......... .......... .......... 76%  196M 3s
+2017-05-07T15:46:35.000761+00:00 app[web.1]:  27950K .......... .......... .......... .......... .......... 76% 35.2M 3s
+2017-05-07T15:46:35.027874+00:00 app[web.1]:  28000K .......... .......... .......... .......... .......... 76% 1.80M 3s
+2017-05-07T15:46:35.029148+00:00 app[web.1]:  28050K .......... .......... .......... .......... .......... 76% 41.3M 3s
+2017-05-07T15:46:35.030453+00:00 app[web.1]:  28100K .......... .......... .......... .......... .......... 76% 35.4M 3s
+2017-05-07T15:46:35.085222+00:00 app[web.1]:  28150K .......... .......... .......... .......... .......... 76%  914K 3s
+2017-05-07T15:46:35.086332+00:00 app[web.1]:  28200K .......... .......... .......... .......... .......... 76% 40.2M 3s
+2017-05-07T15:46:35.099850+00:00 app[web.1]:  28250K .......... .......... .......... .......... .......... 77% 3.61M 3s
+2017-05-07T15:46:35.100125+00:00 app[web.1]:  28300K .......... .......... .......... .......... .......... 77%  176M 3s
+2017-05-07T15:46:35.100557+00:00 app[web.1]:  28350K .......... .......... .......... .......... .......... 77%  184M 3s
+2017-05-07T15:46:35.115405+00:00 app[web.1]:  28400K .......... .......... .......... .......... .......... 77% 3.25M 3s
+2017-05-07T15:46:35.115668+00:00 app[web.1]:  28450K .......... .......... .......... .......... .......... 77%  181M 3s
+2017-05-07T15:46:35.131736+00:00 app[web.1]:  28500K .......... .......... .......... .......... .......... 77% 3.04M 3s
+2017-05-07T15:46:35.132042+00:00 app[web.1]:  28550K .......... .......... .......... .......... .......... 77%  161M 3s
+2017-05-07T15:46:35.132312+00:00 app[web.1]:  28600K .......... .......... .......... .......... .......... 77%  156M 3s
+2017-05-07T15:46:35.144337+00:00 app[web.1]:  28650K .......... .......... .......... .......... .......... 78% 4.07M 3s
+2017-05-07T15:46:35.144639+00:00 app[web.1]:  28700K .......... .......... .......... .......... .......... 78%  158M 3s
+2017-05-07T15:46:35.144971+00:00 app[web.1]:  28750K .......... .......... .......... .......... .......... 78%  173M 3s
+2017-05-07T15:46:35.145231+00:00 app[web.1]:  28800K .......... .......... .......... .......... .......... 78%  155M 3s
+2017-05-07T15:46:35.145509+00:00 app[web.1]:  28850K .......... .......... .......... .......... .......... 78%  179M 3s
+2017-05-07T15:46:35.173120+00:00 app[web.1]:  28900K .......... .......... .......... .......... .......... 78% 1.77M 3s
+2017-05-07T15:46:35.173613+00:00 app[web.1]:  28950K .......... .......... .......... .......... .......... 78%  105M 3s
+2017-05-07T15:46:35.173961+00:00 app[web.1]:  29000K .......... .......... .......... .......... .......... 79%  123M 3s
+2017-05-07T15:46:35.202665+00:00 app[web.1]:  29050K .......... .......... .......... .......... .......... 79% 1.70M 3s
+2017-05-07T15:46:35.202942+00:00 app[web.1]:  29100K .......... .......... .......... .......... .......... 79%  170M 3s
+2017-05-07T15:46:35.203265+00:00 app[web.1]:  29150K .......... .......... .......... .......... .......... 79%  178M 3s
+2017-05-07T15:46:35.203533+00:00 app[web.1]:  29200K .......... .......... .......... .......... .......... 79%  153M 3s
+2017-05-07T15:46:35.203819+00:00 app[web.1]:  29250K .......... .......... .......... .......... .......... 79%  171M 3s
+2017-05-07T15:46:35.329132+00:00 app[web.1]:  29300K .......... .......... .......... .......... .......... 79%  399K 3s
+2017-05-07T15:46:35.336884+00:00 app[web.1]:  29350K .......... .......... .......... .......... .......... 80% 6.49M 3s
+2017-05-07T15:46:35.453732+00:00 app[web.1]:  29400K .......... .......... .......... .......... .......... 80%  429K 3s
+2017-05-07T15:46:35.453749+00:00 app[web.1]:  29450K .......... .......... .......... .......... .......... 80%  255M 3s
+2017-05-07T15:46:35.453750+00:00 app[web.1]:  29500K .......... .......... .......... .......... .......... 80%  256M 3s
+2017-05-07T15:46:35.488580+00:00 app[web.1]:  29550K .......... .......... .......... .......... .......... 80% 1.40M 3s
+2017-05-07T15:46:35.488952+00:00 app[web.1]:  29600K .......... .......... .......... .......... .......... 80%  109M 2s
+2017-05-07T15:46:35.500912+00:00 app[web.1]:  29650K .......... .......... .......... .......... .......... 80% 4.08M 2s
+2017-05-07T15:46:35.501334+00:00 app[web.1]:  29700K .......... .......... .......... .......... .......... 80%  137M 2s
+2017-05-07T15:46:35.502455+00:00 app[web.1]:  29750K .......... .......... .......... .......... .......... 81% 42.5M 2s
+2017-05-07T15:46:35.530036+00:00 app[web.1]:  29800K .......... .......... .......... .......... .......... 81% 1.77M 2s
+2017-05-07T15:46:35.531810+00:00 app[web.1]:  29850K .......... .......... .......... .......... .......... 81% 27.6M 2s
+2017-05-07T15:46:35.532670+00:00 app[web.1]:  29900K .......... .......... .......... .......... .......... 81% 60.5M 2s
+2017-05-07T15:46:35.566114+00:00 app[web.1]:  29950K .......... .......... .......... .......... .......... 81% 1.46M 2s
+2017-05-07T15:46:35.567234+00:00 app[web.1]:  30000K .......... .......... .......... .......... .......... 81% 42.2M 2s
+2017-05-07T15:46:35.592734+00:00 app[web.1]:  30050K .......... .......... .......... .......... .......... 81% 1.92M 2s
+2017-05-07T15:46:35.593495+00:00 app[web.1]:  30100K .......... .......... .......... .......... .......... 82% 67.1M 2s
+2017-05-07T15:46:35.594255+00:00 app[web.1]:  30150K .......... .......... .......... .......... .......... 82% 58.8M 2s
+2017-05-07T15:46:35.641219+00:00 app[web.1]:  30200K .......... .......... .......... .......... .......... 82% 1.04M 2s
+2017-05-07T15:46:35.641596+00:00 app[web.1]:  30250K .......... .......... .......... .......... .......... 82%  129M 2s
+2017-05-07T15:46:35.743823+00:00 app[web.1]:  30300K .......... .......... .......... .......... .......... 82%  489K 2s
+2017-05-07T15:46:35.744750+00:00 app[web.1]:  30350K .......... .......... .......... .......... .......... 82%  169M 2s
+2017-05-07T15:46:35.747532+00:00 app[web.1]:  30400K .......... .......... .......... .......... .......... 82% 14.3M 2s
+2017-05-07T15:46:35.827104+00:00 app[web.1]:  30450K .......... .......... .......... .......... .......... 82%  638K 2s
+2017-05-07T15:46:35.827806+00:00 app[web.1]:  30500K .......... .......... .......... .......... .......... 83% 25.3M 2s
+2017-05-07T15:46:35.888654+00:00 app[web.1]:  30550K .......... .......... .......... .......... .......... 83%  840K 2s
+2017-05-07T15:46:35.889432+00:00 app[web.1]:  30600K .......... .......... .......... .......... .......... 83% 23.6M 2s
+2017-05-07T15:46:35.890200+00:00 app[web.1]:  30650K .......... .......... .......... .......... .......... 83% 61.6M 2s
+2017-05-07T15:46:36.067306+00:00 app[web.1]:  30700K .......... .......... .......... .......... .......... 83%  282K 2s
+2017-05-07T15:46:36.069772+00:00 app[web.1]:  30750K .......... .......... .......... .......... .......... 83% 26.4M 2s
+2017-05-07T15:46:36.124177+00:00 app[web.1]:  30800K .......... .......... .......... .......... .......... 83%  909K 2s
+2017-05-07T15:46:36.126183+00:00 app[web.1]:  30850K .......... .......... .......... .......... .......... 84% 25.3M 2s
+2017-05-07T15:46:36.127176+00:00 app[web.1]:  30900K .......... .......... .......... .......... .......... 84% 45.0M 2s
+2017-05-07T15:46:36.195986+00:00 app[web.1]:  30950K .......... .......... .......... .......... .......... 84%  732K 2s
+2017-05-07T15:46:36.200043+00:00 app[web.1]:  31000K .......... .......... .......... .......... .......... 84% 14.6M 2s
+2017-05-07T15:46:36.204402+00:00 app[web.1]:  31050K .......... .......... .......... .......... .......... 84% 9.42M 2s
+2017-05-07T15:46:36.230037+00:00 app[web.1]:  31100K .......... .......... .......... .......... .......... 84% 1.88M 2s
+2017-05-07T15:46:36.230874+00:00 app[web.1]:  31150K .......... .......... .......... .......... .......... 84% 58.0M 2s
+2017-05-07T15:46:36.273946+00:00 app[web.1]:  31200K .......... .......... .......... .......... .......... 85% 1.14M 2s
+2017-05-07T15:46:36.273948+00:00 app[web.1]:  31250K .......... .......... .......... .......... .......... 85%  204M 2s
+2017-05-07T15:46:36.275322+00:00 app[web.1]:  31300K .......... .......... .......... .......... .......... 85% 29.3M 2s
+2017-05-07T15:46:36.351119+00:00 app[web.1]:  31350K .......... .......... .......... .......... .......... 85%  660K 2s
+2017-05-07T15:46:36.351344+00:00 app[web.1]:  31400K .......... .......... .......... .......... .......... 85%  161M 2s
+2017-05-07T15:46:36.364754+00:00 app[web.1]:  31450K .......... .......... .......... .......... .......... 85% 3.65M 2s
+2017-05-07T15:46:36.364965+00:00 app[web.1]:  31500K .......... .......... .......... .......... .......... 85%  200M 2s
+2017-05-07T15:46:36.365151+00:00 app[web.1]:  31550K .......... .......... .......... .......... .......... 85%  295M 2s
+2017-05-07T15:46:36.372973+00:00 app[web.1]:  31600K .......... .......... .......... .......... .......... 86% 6.24M 2s
+2017-05-07T15:46:36.376427+00:00 app[web.1]:  31650K .......... .......... .......... .......... .......... 86% 14.3M 2s
+2017-05-07T15:46:36.420159+00:00 app[web.1]:  31700K .......... .......... .......... .......... .......... 86% 1.12M 2s
+2017-05-07T15:46:36.420529+00:00 app[web.1]:  31750K .......... .......... .......... .......... .......... 86%  152M 2s
+2017-05-07T15:46:36.420801+00:00 app[web.1]:  31800K .......... .......... .......... .......... .......... 86%  140M 2s
+2017-05-07T15:46:36.488020+00:00 app[web.1]:  31850K .......... .......... .......... .......... .......... 86%  744K 2s
+2017-05-07T15:46:36.492207+00:00 app[web.1]:  31900K .......... .......... .......... .......... .......... 86% 11.6M 2s
+2017-05-07T15:46:36.554988+00:00 app[web.1]:  31950K .......... .......... .......... .......... .......... 87%  139M 2s
+2017-05-07T15:46:36.555253+00:00 app[web.1]:  32000K .......... .......... .......... .......... .......... 87%  797K 2s
+2017-05-07T15:46:36.555508+00:00 app[web.1]:  32050K .......... .......... .......... .......... .......... 87%  208M 2s
+2017-05-07T15:46:36.584845+00:00 app[web.1]:  32100K .......... .......... .......... .......... .......... 87% 1.66M 2s
+2017-05-07T15:46:36.585128+00:00 app[web.1]:  32150K .......... .......... .......... .......... .......... 87%  183M 2s
+2017-05-07T15:46:36.585338+00:00 app[web.1]:  32200K .......... .......... .......... .......... .......... 87%  194M 2s
+2017-05-07T15:46:36.621127+00:00 app[web.1]:  32250K .......... .......... .......... .......... .......... 87% 1.37M 2s
+2017-05-07T15:46:36.622003+00:00 app[web.1]:  32300K .......... .......... .......... .......... .......... 88% 54.6M 2s
+2017-05-07T15:46:36.622958+00:00 app[web.1]:  32350K .......... .......... .......... .......... .......... 88% 52.6M 2s
+2017-05-07T15:46:36.624948+00:00 app[web.1]:  32400K .......... .......... .......... .......... .......... 88% 23.5M 2s
+2017-05-07T15:46:36.625332+00:00 app[web.1]:  32450K .......... .......... .......... .......... .......... 88%  129M 2s
+2017-05-07T15:46:36.648866+00:00 app[web.1]:  32500K .......... .......... .......... .......... .......... 88% 2.07M 1s
+2017-05-07T15:46:36.652852+00:00 app[web.1]:  32550K .......... .......... .......... .......... .......... 88% 12.2M 1s
+2017-05-07T15:46:36.653171+00:00 app[web.1]:  32600K .......... .......... .......... .......... .......... 88%  155M 1s
+2017-05-07T15:46:36.656755+00:00 app[web.1]:  32650K .......... .......... .......... .......... .......... 88% 13.6M 1s
+2017-05-07T15:46:36.657066+00:00 app[web.1]:  32700K .......... .......... .......... .......... .......... 89%  160M 1s
+2017-05-07T15:46:36.658008+00:00 app[web.1]:  32750K .......... .......... .......... .......... .......... 89% 54.5M 1s
+2017-05-07T15:46:36.664634+00:00 app[web.1]:  32800K .......... .......... .......... .......... .......... 89% 7.32M 1s
+2017-05-07T15:46:36.672533+00:00 app[web.1]:  32850K .......... .......... .......... .......... .......... 89% 6.19M 1s
+2017-05-07T15:46:36.672837+00:00 app[web.1]:  32900K .......... .......... .......... .......... .......... 89%  157M 1s
+2017-05-07T15:46:36.673156+00:00 app[web.1]:  32950K .......... .......... .......... .......... .......... 89%  152M 1s
+2017-05-07T15:46:36.715259+00:00 app[web.1]:  33000K .......... .......... .......... .......... .......... 89% 1.16M 1s
+2017-05-07T15:46:36.725070+00:00 app[web.1]:  33050K .......... .......... .......... .......... .......... 90% 4.97M 1s
+2017-05-07T15:46:36.725324+00:00 app[web.1]:  33100K .......... .......... .......... .......... .......... 90%  189M 1s
+2017-05-07T15:46:36.725587+00:00 app[web.1]:  33150K .......... .......... .......... .......... .......... 90%  187M 1s
+2017-05-07T15:46:36.725925+00:00 app[web.1]:  33200K .......... .......... .......... .......... .......... 90%  146M 1s
+2017-05-07T15:46:36.784705+00:00 app[web.1]:  33250K .......... .......... .......... .......... .......... 90%  851K 1s
+2017-05-07T15:46:36.786797+00:00 app[web.1]:  33300K .......... .......... .......... .......... .......... 90% 23.6M 1s
+2017-05-07T15:46:36.787104+00:00 app[web.1]:  33350K .......... .......... .......... .......... .......... 90%  145M 1s
+2017-05-07T15:46:36.800815+00:00 app[web.1]:  33400K .......... .......... .......... .......... .......... 91% 3.56M 1s
+2017-05-07T15:46:36.801120+00:00 app[web.1]:  33450K .......... .......... .......... .......... .......... 91%  165M 1s
+2017-05-07T15:46:36.863076+00:00 app[web.1]:  33500K .......... .......... .......... .......... .......... 91%  807K 1s
+2017-05-07T15:46:36.863710+00:00 app[web.1]:  33550K .......... .......... .......... .......... .......... 91% 99.6M 1s
+2017-05-07T15:46:36.864022+00:00 app[web.1]:  33600K .......... .......... .......... .......... .......... 91%  106M 1s
+2017-05-07T15:46:36.889311+00:00 app[web.1]:  33650K .......... .......... .......... .......... .......... 91% 1.93M 1s
+2017-05-07T15:46:36.896770+00:00 app[web.1]:  33700K .......... .......... .......... .......... .......... 91% 6.53M 1s
+2017-05-07T15:46:36.941901+00:00 app[web.1]:  33750K .......... .......... .......... .......... .......... 91% 1.08M 1s
+2017-05-07T15:46:36.942231+00:00 app[web.1]:  33800K .......... .......... .......... .......... .......... 92%  120M 1s
+2017-05-07T15:46:36.942460+00:00 app[web.1]:  33850K .......... .......... .......... .......... .......... 92%  212M 1s
+2017-05-07T15:46:37.012794+00:00 app[web.1]:  33900K .......... .......... .......... .......... .......... 92%  711K 1s
+2017-05-07T15:46:37.013313+00:00 app[web.1]:  33950K .......... .......... .......... .......... .......... 92%  104M 1s
+2017-05-07T15:46:37.024284+00:00 app[web.1]:  34000K .......... .......... .......... .......... .......... 92% 4.67M 1s
+2017-05-07T15:46:37.025945+00:00 app[web.1]:  34050K .......... .......... .......... .......... .......... 92% 28.5M 1s
+2017-05-07T15:46:37.027131+00:00 app[web.1]:  34100K .......... .......... .......... .......... .......... 92% 36.4M 1s
+2017-05-07T15:46:37.060070+00:00 app[web.1]:  34150K .......... .......... .......... .......... .......... 93% 1.47M 1s
+2017-05-07T15:46:37.060346+00:00 app[web.1]:  34200K .......... .......... .......... .......... .......... 93%  109M 1s
+2017-05-07T15:46:37.060633+00:00 app[web.1]:  34250K .......... .......... .......... .......... .......... 93%  173M 1s
+2017-05-07T15:46:37.098900+00:00 app[web.1]:  34300K .......... .......... .......... .......... .......... 93% 1.28M 1s
+2017-05-07T15:46:37.099236+00:00 app[web.1]:  34350K .......... .......... .......... .......... .......... 93%  159M 1s
+2017-05-07T15:46:37.152358+00:00 app[web.1]:  34400K .......... .......... .......... .......... .......... 93%  941K 1s
+2017-05-07T15:46:37.152656+00:00 app[web.1]:  34450K .......... .......... .......... .......... .......... 93%  160M 1s
+2017-05-07T15:46:37.152911+00:00 app[web.1]:  34500K .......... .......... .......... .......... .......... 94%  195M 1s
+2017-05-07T15:46:37.216126+00:00 app[web.1]:  34550K .......... .......... .......... .......... .......... 94%  792K 1s
+2017-05-07T15:46:37.224647+00:00 app[web.1]:  34600K .......... .......... .......... .......... .......... 94% 5.69M 1s
+2017-05-07T15:46:37.246358+00:00 app[web.1]:  34650K .......... .......... .......... .......... .......... 94% 2.25M 1s
+2017-05-07T15:46:37.246666+00:00 app[web.1]:  34700K .......... .......... .......... .......... .......... 94%  152M 1s
+2017-05-07T15:46:37.247130+00:00 app[web.1]:  34750K .......... .......... .......... .......... .......... 94%  113M 1s
+2017-05-07T15:46:37.266101+00:00 app[web.1]:  34800K .......... .......... .......... .......... .......... 94% 2.57M 1s
+2017-05-07T15:46:37.266385+00:00 app[web.1]:  34850K .......... .......... .......... .......... .......... 94%  172M 1s
+2017-05-07T15:46:37.275924+00:00 app[web.1]:  34900K .......... .......... .......... .......... .......... 95% 5.13M 1s
+2017-05-07T15:46:37.277816+00:00 app[web.1]:  34950K .......... .......... .......... .......... .......... 95% 25.8M 1s
+2017-05-07T15:46:37.286757+00:00 app[web.1]:  35000K .......... .......... .......... .......... .......... 95% 5.45M 1s
+2017-05-07T15:46:37.306919+00:00 app[web.1]:  35050K .......... .......... .......... .......... .......... 95% 2.42M 1s
+2017-05-07T15:46:37.307205+00:00 app[web.1]:  35100K .......... .......... .......... .......... .......... 95%  160M 1s
+2017-05-07T15:46:37.322430+00:00 app[web.1]:  35150K .......... .......... .......... .......... .......... 95% 56.0M 1s
+2017-05-07T15:46:37.322652+00:00 app[web.1]:  35200K .......... .......... .......... .......... .......... 95% 3.35M 1s
+2017-05-07T15:46:37.322958+00:00 app[web.1]:  35250K .......... .......... .......... .......... .......... 96%  158M 1s
+2017-05-07T15:46:37.363376+00:00 app[web.1]:  35300K .......... .......... .......... .......... .......... 96% 1.21M 0s
+2017-05-07T15:46:37.366550+00:00 app[web.1]:  35350K .......... .......... .......... .......... .......... 96% 15.9M 0s
+2017-05-07T15:46:37.367457+00:00 app[web.1]:  35400K .......... .......... .......... .......... .......... 96% 49.0M 0s
+2017-05-07T15:46:37.389650+00:00 app[web.1]:  35450K .......... .......... .......... .......... .......... 96% 2.25M 0s
+2017-05-07T15:46:37.391208+00:00 app[web.1]:  35500K .......... .......... .......... .......... .......... 96% 26.2M 0s
+2017-05-07T15:46:37.430871+00:00 app[web.1]:  35550K .......... .......... .......... .......... .......... 96% 1.23M 0s
+2017-05-07T15:46:37.433246+00:00 app[web.1]:  35600K .......... .......... .......... .......... .......... 97% 19.7M 0s
+2017-05-07T15:46:37.434410+00:00 app[web.1]:  35650K .......... .......... .......... .......... .......... 97% 51.3M 0s
+2017-05-07T15:46:37.476404+00:00 app[web.1]:  35700K .......... .......... .......... .......... .......... 97% 1.16M 0s
+2017-05-07T15:46:37.476730+00:00 app[web.1]:  35750K .......... .......... .......... .......... .......... 97%  147M 0s
+2017-05-07T15:46:37.495640+00:00 app[web.1]:  35800K .......... .......... .......... .......... .......... 97% 2.58M 0s
+2017-05-07T15:46:37.495929+00:00 app[web.1]:  35850K .......... .......... .......... .......... .......... 97%  164M 0s
+2017-05-07T15:46:37.496206+00:00 app[web.1]:  35900K .......... .......... .......... .......... .......... 97%  182M 0s
+2017-05-07T15:46:37.496526+00:00 app[web.1]:  35950K .......... .......... .......... .......... .......... 97%  174M 0s
+2017-05-07T15:46:37.496733+00:00 app[web.1]:  36000K .......... .......... .......... .......... .......... 98%  175M 0s
+2017-05-07T15:46:37.549836+00:00 app[web.1]:  36050K .......... .......... .......... .......... .......... 98%  942K 0s
+2017-05-07T15:46:37.550770+00:00 app[web.1]:  36100K .......... .......... .......... .......... .......... 98% 56.6M 0s
+2017-05-07T15:46:37.551605+00:00 app[web.1]:  36150K .......... .......... .......... .......... .......... 98% 54.0M 0s
+2017-05-07T15:46:37.654285+00:00 app[web.1]:  36200K .......... .......... .......... .......... .......... 98%  491K 0s
+2017-05-07T15:46:37.654288+00:00 app[web.1]:  36250K .......... .......... .......... .......... .......... 98%  166M 0s
+2017-05-07T15:46:37.654289+00:00 app[web.1]:  36300K .......... .......... .......... .......... .......... 98%  234M 0s
+2017-05-07T15:46:37.705564+00:00 app[web.1]:  36350K .......... .......... .......... .......... .......... 99%  969K 0s
+2017-05-07T15:46:37.707617+00:00 app[web.1]:  36400K .......... .......... .......... .......... .......... 99% 22.8M 0s
+2017-05-07T15:46:37.721341+00:00 app[web.1]:  36450K .......... .......... .......... .......... .......... 99% 3.57M 0s
+2017-05-07T15:46:37.722106+00:00 app[web.1]:  36500K .......... .......... .......... .......... .......... 99% 59.5M 0s
+2017-05-07T15:46:37.722489+00:00 app[web.1]:  36550K .......... .......... .......... .......... .......... 99%  142M 0s
+2017-05-07T15:46:37.791286+00:00 app[web.1]:  36600K .......... .......... .......... .......... .......... 99%  728K 0s
+2017-05-07T15:46:37.793257+00:00 app[web.1]:  36650K .......... .......... .......... .......... .......... 99% 24.1M 0s
+2017-05-07T15:46:37.867272+00:00 app[web.1]:  36700K .......... .......... .......... .......... ........  100%  659K=13s
+2017-05-07T15:46:37.867275+00:00 app[web.1]: 
+2017-05-07T15:46:37.874741+00:00 app[web.1]: 2017-05-07 15:46:37 (2.81 MB/s) - 'kafka.tgz' saved [37630750/37630750]
+2017-05-07T15:46:37.874743+00:00 app[web.1]: 
+2017-05-07T15:46:38.680259+00:00 app[web.1]: Picked up JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8
+2017-05-07T15:46:39.308909+00:00 app[web.1]: [2017-05-07 15:46:39,308] INFO Reading configuration from: config/zookeeper.properties (org.apache.zookeeper.server.quorum.QuorumPeerConfig)
+2017-05-07T15:46:39.318762+00:00 app[web.1]: [2017-05-07 15:46:39,318] INFO autopurge.snapRetainCount set to 3 (org.apache.zookeeper.server.DatadirCleanupManager)
+2017-05-07T15:46:39.318836+00:00 app[web.1]: [2017-05-07 15:46:39,318] INFO autopurge.purgeInterval set to 0 (org.apache.zookeeper.server.DatadirCleanupManager)
+2017-05-07T15:46:39.318920+00:00 app[web.1]: [2017-05-07 15:46:39,318] INFO Purge task is not scheduled. (org.apache.zookeeper.server.DatadirCleanupManager)
+2017-05-07T15:46:39.319014+00:00 app[web.1]: [2017-05-07 15:46:39,318] WARN Either no config or no quorum defined in config, running  in standalone mode (org.apache.zookeeper.server.quorum.QuorumPeerMain)
+2017-05-07T15:46:39.349747+00:00 app[web.1]: [2017-05-07 15:46:39,349] INFO Reading configuration from: config/zookeeper.properties (org.apache.zookeeper.server.quorum.QuorumPeerConfig)
+2017-05-07T15:46:39.350126+00:00 app[web.1]: [2017-05-07 15:46:39,350] INFO Starting server (org.apache.zookeeper.server.ZooKeeperServerMain)
+2017-05-07T15:46:39.362364+00:00 app[web.1]: [2017-05-07 15:46:39,362] INFO Server environment:zookeeper.version=3.4.9-1757313, built on 08/23/2016 06:50 GMT (org.apache.zookeeper.server.ZooKeeperServer)
+2017-05-07T15:46:39.362420+00:00 app[web.1]: [2017-05-07 15:46:39,362] INFO Server environment:host.name=d0ed4964-d9e4-40ca-aa64-f97017e40114.prvt.dyno.rt.heroku.com (org.apache.zookeeper.server.ZooKeeperServer)
+2017-05-07T15:46:39.362478+00:00 app[web.1]: [2017-05-07 15:46:39,362] INFO Server environment:java.version=1.8.0_121-cedar14 (org.apache.zookeeper.server.ZooKeeperServer)
+2017-05-07T15:46:39.362538+00:00 app[web.1]: [2017-05-07 15:46:39,362] INFO Server environment:java.vendor=Oracle Corporation (org.apache.zookeeper.server.ZooKeeperServer)
+2017-05-07T15:46:39.362605+00:00 app[web.1]: [2017-05-07 15:46:39,362] INFO Server environment:java.home=/app/.jdk/jre (org.apache.zookeeper.server.ZooKeeperServer)
+2017-05-07T15:46:39.362861+00:00 app[web.1]: [2017-05-07 15:46:39,362] INFO Server environment:java.class.path=:/app/kafka/bin/../libs/aopalliance-repackaged-2.5.0-b05.jar:/app/kafka/bin/../libs/argparse4j-0.7.0.jar:/app/kafka/bin/../libs/connect-api-0.10.2.0.jar:/app/kafka/bin/../libs/connect-file-0.10.2.0.jar:/app/kafka/bin/../libs/connect-json-0.10.2.0.jar:/app/kafka/bin/../libs/connect-runtime-0.10.2.0.jar:/app/kafka/bin/../libs/connect-transforms-0.10.2.0.jar:/app/kafka/bin/../libs/guava-18.0.jar:/app/kafka/bin/../libs/hk2-api-2.5.0-b05.jar:/app/kafka/bin/../libs/hk2-locator-2.5.0-b05.jar:/app/kafka/bin/../libs/hk2-utils-2.5.0-b05.jar:/app/kafka/bin/../libs/jackson-annotations-2.8.0.jar:/app/kafka/bin/../libs/jackson-annotations-2.8.5.jar:/app/kafka/bin/../libs/jackson-core-2.8.5.jar:/app/kafka/bin/../libs/jackson-databind-2.8.5.jar:/app/kafka/bin/../libs/jackson-jaxrs-base-2.8.5.jar:/app/kafka/bin/../libs/jackson-jaxrs-json-provider-2.8.5.jar:/app/kafka/bin/../libs/jackson-module-jaxb-annotations-2.8.5.jar:/app/kafka/bin/../libs/javassist-3.20.0-GA.jar:/app/kafka/bin/../libs/javax.annotation-api-1.2.jar:/app/kafka/bin/../libs/javax.inject-1.jar:/app/kafka/bin/../libs/javax.inject-2.5.0-b05.jar:/app/kafka/bin/../libs/javax.servlet-api-3.1.0.jar:/app/kafka/bin/../libs/javax.ws.rs-api-2.0.1.jar:/app/kafka/bin/../libs/jersey-client-2.24.jar:/app/kafka/bin/../libs/jersey-common-2.24.jar:/app/kafka/bin/../libs/jersey-container-servlet-2.24.jar:/app/kafka/bin/../libs/jersey-container-servlet-core-2.24.jar:/app/kafka/bin/../libs/jersey-guava-2.24.jar:/app/kafka/bin/../libs/jersey-media-jaxb-2.24.jar:/app/kafka/bin/../libs/jersey-server-2.24.jar:/app/kafka/bin/../libs/jetty-continuation-9.2.15.v20160210.jar:/app/kafka/bin/../libs/jetty-http-9.2.15.v20160210.jar:/app/kafka/bin/../libs/jetty-io-9.2.15.v20160210.jar:/app/kafka/bin/../libs/jetty-security-9.2.15.v20160210.jar:/app/kafka/bin/../libs/jetty-server-9.2.15.v20160210.jar:/app/kafka/bin/../libs/jetty-servlet-9.2.15.v20160210.jar:/app/kafka/bin/../libs/jetty-servlets-9.2.15.v20160210.jar:/app/kafka/bin/../libs/jetty-util-9.2.15.v20160210.jar:/app/kafka/bin/../libs/jopt-simple-5.0.3.jar:/app/kafka/bin/../libs/kafka-clients-0.10.2.0.jar:/app/kafka/bin/../libs/kafka-log4j-appender-0.10.2.0.jar:/app/kafka/bin/../libs/kafka-streams-0.10.2.0.jar:/app/kafka/bin/../libs/kafka-streams-examples-0.10.2.0.jar:/app/kafka/bin/../libs/kafka-tools-0.10.2.0.jar:/app/kafka/bin/../libs/kafka_2.11-0.10.2.0-sources.jar:/app/kafka/bin/../libs/kafka_2.11-0.10.2.0-test-sources.jar:/app/kafka/bin/../libs/kafka_2.11-0.10.2.0.jar:/app/kafka/bin/../libs/log4j-1.2.17.jar:/app/kafka/bin/../libs/lz4-1.3.0.jar:/app/kafka/bin/../libs/metrics-core-2.2.0.jar:/app/kafka/bin/../libs/osgi-resource-locator-1.0.1.jar:/app/kafka/bin/../libs/reflections-0.9.10.jar:/app/kafka/bin/../libs/rocksdbjni-5.0.1.jar:/app/kafka/bin/../libs/scala-library-2.11.8.jar:/app/kafka/bin/../libs/scala-parser-combinators_2.11-1.0.4.jar:/app/kafka/bin/../libs/slf4j-api-1.7.21.jar:/app/kafka/bin/../libs/slf4j-log4j12-1.7.21.jar:/app/kafka/bin/../libs/snappy-java-1.1.2.6.jar:/app/kafka/bin/../libs/validation-api-1.1.0.Final.jar:/app/kafka/bin/../libs/zkclient-0.10.jar:/app/kafka/bin/../libs/zookeeper-3.4.9.jar (org.apache.zookeeper.server.ZooKeeperServer)
+2017-05-07T15:46:39.362932+00:00 app[web.1]: [2017-05-07 15:46:39,362] INFO Server environment:java.library.path=/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib (org.apache.zookeeper.server.ZooKeeperServer)
+2017-05-07T15:46:39.362991+00:00 app[web.1]: [2017-05-07 15:46:39,362] INFO Server environment:java.io.tmpdir=/tmp (org.apache.zookeeper.server.ZooKeeperServer)
+2017-05-07T15:46:39.363055+00:00 app[web.1]: [2017-05-07 15:46:39,362] INFO Server environment:java.compiler=<NA> (org.apache.zookeeper.server.ZooKeeperServer)
+2017-05-07T15:46:39.363117+00:00 app[web.1]: [2017-05-07 15:46:39,363] INFO Server environment:os.name=Linux (org.apache.zookeeper.server.ZooKeeperServer)
+2017-05-07T15:46:39.363180+00:00 app[web.1]: [2017-05-07 15:46:39,363] INFO Server environment:os.arch=amd64 (org.apache.zookeeper.server.ZooKeeperServer)
+2017-05-07T15:46:39.363250+00:00 app[web.1]: [2017-05-07 15:46:39,363] INFO Server environment:os.version=3.13.0-112-generic (org.apache.zookeeper.server.ZooKeeperServer)
+2017-05-07T15:46:39.363314+00:00 app[web.1]: [2017-05-07 15:46:39,363] INFO Server environment:user.name=u10183 (org.apache.zookeeper.server.ZooKeeperServer)
+2017-05-07T15:46:39.363379+00:00 app[web.1]: [2017-05-07 15:46:39,363] INFO Server environment:user.home=/app (org.apache.zookeeper.server.ZooKeeperServer)
+2017-05-07T15:46:39.363443+00:00 app[web.1]: [2017-05-07 15:46:39,363] INFO Server environment:user.dir=/app/kafka (org.apache.zookeeper.server.ZooKeeperServer)
+2017-05-07T15:46:39.375362+00:00 app[web.1]: [2017-05-07 15:46:39,375] INFO tickTime set to 3000 (org.apache.zookeeper.server.ZooKeeperServer)
+2017-05-07T15:46:39.375467+00:00 app[web.1]: [2017-05-07 15:46:39,375] INFO minSessionTimeout set to -1 (org.apache.zookeeper.server.ZooKeeperServer)
+2017-05-07T15:46:39.375561+00:00 app[web.1]: [2017-05-07 15:46:39,375] INFO maxSessionTimeout set to -1 (org.apache.zookeeper.server.ZooKeeperServer)
+2017-05-07T15:46:39.389355+00:00 app[web.1]: [2017-05-07 15:46:39,389] INFO binding to port 0.0.0.0/0.0.0.0:2181 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+2017-05-07T15:46:48.836351+00:00 app[web.1]: Picked up JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8
+2017-05-07T15:46:50.734799+00:00 app[web.1]: [2017-05-07 15:46:50,730] INFO KafkaConfig values: 
+2017-05-07T15:46:50.734810+00:00 app[web.1]: 	advertised.host.name = null
+2017-05-07T15:46:50.734810+00:00 app[web.1]: 	advertised.listeners = null
+2017-05-07T15:46:50.734811+00:00 app[web.1]: 	advertised.port = null
+2017-05-07T15:46:50.734812+00:00 app[web.1]: 	authorizer.class.name = 
+2017-05-07T15:46:50.734813+00:00 app[web.1]: 	auto.create.topics.enable = true
+2017-05-07T15:46:50.734813+00:00 app[web.1]: 	auto.leader.rebalance.enable = true
+2017-05-07T15:46:50.734814+00:00 app[web.1]: 	background.threads = 10
+2017-05-07T15:46:50.734815+00:00 app[web.1]: 	broker.id = 0
+2017-05-07T15:46:50.734815+00:00 app[web.1]: 	broker.id.generation.enable = true
+2017-05-07T15:46:50.734816+00:00 app[web.1]: 	broker.rack = null
+2017-05-07T15:46:50.734817+00:00 app[web.1]: 	compression.type = producer
+2017-05-07T15:46:50.734817+00:00 app[web.1]: 	connections.max.idle.ms = 600000
+2017-05-07T15:46:50.734818+00:00 app[web.1]: 	controlled.shutdown.enable = true
+2017-05-07T15:46:50.734819+00:00 app[web.1]: 	controlled.shutdown.max.retries = 3
+2017-05-07T15:46:50.734819+00:00 app[web.1]: 	controlled.shutdown.retry.backoff.ms = 5000
+2017-05-07T15:46:50.734820+00:00 app[web.1]: 	controller.socket.timeout.ms = 30000
+2017-05-07T15:46:50.734820+00:00 app[web.1]: 	create.topic.policy.class.name = null
+2017-05-07T15:46:50.734821+00:00 app[web.1]: 	default.replication.factor = 1
+2017-05-07T15:46:50.734821+00:00 app[web.1]: 	delete.topic.enable = false
+2017-05-07T15:46:50.734822+00:00 app[web.1]: 	fetch.purgatory.purge.interval.requests = 1000
+2017-05-07T15:46:50.734823+00:00 app[web.1]: 	group.max.session.timeout.ms = 300000
+2017-05-07T15:46:50.734823+00:00 app[web.1]: 	group.min.session.timeout.ms = 6000
+2017-05-07T15:46:50.734824+00:00 app[web.1]: 	host.name = 
+2017-05-07T15:46:50.734824+00:00 app[web.1]: 	inter.broker.listener.name = null
+2017-05-07T15:46:50.734825+00:00 app[web.1]: 	inter.broker.protocol.version = 0.10.2-IV0
+2017-05-07T15:46:50.734826+00:00 app[web.1]: 	leader.imbalance.check.interval.seconds = 300
+2017-05-07T15:46:50.734826+00:00 app[web.1]: 	leader.imbalance.per.broker.percentage = 10
+2017-05-07T15:46:50.734827+00:00 app[web.1]: 	listener.security.protocol.map = SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,TRACE:TRACE,SASL_SSL:SASL_SSL,PLAINTEXT:PLAINTEXT
+2017-05-07T15:46:50.734828+00:00 app[web.1]: 	listeners = null
+2017-05-07T15:46:50.734828+00:00 app[web.1]: 	log.cleaner.backoff.ms = 15000
+2017-05-07T15:46:50.734829+00:00 app[web.1]: 	log.cleaner.dedupe.buffer.size = 134217728
+2017-05-07T15:46:50.734829+00:00 app[web.1]: 	log.cleaner.delete.retention.ms = 86400000
+2017-05-07T15:46:50.734830+00:00 app[web.1]: 	log.cleaner.enable = true
+2017-05-07T15:46:50.734831+00:00 app[web.1]: 	log.cleaner.io.buffer.load.factor = 0.9
+2017-05-07T15:46:50.734831+00:00 app[web.1]: 	log.cleaner.io.buffer.size = 524288
+2017-05-07T15:46:50.734832+00:00 app[web.1]: 	log.cleaner.io.max.bytes.per.second = 1.7976931348623157E308
+2017-05-07T15:46:50.734832+00:00 app[web.1]: 	log.cleaner.min.cleanable.ratio = 0.5
+2017-05-07T15:46:50.734833+00:00 app[web.1]: 	log.cleaner.min.compaction.lag.ms = 0
+2017-05-07T15:46:50.734833+00:00 app[web.1]: 	log.cleaner.threads = 1
+2017-05-07T15:46:50.734834+00:00 app[web.1]: 	log.cleanup.policy = [delete]
+2017-05-07T15:46:50.734834+00:00 app[web.1]: 	log.dir = /tmp/kafka-logs
+2017-05-07T15:46:50.734835+00:00 app[web.1]: 	log.dirs = /tmp/kafka-logs
+2017-05-07T15:46:50.734835+00:00 app[web.1]: 	log.flush.interval.messages = 9223372036854775807
+2017-05-07T15:46:50.734836+00:00 app[web.1]: 	log.flush.interval.ms = null
+2017-05-07T15:46:50.734837+00:00 app[web.1]: 	log.flush.offset.checkpoint.interval.ms = 60000
+2017-05-07T15:46:50.734837+00:00 app[web.1]: 	log.flush.scheduler.interval.ms = 9223372036854775807
+2017-05-07T15:46:50.734838+00:00 app[web.1]: 	log.index.interval.bytes = 4096
+2017-05-07T15:46:50.734838+00:00 app[web.1]: 	log.index.size.max.bytes = 10485760
+2017-05-07T15:46:50.734839+00:00 app[web.1]: 	log.message.format.version = 0.10.2-IV0
+2017-05-07T15:46:50.734839+00:00 app[web.1]: 	log.message.timestamp.difference.max.ms = 9223372036854775807
+2017-05-07T15:46:50.734840+00:00 app[web.1]: 	log.message.timestamp.type = CreateTime
+2017-05-07T15:46:50.734840+00:00 app[web.1]: 	log.preallocate = false
+2017-05-07T15:46:50.734841+00:00 app[web.1]: 	log.retention.bytes = -1
+2017-05-07T15:46:50.734841+00:00 app[web.1]: 	log.retention.check.interval.ms = 300000
+2017-05-07T15:46:50.734842+00:00 app[web.1]: 	log.retention.hours = 168
+2017-05-07T15:46:50.734843+00:00 app[web.1]: 	log.retention.minutes = null
+2017-05-07T15:46:50.734843+00:00 app[web.1]: 	log.retention.ms = null
+2017-05-07T15:46:50.734844+00:00 app[web.1]: 	log.roll.hours = 168
+2017-05-07T15:46:50.734844+00:00 app[web.1]: 	log.roll.jitter.hours = 0
+2017-05-07T15:46:50.734845+00:00 app[web.1]: 	log.roll.jitter.ms = null
+2017-05-07T15:46:50.734845+00:00 app[web.1]: 	log.roll.ms = null
+2017-05-07T15:46:50.734846+00:00 app[web.1]: 	log.segment.bytes = 1073741824
+2017-05-07T15:46:50.734846+00:00 app[web.1]: 	log.segment.delete.delay.ms = 60000
+2017-05-07T15:46:50.734847+00:00 app[web.1]: 	max.connections.per.ip = 2147483647
+2017-05-07T15:46:50.734848+00:00 app[web.1]: 	max.connections.per.ip.overrides = 
+2017-05-07T15:46:50.734848+00:00 app[web.1]: 	message.max.bytes = 1000012
+2017-05-07T15:46:50.734849+00:00 app[web.1]: 	metric.reporters = []
+2017-05-07T15:46:50.734849+00:00 app[web.1]: 	metrics.num.samples = 2
+2017-05-07T15:46:50.734850+00:00 app[web.1]: 	metrics.recording.level = INFO
+2017-05-07T15:46:50.734850+00:00 app[web.1]: 	metrics.sample.window.ms = 30000
+2017-05-07T15:46:50.734851+00:00 app[web.1]: 	min.insync.replicas = 1
+2017-05-07T15:46:50.734851+00:00 app[web.1]: 	num.io.threads = 8
+2017-05-07T15:46:50.734852+00:00 app[web.1]: 	num.network.threads = 3
+2017-05-07T15:46:50.734852+00:00 app[web.1]: 	num.partitions = 1
+2017-05-07T15:46:50.734853+00:00 app[web.1]: 	num.recovery.threads.per.data.dir = 1
+2017-05-07T15:46:50.734853+00:00 app[web.1]: 	num.replica.fetchers = 1
+2017-05-07T15:46:50.734854+00:00 app[web.1]: 	offset.metadata.max.bytes = 4096
+2017-05-07T15:46:50.734854+00:00 app[web.1]: 	offsets.commit.required.acks = -1
+2017-05-07T15:46:50.734855+00:00 app[web.1]: 	offsets.commit.timeout.ms = 5000
+2017-05-07T15:46:50.734856+00:00 app[web.1]: 	offsets.load.buffer.size = 5242880
+2017-05-07T15:46:50.734856+00:00 app[web.1]: 	offsets.retention.check.interval.ms = 600000
+2017-05-07T15:46:50.734857+00:00 app[web.1]: 	offsets.retention.minutes = 1440
+2017-05-07T15:46:50.734857+00:00 app[web.1]: 	offsets.topic.compression.codec = 0
+2017-05-07T15:46:50.734858+00:00 app[web.1]: 	offsets.topic.num.partitions = 50
+2017-05-07T15:46:50.734858+00:00 app[web.1]: 	offsets.topic.replication.factor = 3
+2017-05-07T15:46:50.734859+00:00 app[web.1]: 	offsets.topic.segment.bytes = 104857600
+2017-05-07T15:46:50.734859+00:00 app[web.1]: 	port = 9092
+2017-05-07T15:46:50.734860+00:00 app[web.1]: 	principal.builder.class = class org.apache.kafka.common.security.auth.DefaultPrincipalBuilder
+2017-05-07T15:46:50.734861+00:00 app[web.1]: 	producer.purgatory.purge.interval.requests = 1000
+2017-05-07T15:46:50.734861+00:00 app[web.1]: 	queued.max.requests = 500
+2017-05-07T15:46:50.734862+00:00 app[web.1]: 	quota.consumer.default = 9223372036854775807
+2017-05-07T15:46:50.734862+00:00 app[web.1]: 	quota.producer.default = 9223372036854775807
+2017-05-07T15:46:50.734863+00:00 app[web.1]: 	quota.window.num = 11
+2017-05-07T15:46:50.734868+00:00 app[web.1]: 	quota.window.size.seconds = 1
+2017-05-07T15:46:50.734869+00:00 app[web.1]: 	replica.fetch.backoff.ms = 1000
+2017-05-07T15:46:50.734869+00:00 app[web.1]: 	replica.fetch.max.bytes = 1048576
+2017-05-07T15:46:50.734870+00:00 app[web.1]: 	replica.fetch.min.bytes = 1
+2017-05-07T15:46:50.734870+00:00 app[web.1]: 	replica.fetch.response.max.bytes = 10485760
+2017-05-07T15:46:50.734871+00:00 app[web.1]: 	replica.fetch.wait.max.ms = 500
+2017-05-07T15:46:50.734871+00:00 app[web.1]: 	replica.high.watermark.checkpoint.interval.ms = 5000
+2017-05-07T15:46:50.734872+00:00 app[web.1]: 	replica.lag.time.max.ms = 10000
+2017-05-07T15:46:50.734872+00:00 app[web.1]: 	replica.socket.receive.buffer.bytes = 65536
+2017-05-07T15:46:50.734873+00:00 app[web.1]: 	replica.socket.timeout.ms = 30000
+2017-05-07T15:46:50.734874+00:00 app[web.1]: 	replication.quota.window.num = 11
+2017-05-07T15:46:50.734874+00:00 app[web.1]: 	replication.quota.window.size.seconds = 1
+2017-05-07T15:46:50.734875+00:00 app[web.1]: 	request.timeout.ms = 30000
+2017-05-07T15:46:50.734875+00:00 app[web.1]: 	reserved.broker.max.id = 1000
+2017-05-07T15:46:50.734876+00:00 app[web.1]: 	sasl.enabled.mechanisms = [GSSAPI]
+2017-05-07T15:46:50.734876+00:00 app[web.1]: 	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+2017-05-07T15:46:50.734877+00:00 app[web.1]: 	sasl.kerberos.min.time.before.relogin = 60000
+2017-05-07T15:46:50.734878+00:00 app[web.1]: 	sasl.kerberos.principal.to.local.rules = [DEFAULT]
+2017-05-07T15:46:50.734878+00:00 app[web.1]: 	sasl.kerberos.service.name = null
+2017-05-07T15:46:50.734917+00:00 app[web.1]: 	sasl.kerberos.ticket.renew.jitter = 0.05
+2017-05-07T15:46:50.734918+00:00 app[web.1]: 	sasl.kerberos.ticket.renew.window.factor = 0.8
+2017-05-07T15:46:50.734919+00:00 app[web.1]: 	sasl.mechanism.inter.broker.protocol = GSSAPI
+2017-05-07T15:46:50.734919+00:00 app[web.1]: 	security.inter.broker.protocol = PLAINTEXT
+2017-05-07T15:46:50.734920+00:00 app[web.1]: 	socket.receive.buffer.bytes = 102400
+2017-05-07T15:46:50.734920+00:00 app[web.1]: 	socket.request.max.bytes = 104857600
+2017-05-07T15:46:50.734921+00:00 app[web.1]: 	socket.send.buffer.bytes = 102400
+2017-05-07T15:46:50.734922+00:00 app[web.1]: 	ssl.cipher.suites = null
+2017-05-07T15:46:50.734922+00:00 app[web.1]: 	ssl.client.auth = none
+2017-05-07T15:46:50.734923+00:00 app[web.1]: 	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+2017-05-07T15:46:50.734923+00:00 app[web.1]: 	ssl.endpoint.identification.algorithm = null
+2017-05-07T15:46:50.734924+00:00 app[web.1]: 	ssl.key.password = null
+2017-05-07T15:46:50.734925+00:00 app[web.1]: 	ssl.keymanager.algorithm = SunX509
+2017-05-07T15:46:50.734925+00:00 app[web.1]: 	ssl.keystore.location = null
+2017-05-07T15:46:50.734926+00:00 app[web.1]: 	ssl.keystore.password = null
+2017-05-07T15:46:50.734926+00:00 app[web.1]: 	ssl.keystore.type = JKS
+2017-05-07T15:46:50.734927+00:00 app[web.1]: 	ssl.protocol = TLS
+2017-05-07T15:46:50.734927+00:00 app[web.1]: 	ssl.provider = null
+2017-05-07T15:46:50.734928+00:00 app[web.1]: 	ssl.secure.random.implementation = null
+2017-05-07T15:46:50.734930+00:00 app[web.1]: 	ssl.trustmanager.algorithm = PKIX
+2017-05-07T15:46:50.734931+00:00 app[web.1]: 	ssl.truststore.location = null
+2017-05-07T15:46:50.734931+00:00 app[web.1]: 	ssl.truststore.password = null
+2017-05-07T15:46:50.734932+00:00 app[web.1]: 	ssl.truststore.type = JKS
+2017-05-07T15:46:50.734933+00:00 app[web.1]: 	unclean.leader.election.enable = true
+2017-05-07T15:46:50.734933+00:00 app[web.1]: 	zookeeper.connect = localhost:2181
+2017-05-07T15:46:50.734934+00:00 app[web.1]: 	zookeeper.connection.timeout.ms = 6000
+2017-05-07T15:46:50.734934+00:00 app[web.1]: 	zookeeper.session.timeout.ms = 6000
+2017-05-07T15:46:50.734935+00:00 app[web.1]: 	zookeeper.set.acl = false
+2017-05-07T15:46:50.734936+00:00 app[web.1]: 	zookeeper.sync.time.ms = 2000
+2017-05-07T15:46:50.734936+00:00 app[web.1]:  (kafka.server.KafkaConfig)
+2017-05-07T15:46:50.841573+00:00 app[web.1]: [2017-05-07 15:46:50,841] INFO starting (kafka.server.KafkaServer)
+2017-05-07T15:46:50.844723+00:00 app[web.1]: [2017-05-07 15:46:50,844] INFO Connecting to zookeeper on localhost:2181 (kafka.server.KafkaServer)
+2017-05-07T15:46:50.872050+00:00 app[web.1]: [2017-05-07 15:46:50,871] INFO Starting ZkClient event thread. (org.I0Itec.zkclient.ZkEventThread)
+2017-05-07T15:46:50.879812+00:00 app[web.1]: [2017-05-07 15:46:50,879] INFO Client environment:zookeeper.version=3.4.9-1757313, built on 08/23/2016 06:50 GMT (org.apache.zookeeper.ZooKeeper)
+2017-05-07T15:46:50.879912+00:00 app[web.1]: [2017-05-07 15:46:50,879] INFO Client environment:host.name=d0ed4964-d9e4-40ca-aa64-f97017e40114.prvt.dyno.rt.heroku.com (org.apache.zookeeper.ZooKeeper)
+2017-05-07T15:46:50.879990+00:00 app[web.1]: [2017-05-07 15:46:50,879] INFO Client environment:java.version=1.8.0_121-cedar14 (org.apache.zookeeper.ZooKeeper)
+2017-05-07T15:46:50.880059+00:00 app[web.1]: [2017-05-07 15:46:50,880] INFO Client environment:java.vendor=Oracle Corporation (org.apache.zookeeper.ZooKeeper)
+2017-05-07T15:46:50.880138+00:00 app[web.1]: [2017-05-07 15:46:50,880] INFO Client environment:java.home=/app/.jdk/jre (org.apache.zookeeper.ZooKeeper)
+2017-05-07T15:46:50.880492+00:00 app[web.1]: [2017-05-07 15:46:50,880] INFO Client environment:java.class.path=:/app/kafka/bin/../libs/aopalliance-repackaged-2.5.0-b05.jar:/app/kafka/bin/../libs/argparse4j-0.7.0.jar:/app/kafka/bin/../libs/connect-api-0.10.2.0.jar:/app/kafka/bin/../libs/connect-file-0.10.2.0.jar:/app/kafka/bin/../libs/connect-json-0.10.2.0.jar:/app/kafka/bin/../libs/connect-runtime-0.10.2.0.jar:/app/kafka/bin/../libs/connect-transforms-0.10.2.0.jar:/app/kafka/bin/../libs/guava-18.0.jar:/app/kafka/bin/../libs/hk2-api-2.5.0-b05.jar:/app/kafka/bin/../libs/hk2-locator-2.5.0-b05.jar:/app/kafka/bin/../libs/hk2-utils-2.5.0-b05.jar:/app/kafka/bin/../libs/jackson-annotations-2.8.0.jar:/app/kafka/bin/../libs/jackson-annotations-2.8.5.jar:/app/kafka/bin/../libs/jackson-core-2.8.5.jar:/app/kafka/bin/../libs/jackson-databind-2.8.5.jar:/app/kafka/bin/../libs/jackson-jaxrs-base-2.8.5.jar:/app/kafka/bin/../libs/jackson-jaxrs-json-provider-2.8.5.jar:/app/kafka/bin/../libs/jackson-module-jaxb-annotations-2.8.5.jar:/app/kafka/bin/../libs/javassist-3.20.0-GA.jar:/app/kafka/bin/../libs/javax.annotation-api-1.2.jar:/app/kafka/bin/../libs/javax.inject-1.jar:/app/kafka/bin/../libs/javax.inject-2.5.0-b05.jar:/app/kafka/bin/../libs/javax.servlet-api-3.1.0.jar:/app/kafka/bin/../libs/javax.ws.rs-api-2.0.1.jar:/app/kafka/bin/../libs/jersey-client-2.24.jar:/app/kafka/bin/../libs/jersey-common-2.24.jar:/app/kafka/bin/../libs/jersey-container-servlet-2.24.jar:/app/kafka/bin/../libs/jersey-container-servlet-core-2.24.jar:/app/kafka/bin/../libs/jersey-guava-2.24.jar:/app/kafka/bin/../libs/jersey-media-jaxb-2.24.jar:/app/kafka/bin/../libs/jersey-server-2.24.jar:/app/kafka/bin/../libs/jetty-continuation-9.2.15.v20160210.jar:/app/kafka/bin/../libs/jetty-http-9.2.15.v20160210.jar:/app/kafka/bin/../libs/jetty-io-9.2.15.v20160210.jar:/app/kafka/bin/../libs/jetty-security-9.2.15.v20160210.jar:/app/kafka/bin/../libs/jetty-server-9.2.15.v20160210.jar:/app/kafka/bin/../libs/jetty-servlet-9.2.15.v20160210.jar:/app/kafka/bin/../libs/jetty-servlets-9.2.15.v20160210.jar:/app/kafka/bin/../libs/jetty-util-9.2.15.v20160210.jar:/app/kafka/bin/../libs/jopt-simple-5.0.3.jar:/app/kafka/bin/../libs/kafka-clients-0.10.2.0.jar:/app/kafka/bin/../libs/kafka-log4j-appender-0.10.2.0.jar:/app/kafka/bin/../libs/kafka-streams-0.10.2.0.jar:/app/kafka/bin/../libs/kafka-streams-examples-0.10.2.0.jar:/app/kafka/bin/../libs/kafka-tools-0.10.2.0.jar:/app/kafka/bin/../libs/kafka_2.11-0.10.2.0-sources.jar:/app/kafka/bin/../libs/kafka_2.11-0.10.2.0-test-sources.jar:/app/kafka/bin/../libs/kafka_2.11-0.10.2.0.jar:/app/kafka/bin/../libs/log4j-1.2.17.jar:/app/kafka/bin/../libs/lz4-1.3.0.jar:/app/kafka/bin/../libs/metrics-core-2.2.0.jar:/app/kafka/bin/../libs/osgi-resource-locator-1.0.1.jar:/app/kafka/bin/../libs/reflections-0.9.10.jar:/app/kafka/bin/../libs/rocksdbjni-5.0.1.jar:/app/kafka/bin/../libs/scala-library-2.11.8.jar:/app/kafka/bin/../libs/scala-parser-combinators_2.11-1.0.4.jar:/app/kafka/bin/../libs/slf4j-api-1.7.21.jar:/app/kafka/bin/../libs/slf4j-log4j12-1.7.21.jar:/app/kafka/bin/../libs/snappy-java-1.1.2.6.jar:/app/kafka/bin/../libs/validation-api-1.1.0.Final.jar:/app/kafka/bin/../libs/zkclient-0.10.jar:/app/kafka/bin/../libs/zookeeper-3.4.9.jar (org.apache.zookeeper.ZooKeeper)
+2017-05-07T15:46:50.880568+00:00 app[web.1]: [2017-05-07 15:46:50,880] INFO Client environment:java.library.path=/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib (org.apache.zookeeper.ZooKeeper)
+2017-05-07T15:46:50.880642+00:00 app[web.1]: [2017-05-07 15:46:50,880] INFO Client environment:java.io.tmpdir=/tmp (org.apache.zookeeper.ZooKeeper)
+2017-05-07T15:46:50.880711+00:00 app[web.1]: [2017-05-07 15:46:50,880] INFO Client environment:java.compiler=<NA> (org.apache.zookeeper.ZooKeeper)
+2017-05-07T15:46:50.880778+00:00 app[web.1]: [2017-05-07 15:46:50,880] INFO Client environment:os.name=Linux (org.apache.zookeeper.ZooKeeper)
+2017-05-07T15:46:50.880849+00:00 app[web.1]: [2017-05-07 15:46:50,880] INFO Client environment:os.arch=amd64 (org.apache.zookeeper.ZooKeeper)
+2017-05-07T15:46:50.880917+00:00 app[web.1]: [2017-05-07 15:46:50,880] INFO Client environment:os.version=3.13.0-112-generic (org.apache.zookeeper.ZooKeeper)
+2017-05-07T15:46:50.880985+00:00 app[web.1]: [2017-05-07 15:46:50,880] INFO Client environment:user.name=u10183 (org.apache.zookeeper.ZooKeeper)
+2017-05-07T15:46:50.881086+00:00 app[web.1]: [2017-05-07 15:46:50,881] INFO Client environment:user.home=/app (org.apache.zookeeper.ZooKeeper)
+2017-05-07T15:46:50.881368+00:00 app[web.1]: [2017-05-07 15:46:50,881] INFO Client environment:user.dir=/app/kafka (org.apache.zookeeper.ZooKeeper)
+2017-05-07T15:46:50.882418+00:00 app[web.1]: [2017-05-07 15:46:50,882] INFO Initiating client connection, connectString=localhost:2181 sessionTimeout=6000 watcher=org.I0Itec.zkclient.ZkClient@40ef3420 (org.apache.zookeeper.ZooKeeper)
+2017-05-07T15:46:50.904717+00:00 app[web.1]: [2017-05-07 15:46:50,904] INFO Waiting for keeper state SyncConnected (org.I0Itec.zkclient.ZkClient)
+2017-05-07T15:46:50.905852+00:00 app[web.1]: [2017-05-07 15:46:50,905] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+2017-05-07T15:46:50.917731+00:00 app[web.1]: [2017-05-07 15:46:50,917] INFO Accepted socket connection from /127.0.0.1:48532 (org.apache.zookeeper.server.NIOServerCnxnFactory)
+2017-05-07T15:46:50.931798+00:00 app[web.1]: [2017-05-07 15:46:50,931] INFO Socket connection established to localhost/127.0.0.1:2181, initiating session (org.apache.zookeeper.ClientCnxn)
+2017-05-07T15:46:50.945091+00:00 app[web.1]: [2017-05-07 15:46:50,944] INFO Client attempting to establish new session at /127.0.0.1:48532 (org.apache.zookeeper.server.ZooKeeperServer)
+2017-05-07T15:46:50.949328+00:00 app[web.1]: [2017-05-07 15:46:50,949] INFO Creating new log file: log.1 (org.apache.zookeeper.server.persistence.FileTxnLog)
+2017-05-07T15:46:50.974475+00:00 app[web.1]: [2017-05-07 15:46:50,974] INFO Established session 0x15be3975cad0000 with negotiated timeout 6000 for client /127.0.0.1:48532 (org.apache.zookeeper.server.ZooKeeperServer)
+2017-05-07T15:46:50.977619+00:00 app[web.1]: [2017-05-07 15:46:50,977] INFO Session establishment complete on server localhost/127.0.0.1:2181, sessionid = 0x15be3975cad0000, negotiated timeout = 6000 (org.apache.zookeeper.ClientCnxn)
+2017-05-07T15:46:50.980273+00:00 app[web.1]: [2017-05-07 15:46:50,980] INFO zookeeper state changed (SyncConnected) (org.I0Itec.zkclient.ZkClient)
+2017-05-07T15:46:51.076771+00:00 app[web.1]: [2017-05-07 15:46:51,076] INFO Got user-level KeeperException when processing sessionid:0x15be3975cad0000 type:create cxid:0x5 zxid:0x3 txntype:-1 reqpath:n/a Error Path:/brokers Error:KeeperErrorCode = NoNode for /brokers (org.apache.zookeeper.server.PrepRequestProcessor)
+2017-05-07T15:46:51.113682+00:00 app[web.1]: [2017-05-07 15:46:51,113] INFO Got user-level KeeperException when processing sessionid:0x15be3975cad0000 type:create cxid:0xb zxid:0x7 txntype:-1 reqpath:n/a Error Path:/config Error:KeeperErrorCode = NoNode for /config (org.apache.zookeeper.server.PrepRequestProcessor)
+2017-05-07T15:46:51.163812+00:00 app[web.1]: [2017-05-07 15:46:51,163] INFO Got user-level KeeperException when processing sessionid:0x15be3975cad0000 type:create cxid:0x13 zxid:0xc txntype:-1 reqpath:n/a Error Path:/admin Error:KeeperErrorCode = NoNode for /admin (org.apache.zookeeper.server.PrepRequestProcessor)
+2017-05-07T15:46:51.280763+00:00 app[web.1]: [2017-05-07 15:46:51,280] INFO Got user-level KeeperException when processing sessionid:0x15be3975cad0000 type:create cxid:0x1b zxid:0x11 txntype:-1 reqpath:n/a Error Path:/cluster Error:KeeperErrorCode = NoNode for /cluster (org.apache.zookeeper.server.PrepRequestProcessor)
+2017-05-07T15:46:51.298956+00:00 app[web.1]: [2017-05-07 15:46:51,298] INFO Cluster ID = qayY3V2fSHC3b-auzvjScg (kafka.server.KafkaServer)
+2017-05-07T15:46:51.303766+00:00 app[web.1]: [2017-05-07 15:46:51,303] WARN No meta.properties file under dir /tmp/kafka-logs/meta.properties (kafka.server.BrokerMetadataCheckpoint)
+2017-05-07T15:46:51.329089+00:00 app[web.1]: [2017-05-07 15:46:51,328] INFO [ThrottledRequestReaper-Fetch], Starting  (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+2017-05-07T15:46:51.344687+00:00 app[web.1]: [2017-05-07 15:46:51,344] INFO [ThrottledRequestReaper-Produce], Starting  (kafka.server.ClientQuotaManager$ThrottledRequestReaper)
+2017-05-07T15:46:51.389400+00:00 app[web.1]: [2017-05-07 15:46:51,389] INFO Log directory '/tmp/kafka-logs' not found, creating it. (kafka.log.LogManager)
+2017-05-07T15:46:51.400234+00:00 app[web.1]: [2017-05-07 15:46:51,400] INFO Loading logs. (kafka.log.LogManager)
+2017-05-07T15:46:51.413341+00:00 app[web.1]: [2017-05-07 15:46:51,413] INFO Logs loading complete in 12 ms. (kafka.log.LogManager)
+2017-05-07T15:46:51.824476+00:00 app[web.1]: [2017-05-07 15:46:51,824] INFO Starting log cleanup with a period of 300000 ms. (kafka.log.LogManager)
+2017-05-07T15:46:51.827147+00:00 app[web.1]: [2017-05-07 15:46:51,827] INFO Starting log flusher with a default period of 9223372036854775807 ms. (kafka.log.LogManager)
+2017-05-07T15:46:51.956515+00:00 app[web.1]: [2017-05-07 15:46:51,951] INFO Awaiting socket connections on 0.0.0.0:9092. (kafka.network.Acceptor)
+2017-05-07T15:46:51.970661+00:00 app[web.1]: [2017-05-07 15:46:51,970] INFO [Socket Server on Broker 0], Started 1 acceptor threads (kafka.network.SocketServer)
+2017-05-07T15:46:52.020827+00:00 app[web.1]: [2017-05-07 15:46:52,020] INFO [ExpirationReaper-0], Starting  (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+2017-05-07T15:46:52.022863+00:00 app[web.1]: [2017-05-07 15:46:52,022] INFO [ExpirationReaper-0], Starting  (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+2017-05-07T15:46:52.080616+00:00 app[web.1]: [2017-05-07 15:46:52,080] INFO Creating /controller (is it secure? false) (kafka.utils.ZKCheckedEphemeral)
+2017-05-07T15:46:52.097090+00:00 app[web.1]: [2017-05-07 15:46:52,096] INFO Result of znode creation is: OK (kafka.utils.ZKCheckedEphemeral)
+2017-05-07T15:46:52.097668+00:00 app[web.1]: [2017-05-07 15:46:52,097] INFO 0 successfully elected as leader (kafka.server.ZookeeperLeaderElector)
+2017-05-07T15:46:52.109172+00:00 app[web.1]: [2017-05-07 15:46:52,109] INFO Got user-level KeeperException when processing sessionid:0x15be3975cad0000 type:setData cxid:0x25 zxid:0x15 txntype:-1 reqpath:n/a Error Path:/controller_epoch Error:KeeperErrorCode = NoNode for /controller_epoch (org.apache.zookeeper.server.PrepRequestProcessor)
+2017-05-07T15:46:52.287086+00:00 app[web.1]: [2017-05-07 15:46:52,286] INFO Got user-level KeeperException when processing sessionid:0x15be3975cad0000 type:delete cxid:0x36 zxid:0x17 txntype:-1 reqpath:n/a Error Path:/admin/preferred_replica_election Error:KeeperErrorCode = NoNode for /admin/preferred_replica_election (org.apache.zookeeper.server.PrepRequestProcessor)
+2017-05-07T15:46:52.367477+00:00 app[web.1]: [2017-05-07 15:46:52,367] INFO [ExpirationReaper-0], Starting  (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+2017-05-07T15:46:52.401099+00:00 app[web.1]: [2017-05-07 15:46:52,399] INFO [ExpirationReaper-0], Starting  (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+2017-05-07T15:46:52.417075+00:00 app[web.1]: [2017-05-07 15:46:52,416] INFO [ExpirationReaper-0], Starting  (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+2017-05-07T15:46:52.474380+00:00 app[web.1]: [2017-05-07 15:46:52,474] INFO [GroupCoordinator 0]: Starting up. (kafka.coordinator.GroupCoordinator)
+2017-05-07T15:46:52.479970+00:00 app[web.1]: [2017-05-07 15:46:52,479] INFO [GroupCoordinator 0]: Startup complete. (kafka.coordinator.GroupCoordinator)
+2017-05-07T15:46:52.499252+00:00 app[web.1]: [2017-05-07 15:46:52,499] INFO [Group Metadata Manager on Broker 0]: Removed 0 expired offsets in 13 milliseconds. (kafka.coordinator.GroupMetadataManager)
+2017-05-07T15:46:52.550747+00:00 app[web.1]: [2017-05-07 15:46:52,550] INFO Will not load MX4J, mx4j-tools.jar is not in the classpath (kafka.utils.Mx4jLoader$)
+2017-05-07T15:46:52.610265+00:00 app[web.1]: [2017-05-07 15:46:52,610] INFO Creating /brokers/ids/0 (is it secure? false) (kafka.utils.ZKCheckedEphemeral)
+2017-05-07T15:46:52.616726+00:00 app[web.1]: [2017-05-07 15:46:52,616] INFO Got user-level KeeperException when processing sessionid:0x15be3975cad0000 type:create cxid:0x41 zxid:0x18 txntype:-1 reqpath:n/a Error Path:/brokers Error:KeeperErrorCode = NodeExists for /brokers (org.apache.zookeeper.server.PrepRequestProcessor)
+2017-05-07T15:46:52.618669+00:00 app[web.1]: [2017-05-07 15:46:52,618] INFO Got user-level KeeperException when processing sessionid:0x15be3975cad0000 type:create cxid:0x42 zxid:0x19 txntype:-1 reqpath:n/a Error Path:/brokers/ids Error:KeeperErrorCode = NodeExists for /brokers/ids (org.apache.zookeeper.server.PrepRequestProcessor)
+2017-05-07T15:46:52.647285+00:00 app[web.1]: [2017-05-07 15:46:52,640] INFO Result of znode creation is: OK (kafka.utils.ZKCheckedEphemeral)
+2017-05-07T15:46:52.648791+00:00 app[web.1]: [2017-05-07 15:46:52,648] INFO Registered broker 0 at path /brokers/ids/0 with addresses: EndPoint(d0ed4964-d9e4-40ca-aa64-f97017e40114.prvt.dyno.rt.heroku.com,9092,ListenerName(PLAINTEXT),PLAINTEXT) (kafka.utils.ZkUtils)
+2017-05-07T15:46:52.649689+00:00 app[web.1]: [2017-05-07 15:46:52,649] WARN No meta.properties file under dir /tmp/kafka-logs/meta.properties (kafka.server.BrokerMetadataCheckpoint)
+2017-05-07T15:46:52.750562+00:00 app[web.1]: [2017-05-07 15:46:52,750] INFO New leader is 0 (kafka.server.ZookeeperLeaderElector$LeaderChangeListener)
+2017-05-07T15:46:52.750999+00:00 app[web.1]: [2017-05-07 15:46:52,750] INFO Kafka version : 0.10.2.0 (org.apache.kafka.common.utils.AppInfoParser)
+2017-05-07T15:46:52.751067+00:00 app[web.1]: [2017-05-07 15:46:52,751] INFO Kafka commitId : 576d93a8dc0cf421 (org.apache.kafka.common.utils.AppInfoParser)
+2017-05-07T15:46:52.752169+00:00 app[web.1]: [2017-05-07 15:46:52,751] INFO [Kafka Server 0], started (kafka.server.KafkaServer)
+2017-05-07T15:46:52.679059+00:00 heroku[web.1]: source=web.1 dyno=heroku.68088157.d0ed4964-d9e4-40ca-aa64-f97017e40114 sample#memory_total=366.41MB sample#memory_rss=290.22MB sample#memory_cache=76.19MB sample#memory_swap=0.00MB sample#memory_pgpgin=134012pages sample#memory_pgpgout=40212pages sample#memory_quota=512.00MB
+2017-05-07T15:46:58.341949+00:00 app[web.1]: Picked up JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8
+2017-05-07T15:46:59.141328+00:00 app[web.1]: SLF4J: Class path contains multiple SLF4J bindings.
+2017-05-07T15:46:59.142100+00:00 app[web.1]: SLF4J: Found binding in [jar:file:/app/target/parti4b-0.0.1.jar!/BOOT-INF/lib/logback-classic-1.1.9.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+2017-05-07T15:46:59.142184+00:00 app[web.1]: SLF4J: Found binding in [jar:file:/app/target/parti4b-0.0.1.jar!/BOOT-INF/lib/slf4j-log4j12-1.7.22.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+2017-05-07T15:46:59.142286+00:00 app[web.1]: SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+2017-05-07T15:46:59.475302+00:00 app[web.1]: SLF4J: Actual binding is of type [ch.qos.logback.classic.util.ContextSelectorStaticBinder]
+2017-05-07T15:47:03.530864+00:00 app[web.1]: 2017-05-07 15:47:03.523  INFO 570 --- [           main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@20fa23c1: startup date [Sun May 07 15:47:03 UTC 2017]; root of context hierarchy
+2017-05-07T15:47:09.770834+00:00 app[web.1]: 2017-05-07 15:47:09.770  INFO 570 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'configurationPropertiesRebinderAutoConfiguration' of type [class org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$42ec4a5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-05-07T15:47:11.213240+00:00 app[web.1]: 
+2017-05-07T15:47:11.213540+00:00 app[web.1]:   .   ____          _            __ _ _
+2017-05-07T15:47:11.213628+00:00 app[web.1]:  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+2017-05-07T15:47:11.213683+00:00 app[web.1]: ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+2017-05-07T15:47:11.213747+00:00 app[web.1]:  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+2017-05-07T15:47:11.214133+00:00 app[web.1]:   '  |____| .__|_| |_|_| |_\__, | / / / /
+2017-05-07T15:47:11.214188+00:00 app[web.1]:  =========|_|==============|___/=/_/_/_/
+2017-05-07T15:47:11.215239+00:00 app[web.1]:  :: Spring Boot ::        (v1.4.4.RELEASE)
+2017-05-07T15:47:11.215313+00:00 app[web.1]: 
+2017-05-07T15:47:11.379919+00:00 app[web.1]: 2017-05-07 15:47:11.379  INFO 570 --- [           main] es.uniovi.asw.Application                : No active profile set, falling back to default profiles: default
+2017-05-07T15:47:11.450832+00:00 app[web.1]: 2017-05-07 15:47:11.446  INFO 570 --- [           main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4c70fda8: startup date [Sun May 07 15:47:11 UTC 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@20fa23c1
+2017-05-07T15:47:14.531787+00:00 heroku[web.1]: source=web.1 dyno=heroku.68088157.d0ed4964-d9e4-40ca-aa64-f97017e40114 sample#load_avg_1m=2.22
+2017-05-07T15:47:14.532007+00:00 heroku[web.1]: source=web.1 dyno=heroku.68088157.d0ed4964-d9e4-40ca-aa64-f97017e40114 sample#memory_total=536.95MB sample#memory_rss=222.08MB sample#memory_cache=0.10MB sample#memory_swap=314.77MB sample#memory_pgpgin=280957pages sample#memory_pgpgout=224079pages sample#memory_quota=512.00MB
+2017-05-07T15:47:14.532721+00:00 heroku[web.1]: Process running mem=536M(104.9%)
+2017-05-07T15:47:14.532827+00:00 heroku[web.1]: Error R14 (Memory quota exceeded)
+2017-05-07T15:47:20.414263+00:00 app[web.1]: 2017-05-07 15:47:20.413  INFO 570 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'kafkaListenerContainerFactory' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=kafkaProducerFactory; factoryMethodName=kafkaListenerContainerFactory; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [es/uniovi/asw/streamkafka/producers/KafkaProducerFactory.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=kafkaListenerFactory; factoryMethodName=kafkaListenerContainerFactory; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [es/uniovi/asw/streamkafka/consumer/KafkaListenerFactory.class]]
+2017-05-07T15:47:20.415202+00:00 app[web.1]: 2017-05-07 15:47:20.415  INFO 570 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'consumerFactory' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=kafkaProducerFactory; factoryMethodName=consumerFactory; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [es/uniovi/asw/streamkafka/producers/KafkaProducerFactory.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=kafkaListenerFactory; factoryMethodName=consumerFactory; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [es/uniovi/asw/streamkafka/consumer/KafkaListenerFactory.class]]
+2017-05-07T15:47:20.415882+00:00 app[web.1]: 2017-05-07 15:47:20.415  INFO 570 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'consumerConfigs' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=kafkaProducerFactory; factoryMethodName=consumerConfigs; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [es/uniovi/asw/streamkafka/producers/KafkaProducerFactory.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=kafkaListenerFactory; factoryMethodName=consumerConfigs; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [es/uniovi/asw/streamkafka/consumer/KafkaListenerFactory.class]]
+2017-05-07T15:47:21.261783+00:00 app[web.1]: 2017-05-07 15:47:21.261  INFO 570 --- [           main] o.s.b.f.config.PropertiesFactoryBean     : Loading properties file from URL [jar:file:/app/target/parti4b-0.0.1.jar!/BOOT-INF/lib/spring-integration-core-4.3.7.RELEASE.jar!/META-INF/spring.integration.default.properties]
+2017-05-07T15:47:21.270948+00:00 app[web.1]: 2017-05-07 15:47:21.270  INFO 570 --- [           main] o.s.i.config.IntegrationRegistrar        : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2017-05-07T15:47:22.039585+00:00 app[web.1]: 2017-05-07 15:47:22.039  INFO 570 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'managementServletContext' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.actuate.autoconfigure.EndpointWebMvcHypermediaManagementContextConfiguration; factoryMethodName=managementServletContext; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/actuate/autoconfigure/EndpointWebMvcHypermediaManagementContextConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.actuate.autoconfigure.EndpointWebMvcAutoConfiguration; factoryMethodName=managementServletContext; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/actuate/autoconfigure/EndpointWebMvcAutoConfiguration.class]]
+2017-05-07T15:47:24.207277+00:00 app[web.1]: 2017-05-07 15:47:24.206  WARN 570 --- [           main] o.s.c.a.ConfigurationClassPostProcessor  : Cannot enhance @Configuration bean definition 'refreshScope' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2017-05-07T15:47:26.139910+00:00 app[web.1]: 2017-05-07 15:47:26.139  INFO 570 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1a47a5c8-1f8f-3d39-9947-895665fcbe15
+2017-05-07T15:47:26.311077+00:00 app[web.1]: 2017-05-07 15:47:26.305  INFO 570 --- [           main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2017-05-07T15:47:26.329556+00:00 app[web.1]: 2017-05-07 15:47:26.329  INFO 570 --- [           main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2017-05-07T15:47:26.745045+00:00 app[web.1]: 2017-05-07 15:47:26.736  INFO 570 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [class org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$bbc6d32b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-05-07T15:47:27.340077+00:00 app[web.1]: 2017-05-07 15:47:27.339  INFO 570 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e814c1a8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-05-07T15:47:28.048348+00:00 app[web.1]: 2017-05-07 15:47:28.048  INFO 570 --- [           main] o.s.b.f.config.PropertiesFactoryBean     : Loading properties file from URL [jar:file:/app/target/parti4b-0.0.1.jar!/BOOT-INF/lib/spring-integration-core-4.3.7.RELEASE.jar!/META-INF/spring.integration.default.properties]
+2017-05-07T15:47:28.052859+00:00 app[web.1]: 2017-05-07 15:47:28.052  INFO 570 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationGlobalProperties' of type [class org.springframework.beans.factory.config.PropertiesFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-05-07T15:47:28.054977+00:00 app[web.1]: 2017-05-07 15:47:28.054  INFO 570 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationGlobalProperties' of type [class java.util.Properties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-05-07T15:47:28.336972+00:00 app[web.1]: 2017-05-07 15:47:28.336  INFO 570 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [class org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$42ec4a5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-05-07T15:47:28.396864+00:00 app[web.1]: 2017-05-07 15:47:28.396  INFO 570 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.stream.config.BindingServiceConfiguration$PostProcessorConfiguration' of type [class org.springframework.cloud.stream.config.BindingServiceConfiguration$PostProcessorConfiguration$$EnhancerBySpringCGLIB$$a9dc5fad] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-05-07T15:47:29.953739+00:00 app[web.1]: 2017-05-07 15:47:29.932  INFO 570 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 56480 (http)
+2017-05-07T15:47:30.024502+00:00 app[web.1]: 2017-05-07 15:47:30.024  INFO 570 --- [           main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2017-05-07T15:47:30.026860+00:00 app[web.1]: 2017-05-07 15:47:30.026  INFO 570 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.11
+2017-05-07T15:47:30.330794+00:00 app[web.1]: 2017-05-07 15:47:30.330  INFO 570 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-05-07T15:47:30.330996+00:00 app[web.1]: 2017-05-07 15:47:30.330  INFO 570 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 18884 ms
+2017-05-07T15:47:32.330438+00:00 app[web.1]: 2017-05-07 15:47:32.330  INFO 570 --- [ost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-05-07T15:47:32.355026+00:00 app[web.1]: 2017-05-07 15:47:32.354  INFO 570 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'metricsFilter' to: [/*]
+2017-05-07T15:47:32.355473+00:00 app[web.1]: 2017-05-07 15:47:32.355  INFO 570 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-05-07T15:47:32.355648+00:00 app[web.1]: 2017-05-07 15:47:32.355  INFO 570 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-05-07T15:47:32.355832+00:00 app[web.1]: 2017-05-07 15:47:32.355  INFO 570 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-05-07T15:47:32.356004+00:00 app[web.1]: 2017-05-07 15:47:32.355  INFO 570 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-05-07T15:47:32.356229+00:00 app[web.1]: 2017-05-07 15:47:32.356  INFO 570 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webRequestLoggingFilter' to: [/*]
+2017-05-07T15:47:32.372744+00:00 app[web.1]: 2017-05-07 15:47:32.356  INFO 570 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'applicationContextIdFilter' to: [/*]
+2017-05-07T15:47:35.002076+00:00 heroku[web.1]: source=web.1 dyno=heroku.68088157.d0ed4964-d9e4-40ca-aa64-f97017e40114 sample#load_avg_1m=2.73
+2017-05-07T15:47:35.002286+00:00 heroku[web.1]: source=web.1 dyno=heroku.68088157.d0ed4964-d9e4-40ca-aa64-f97017e40114 sample#memory_total=652.32MB sample#memory_rss=372.38MB sample#memory_cache=0.46MB sample#memory_swap=279.48MB sample#memory_pgpgin=358737pages sample#memory_pgpgout=263289pages sample#memory_quota=512.00MB
+2017-05-07T15:47:35.003230+00:00 heroku[web.1]: Process running mem=652M(127.3%)
+2017-05-07T15:47:35.003433+00:00 heroku[web.1]: Error R14 (Memory quota exceeded)
+2017-05-07T15:47:35.714526+00:00 app[web.1]: 2017-05-07 15:47:35.713  INFO 570 --- [           main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-05-07T15:47:35.793268+00:00 app[web.1]: 2017-05-07 15:47:35.785  INFO 570 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+2017-05-07T15:47:35.793271+00:00 app[web.1]: 	name: default
+2017-05-07T15:47:35.793272+00:00 app[web.1]: 	...]
+2017-05-07T15:47:36.248507+00:00 app[web.1]: 2017-05-07 15:47:36.248  INFO 570 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.11.Final}
+2017-05-07T15:47:36.254347+00:00 app[web.1]: 2017-05-07 15:47:36.254  INFO 570 --- [           main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-05-07T15:47:36.260177+00:00 app[web.1]: 2017-05-07 15:47:36.259  INFO 570 --- [           main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2017-05-07T15:47:36.375467+00:00 app[web.1]: 2017-05-07 15:47:36.374  INFO 570 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-05-07T15:47:47.916754+00:00 app[web.1]: 2017-05-07 15:47:47.916  INFO 570 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-05-07T15:47:49.440481+00:00 app[web.1]: 2017-05-07 15:47:49.440  INFO 570 --- [           main] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000228: Running hbm2ddl schema update
+2017-05-07T15:47:52.866303+00:00 heroku[web.1]: Error R10 (Boot timeout) -> Web process failed to bind to $PORT within 90 seconds of launch
+2017-05-07T15:47:52.866438+00:00 heroku[web.1]: Stopping process with SIGKILL
+2017-05-07T15:47:53.181082+00:00 heroku[web.1]: State changed from starting to crashed
+2017-05-07T15:47:53.165681+00:00 heroku[web.1]: Process exited with status 137
