@@ -20,7 +20,7 @@ public class PruebaSteps {
 	private SeleniumUtilTest su = new SeleniumUtilTest();
 	private WebDriver driver = su.getDriver();
 	private String baseUrl = String.format("http://localhost:8080");
-//
+
 //	@Given("^the user is on the login page$")
 //	public void theUserIsOnTheLoginPage() throws Throwable {
 //		driver.get(baseUrl + "/");
