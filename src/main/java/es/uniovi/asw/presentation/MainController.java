@@ -2,10 +2,11 @@ package es.uniovi.asw.presentation;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Controller;
 //import org.springframework.ui.Model;
 //import org.springframework.web.bind.annotation.ModelAttribute;
@@ -17,13 +18,12 @@ import org.springframework.web.servlet.ModelAndView;
 import es.uniovi.asw.conf.Factories;
 import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.model.Commentary;
+import es.uniovi.asw.model.ImprimeDatosComment;
 import es.uniovi.asw.model.Proposal;
 import es.uniovi.asw.model.exception.CitizenException;
 import es.uniovi.asw.model.types.status.EstadosComentario;
 import es.uniovi.asw.model.types.status.EstadosPropuesta;
-import es.uniovi.asw.model.types.topics.Topics;
 import es.uniovi.asw.streamkafka.producers.KafkaProducer;
-import es.uniovi.asw.model.ImprimeDatosComment;
 
 /**
  * Acceso web
@@ -237,7 +237,6 @@ public class MainController {
 	}
 
 	@RequestMapping("/nuevaPropuesta")
-	@KafkaListener(topics = Topics.NEW_COMMENT)
 	public ModelAndView nuevaPropuesta() {
 		if (usuario != null) {
 			kafkaProducer.send("admin", "Sección para crear propuestas");
@@ -266,7 +265,6 @@ public class MainController {
 	}
 
 	@RequestMapping(path = "/votarPositivo", method = RequestMethod.GET)
-	@KafkaListener(topics = Topics.VOTE_HAS_CREATED)
 	public ModelAndView votarPositivo(@RequestParam("idPropuesta") String idPropuesta) {
 		if (usuario != null) {
 			Proposal propuesta = factory.getServicesFactory().getProposalService()
@@ -296,7 +294,6 @@ public class MainController {
 	}
 
 	@RequestMapping(path = "/votarNegativo", method = RequestMethod.GET)
-	@KafkaListener(topics = Topics.VOTE_HAS_CREATED)
 	public ModelAndView votarNegativo(@RequestParam("idPropuesta") String idPropuesta) {
 		if (usuario != null) {
 			Proposal propuesta = factory.getServicesFactory().getProposalService()
