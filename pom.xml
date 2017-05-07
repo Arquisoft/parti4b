@@ -362,60 +362,39 @@
 		<!--Members -->
 	<developers>
 		<developer>
-			<id>labra</id>
-			<name>Jose Emilio Labra</name>
-			<email>labra@uniovi.es</email>
-			<organization>WESO-University of Oviedo</organization>
-			<organizationUrl>http://www.uniovi.es</organizationUrl>
-			<roles>
-				<role>Project Admin</role>
-				<role>Developer</role>
-			</roles>
-			<timezone>2</timezone>
-			<properties />
-		</developer>
-		
-		<developer>
-			<id>Nacho</id>
-			<name>Ignacio Martin Franco</name>
-			<organization>WESO-University of Oviedo</organization>
-			<organizationUrl>http://www.uniovi.es</organizationUrl>
+			<id>igm1990</id>
+			<name>Iván González Mahagamage</name>
+			<email>uo239795@uniovi.es</email>
 			<roles>
 				<role>Developer</role>
 			</roles>
 			<timezone>2</timezone>
 			<properties />
 		</developer>
-		
 		<developer>
-			<id>Hugo</id>
-			<name>Hugo Pérez Martinez</name>
-			<organization>WESO-University of Oviedo</organization>
-			<organizationUrl>http://www.uniovi.es</organizationUrl>
+			<id>JorRoFe</id>
+			<name>Jorge Rodríguez Fernández</name>
+			<email>uo237492@uniovi.es</email>
 			<roles>
 				<role>Developer</role>
 			</roles>
 			<timezone>2</timezone>
 			<properties />
 		</developer>
-		
 		<developer>
-			<id>Dani</id>
-			<name>Daniel Orviz Suárez</name>
-			<organization>WESO-University of Oviedo</organization>
-			<organizationUrl>http://www.uniovi.es</organizationUrl>
+			<id>AdrianGLumbreras</id>
+			<name>Adrián García Lumbreras</name>
+			<email>uo240002@uniovi.es</email>
 			<roles>
 				<role>Developer</role>
 			</roles>
 			<timezone>2</timezone>
 			<properties />
 		</developer>
-		
 		<developer>
-			<id>Tony</id>
-			<name>Jose Antonio Marin Álvarez</name>
-			<organization>WESO-University of Oviedo</organization>
-			<organizationUrl>http://www.uniovi.es</organizationUrl>
+			<id>RaulG89</id>
+			<name>Raúl Gómez Pérez</name>
+			<email>uo241016@uniovi.es</email>
 			<roles>
 				<role>Developer</role>
 			</roles>
@@ -423,7 +402,6 @@
 			<properties />
 		</developer>
 	</developers>
-
 
 	<organization>
 		<name>University of Oviedo</name>
