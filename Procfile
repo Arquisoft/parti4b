@@ -1,0 +1,1 @@
+web: java -jar java -jar target/parti4b-0.0.1.jar
