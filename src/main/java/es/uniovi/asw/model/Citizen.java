@@ -1,7 +1,6 @@
 package es.uniovi.asw.model;
 
 import es.uniovi.asw.model.exception.CitizenException;
-import es.uniovi.asw.model.util.EncryptMD5;
 
 import java.security.NoSuchAlgorithmException;
 import java.text.DateFormat;
@@ -155,7 +154,7 @@ public class Citizen {
 
 	public void setPassword(String password)
 			throws NoSuchAlgorithmException, CitizenException {
-		this.password = new EncryptMD5().encrypting(password);
+		this.password = password;
 	}
 
 	private String generarPassword()
@@ -165,7 +164,7 @@ public class Citizen {
 		Random r = new Random(calendar.getTimeInMillis());
 		int i = 0;
 
-		while (i < 10) {
+		while (i < 5) {
 			char c = (char) r.nextInt(255);
 			if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z')
 					|| (c >= 'a' && c <= 'z')) {
@@ -174,7 +173,7 @@ public class Citizen {
 			}
 		}
 
-		return new EncryptMD5().encrypting(password);
+		return password;
 	}
 
 	public Set<Commentary> getComentarios() {

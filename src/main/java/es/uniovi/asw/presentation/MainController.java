@@ -1,5 +1,6 @@
 package es.uniovi.asw.presentation;
 
+import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -15,6 +16,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import es.uniovi.asw.business.parser.impl.RCitizens;
+import es.uniovi.asw.business.parser.writer.FactoryLetter;
+import es.uniovi.asw.business.parser.writer.Letter;
+import es.uniovi.asw.business.parser.writer.PDFLetter;
+import es.uniovi.asw.business.parser.writer.TXTLetter;
+import es.uniovi.asw.business.parser.writer.WordLetter;
 import es.uniovi.asw.conf.Factories;
 import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.model.Commentary;
@@ -24,6 +31,7 @@ import es.uniovi.asw.model.exception.CitizenException;
 import es.uniovi.asw.model.types.status.EstadosComentario;
 import es.uniovi.asw.model.types.status.EstadosPropuesta;
 import es.uniovi.asw.streamkafka.producers.KafkaProducer;
+import es.uniovi.asw.util.Printer;
 
 /**
  * Acceso web
@@ -493,6 +501,62 @@ public class MainController {
 		} else {
 			kafkaProducer.send("admin", "No se puede acceder a las palabras no permitidas");
 			return fail();
+		}
+	}
+
+	@RequestMapping(path = "/citizensLoader", method = RequestMethod.GET)
+	public ModelAndView citizensLoader() {
+		if (usuario != null) {
+			kafkaProducer.send("admin", "Accediendo a citizensLoader");
+
+			return new ModelAndView("citizensLoader");
+		} else {
+			kafkaProducer.send("admin", "No se puede acceder a citizensLoader");
+			return fail();
+		}
+	}
+
+	@RequestMapping(path = "/loadUsers", method = RequestMethod.POST)
+	public ModelAndView loadUsers(@RequestParam("censo") File censo) throws CitizenException {
+		if (usuario != null) {
+			kafkaProducer.send("admin", "Accediendo a loadUsers");
+
+			try {
+				if (censo != null) {
+				
+					List<Citizen> citizens = new RCitizens().readCitizens(censo);
+
+					generarCartas(citizens);
+
+					for (Citizen citizen : citizens) {
+						factory.getServicesFactory().getCitizenService().save(citizen);
+					}
+				}
+			} catch (Exception e) {
+				new Printer().printCitizenException(e);
+			}
+
+			return new ModelAndView("citizensLoader");
+		} else {
+			kafkaProducer.send("admin", "Acceso denegado");
+			return fail();
+		}
+	}
+
+	private void generarCartas(List<Citizen> citizens) throws CitizenException {
+		Letter letterTxt = new TXTLetter();
+		letterTxt = FactoryLetter.generate("txt");
+
+		Letter letterPDF = new PDFLetter();
+		letterPDF = FactoryLetter.generate("pdf");
+
+		Letter letterWord = new WordLetter();
+		letterWord = FactoryLetter.generate("word");
+
+		for (Citizen citizen : citizens) {
+			letterTxt.generateLetter(citizen);
+			letterPDF.generateLetter(citizen);
+			letterWord.generateLetter(citizen);
 		}
 	}
 }
