@@ -1,1 +1,1 @@
-web: sh Prueba.sh
+worker: sh Prueba.sh
