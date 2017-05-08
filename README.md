@@ -6,7 +6,7 @@
 
 [![Join the chat at https://gitter.im/Arquisoft/participationSystem4b](https://badges.gitter.im/Arquisoft/participationSystem4b.svg)](https://gitter.im/Arquisoft/participants0?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-### GuestUsers en Heroku!
+# Heroku
 [![GuestUsers Heroku](https://img.shields.io/badge/View%20on-Heroku-ff69b4.svg)](http://parti4b.herokuapp.com/) 
 
 # Authors
