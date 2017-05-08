@@ -6,7 +6,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 //import org.springframework.ui.Model;
 //import org.springframework.web.bind.annotation.ModelAttribute;
@@ -29,6 +32,7 @@ import es.uniovi.asw.streamkafka.producers.KafkaProducer;
  * Acceso web
  */
 @Controller
+@Scope("session")
 public class MainController {
 
 	@Autowired
@@ -37,7 +41,7 @@ public class MainController {
 	@Autowired
 	private KafkaProducer kafkaProducer;
 
-	private Citizen usuario;
+	private Citizen user;
 
 	List<String> keyWords = new ArrayList<String>();
 
@@ -53,30 +57,34 @@ public class MainController {
 	// }
 
 	@RequestMapping("/")
-	public String index() {
+	public String index(HttpSession session) {
+		Citizen usuario = (Citizen) session.getAttribute("user");
 		// Cerramos sesion usuario a null y lo mandamos al landing
 		// Aunque tambien se inicializa al principio
-		usuario = null;
+		session.removeAttribute("user");
 		kafkaProducer.send("logout", "El usuario cerro sesion correctamente" + " o es la primera vez que entrea");
 		return "landing";
 	}
 
 	// Se le llama al realizar login
 	@RequestMapping(path = "/login", method = RequestMethod.POST)
-	public ModelAndView login(@RequestParam("dni") String dni, @RequestParam("password") String password) {
+	public ModelAndView login(@RequestParam("dni") String dni, @RequestParam("password") String password,
+			HttpSession session) {
 		// Para cuando la bbdd tenga contraseñas que nos conocemos
 		// usuario = servicio.findLoggableUser(dni , md5(password));
 
-		usuario = factory.getServicesFactory().getCitizenService().findByDni(dni);
+		user = factory.getServicesFactory().getCitizenService().findByDni(dni);
 
-		if (usuario != null) {
-			if (usuario.isAdmin()) {
+		if (user != null) {
+			if (user.isAdmin()) {
 				kafkaProducer.send("admin", "El administrador del sistema se ha logueado");
+				session.setAttribute("user", user);
 				return new ModelAndView("admin"); // la contraseña de admin es
 			} else {
 				List<Proposal> proposals = factory.getServicesFactory().getProposalService()
 						.findByStatus(EstadosPropuesta.EnTramite);
-				kafkaProducer.send("user", "El usuario " + usuario.getNombre() + " se ha logueado");
+				session.setAttribute("user", user);
+				kafkaProducer.send("user", "El usuario " + user.getNombre() + " se ha logueado");
 				return new ModelAndView("usuario").addObject("proposals", proposals);
 			}
 		} else {
@@ -88,7 +96,8 @@ public class MainController {
 
 	@SuppressWarnings("unused")
 	@RequestMapping(path = "/comment", method = RequestMethod.GET)
-	public ModelAndView comment(@RequestParam String id) {
+	public ModelAndView comment(@RequestParam String id, HttpSession session) {
+		Citizen usuario = (Citizen) session.getAttribute("user");
 		if (usuario != null) {
 			List<Commentary> commentaries = null;
 
@@ -143,12 +152,13 @@ public class MainController {
 			}
 		} else {
 			kafkaProducer.send("login", "No existe usuario en sesion");
-			return fail();
+			return fail(session);
 		}
 	}
 
 	@RequestMapping(path = "/censurar", method = RequestMethod.GET)
-	public ModelAndView censurar(@RequestParam("id") String idComment) {
+	public ModelAndView censurar(@RequestParam("id") String idComment, HttpSession session) {
+		Citizen usuario = (Citizen) session.getAttribute("user");
 		if (usuario != null) {
 			SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			Date fec = null;
@@ -163,33 +173,35 @@ public class MainController {
 			factory.getServicesFactory().getCommentaryService().update(comentario);
 
 			kafkaProducer.send("admin", "El administrador censuro este comentario: " + comentario.getContent());
-			return comment(idPropuesta.toString());
+			return comment(idPropuesta.toString(), session);
 		} else {
 			kafkaProducer.send("login", "No existe el usuario en sesion");
-			return fail();
+			return fail(session);
 		}
 	}
 
 	// Cuando en el menu de comments pulsamos en añadir un nuevo comentario
 	@RequestMapping(path = "/crearComment", method = RequestMethod.GET)
-	public ModelAndView crearComment(@RequestParam("id") String id) {
+	public ModelAndView crearComment(@RequestParam("id") String id, HttpSession session) {
+		Citizen usuario = (Citizen) session.getAttribute("user");
 		if (usuario != null) {
 			this.idPropuesta = Long.parseLong(id);
 			kafkaProducer.send("user", "Cargando formulario para crear comentario");
 			return new ModelAndView("crearComment").addObject("hidden", false);
 		} else {
 			kafkaProducer.send("login", "El usuario no existe en sesion");
-			return fail();
+			return fail(session);
 		}
 	}
 
 	// Cuando guardamos el comentario
 	@RequestMapping(path = "/salvarComment", method = RequestMethod.POST)
-	public ModelAndView salvarComment(@RequestParam("comment") String comment) throws CitizenException {
+	public ModelAndView salvarComment(@RequestParam("comment") String comment, HttpSession session) throws CitizenException {
+		Citizen usuario = (Citizen) session.getAttribute("user");
 		if (idPropuesta != null && usuario != null) {
 			System.out.println(comment + " \nid de la propuesta: " + Long.toString(idPropuesta));
 
-			if (validateComment(comment)) {
+			if (validateComment(comment, session)) {
 				// Arreglar la parte del modelo
 				factory.getServicesFactory().getCommentaryService().save(usuario.getId(), idPropuesta, comment);
 				kafkaProducer.send("user", "El comentario se añadio correctamente");
@@ -197,18 +209,19 @@ public class MainController {
 				kafkaProducer.send("user", "El comentario no es válido.");
 			}
 
-			return comment(Long.toString(idPropuesta));
+			return comment(Long.toString(idPropuesta), session);
 
 		} else {
 			kafkaProducer.send("login", "El usuario no existe en sesion");
-			return fail();
+			return fail(session);
 		}
 	}
 
 	// Aqui solo llamamos cuando queramos que vaya hacia atras, es decir,
 	// nos logeamos como usuario pincha en ver comentarios y pulsa inicio
 	@RequestMapping("/usuario")
-	public ModelAndView backUser() {
+	public ModelAndView backUser(HttpSession session) {
+		Citizen usuario = (Citizen) session.getAttribute("user");
 		if (usuario != null) {
 			if (usuario.isAdmin()) {
 				kafkaProducer.send("admin", "El administrador volvio a su pagina principal");
@@ -224,32 +237,34 @@ public class MainController {
 			}
 		} else {
 			kafkaProducer.send("login", "El usuario no existe en sesion");
-			return fail();
+			return fail(session);
 		}
 	}
 
 	// Aqui se manda siempre que falle algo
 	@RequestMapping("/fail")
-	public ModelAndView fail() {
-		usuario = null;
+	public ModelAndView fail(HttpSession session) {
+		session.removeAttribute("user");
 		idPropuesta = null;
 		return new ModelAndView("error");
 	}
 
 	@RequestMapping("/nuevaPropuesta")
-	public ModelAndView nuevaPropuesta() {
+	public ModelAndView nuevaPropuesta(HttpSession session) {
+		Citizen usuario = (Citizen) session.getAttribute("user");
 		if (usuario != null) {
 			kafkaProducer.send("admin", "Sección para crear propuestas");
 			return new ModelAndView("nuevaPropuesta");
 		} else {
 			kafkaProducer.send("admin", "Fallo al acceder a crear propuestas");
-			return fail();
+			return fail(session);
 		}
 	}
 
 	@RequestMapping(path = "/crearPropuesta", method = RequestMethod.POST)
 	public ModelAndView crearPropuesta(@RequestParam("nombre") String nombre,
-			@RequestParam("contenido") String contenido) {
+			@RequestParam("contenido") String contenido, HttpSession session) {
+		Citizen usuario = (Citizen) session.getAttribute("user");
 		if (usuario != null) {
 			Proposal propuesta = new Proposal(nombre, contenido, 1000);
 
@@ -260,12 +275,13 @@ public class MainController {
 			return new ModelAndView("usuario").addObject("proposals", proposals);
 		} else {
 			kafkaProducer.send("admin", "Fallo al crear propuesta");
-			return fail();
+			return fail(session);
 		}
 	}
 
 	@RequestMapping(path = "/votarPositivo", method = RequestMethod.GET)
-	public ModelAndView votarPositivo(@RequestParam("idPropuesta") String idPropuesta) {
+	public ModelAndView votarPositivo(@RequestParam("idPropuesta") String idPropuesta, HttpSession session) {
+		Citizen usuario = (Citizen) session.getAttribute("user");
 		if (usuario != null) {
 			Proposal propuesta = factory.getServicesFactory().getProposalService()
 					.findById(Long.parseLong(idPropuesta));
@@ -289,12 +305,13 @@ public class MainController {
 					.addObject("mensaje", "Voto realizado correctamente");
 		} else {
 			kafkaProducer.send("user", "Error al votar");
-			return fail();
+			return fail(session);
 		}
 	}
 
 	@RequestMapping(path = "/votarNegativo", method = RequestMethod.GET)
-	public ModelAndView votarNegativo(@RequestParam("idPropuesta") String idPropuesta) {
+	public ModelAndView votarNegativo(@RequestParam("idPropuesta") String idPropuesta, HttpSession session) {
+		Citizen usuario = (Citizen) session.getAttribute("user");
 		if (usuario != null) {
 			Proposal propuesta = factory.getServicesFactory().getProposalService()
 					.findById(Long.parseLong(idPropuesta));
@@ -315,12 +332,13 @@ public class MainController {
 					.addObject("mensaje", "Voto realizado correctamente");
 		} else {
 			kafkaProducer.send("user", "Error al votar");
-			return fail();
+			return fail(session);
 		}
 	}
 
 	@RequestMapping("/propuestasTramite")
-	public ModelAndView propuestasTramite() {
+	public ModelAndView propuestasTramite(HttpSession session) {
+		Citizen usuario = (Citizen) session.getAttribute("user");
 		if (usuario != null) {
 			List<Proposal> proposals = factory.getServicesFactory().getProposalService()
 					.findByStatus(EstadosPropuesta.EnTramite);
@@ -345,12 +363,13 @@ public class MainController {
 			}
 		} else {
 			kafkaProducer.send("user", "Error en propuestas en trámite");
-			return fail();
+			return fail(session);
 		}
 	}
 
 	@RequestMapping("/propuestasRechazadas")
-	public ModelAndView propuestasRechazadas() {
+	public ModelAndView propuestasRechazadas(HttpSession session) {
+		Citizen usuario = (Citizen) session.getAttribute("user");
 		if (usuario != null) {
 			List<Proposal> proposals = factory.getServicesFactory().getProposalService()
 					.findByStatus(EstadosPropuesta.Rechazada);
@@ -364,16 +383,17 @@ public class MainController {
 				}
 			} else {
 				kafkaProducer.send("admin", "Error en propuestas rechazadas");
-				return fail();
+				return fail(session);
 			}
 		} else {
 			kafkaProducer.send("admin", "Error en propuestas rechazadas");
-			return fail();
+			return fail(session);
 		}
 	}
 
 	@RequestMapping("/propuestasAceptadas")
-	public ModelAndView propuestasAceptadas() {
+	public ModelAndView propuestasAceptadas(HttpSession session) {
+		Citizen usuario = (Citizen) session.getAttribute("user");
 		if (usuario != null) {
 			List<Proposal> proposals = factory.getServicesFactory().getProposalService()
 					.findByStatus(EstadosPropuesta.Aceptada);
@@ -397,12 +417,13 @@ public class MainController {
 			}
 		} else {
 			kafkaProducer.send("admin", "Error en propuestas aceptadas");
-			return fail();
+			return fail(session);
 		}
 	}
 
 	@RequestMapping(path = "/rechazarPropuesta", method = RequestMethod.GET)
-	public ModelAndView rechazarPropuesta(@RequestParam("idPropuesta") String idPropuesta) {
+	public ModelAndView rechazarPropuesta(@RequestParam("idPropuesta") String idPropuesta, HttpSession session) {
+		Citizen usuario = (Citizen) session.getAttribute("user");
 		if (usuario != null) {
 			Proposal propuesta = factory.getServicesFactory().getProposalService()
 					.findById(Long.parseLong(idPropuesta));
@@ -415,13 +436,14 @@ public class MainController {
 			return new ModelAndView("enTramiteAdmin").addObject("proposals", proposals).addObject("hidden", false);
 		} else {
 			kafkaProducer.send("admin", "Error al rechazar una propuesta");
-			return fail();
+			return fail(session);
 		}
 	}
 
 	@RequestMapping(path = "/modificarMinVotes", method = RequestMethod.POST)
 	public ModelAndView modificarMinVotes(@RequestParam("minVotes") int minVotes,
-			@RequestParam("idPropuesta") String idPropuesta) {
+			@RequestParam("idPropuesta") String idPropuesta, HttpSession session) {
+		Citizen usuario = (Citizen) session.getAttribute("user");
 		if (usuario != null) {
 			Proposal propuesta = factory.getServicesFactory().getProposalService()
 					.findById(Long.parseLong(idPropuesta));
@@ -434,11 +456,12 @@ public class MainController {
 			return new ModelAndView("enTramiteAdmin").addObject("proposals", proposals).addObject("hidden", false);
 		} else {
 			kafkaProducer.send("admin", "Error en modificar número de votos");
-			return fail();
+			return fail(session);
 		}
 	}
 
-	private boolean validateComment(String comment) {
+	private boolean validateComment(String comment, HttpSession session) {
+		Citizen usuario = (Citizen) session.getAttribute("user");
 
 		if (keyWords.size() < 1) {
 			inicializarKeyWord();
@@ -454,7 +477,8 @@ public class MainController {
 	}
 
 	@RequestMapping(path = "/addKeyWords", method = RequestMethod.POST)
-	public ModelAndView addKeyWords(@RequestParam("keyWord") String keyWord) {
+	public ModelAndView addKeyWords(@RequestParam("keyWord") String keyWord, HttpSession session) {
+		Citizen usuario = (Citizen) session.getAttribute("user");
 		if (usuario != null) {
 
 			keyWords.add(keyWord);
@@ -463,7 +487,7 @@ public class MainController {
 			return new ModelAndView("getKeyWords").addObject("getKeyWords", keyWords).addObject("hidden", false);
 		} else {
 			kafkaProducer.send("admin", "Error añadiendo palabra a palabras no permitidas");
-			return fail();
+			return fail(session);
 		}
 	}
 
@@ -476,7 +500,8 @@ public class MainController {
 	}
 
 	@RequestMapping(path = "/getKeyWords", method = RequestMethod.GET)
-	public ModelAndView getKeyWords() {
+	public ModelAndView getKeyWords( HttpSession session) {
+		Citizen usuario = (Citizen) session.getAttribute("user");
 
 		if (usuario != null) {
 
@@ -492,7 +517,7 @@ public class MainController {
 			return new ModelAndView("getKeyWords").addObject("getKeyWords", keyWords).addObject("hidden", false);
 		} else {
 			kafkaProducer.send("admin", "No se puede acceder a las palabras no permitidas");
-			return fail();
+			return fail(session);
 		}
 	}
 }
