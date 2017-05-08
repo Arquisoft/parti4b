@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<head th:replace="plantillas/header :: head">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+</head>
+<body>
+	<nav th:replace="plantillas/header :: menuAdmin"></nav>
+
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title">
+				<b>CitizensLoader</b>
+			</h3>
+		</div>
+	</div>
+
+	<div class="container">
+
+		<form class="form-horizontal" id="form" th:action="@{/loadUsers}"
+			method="POST">
+			<fieldset>
+				<legend>citizensLoader</legend>
+				<div class="form-group">
+					
+					<input type="file" name="censo" id="censo"/>
+
+				</div>
+
+				<div class="form-group">
+					<div class="col-lg-10 col-lg-offset-2">
+						<button type="reset" class="btn btn-default">Limpiar</button>
+						<button type="submit" class="btn btn-primary" id="añadir">Cargar censo</button>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+
+	</div>
+
+</body>
+</html>
