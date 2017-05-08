@@ -3,7 +3,7 @@ package es.uniovi.asw.business.parser.writer;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import com.itextpdf.text.DocumentException;
+import com.lowagie.text.DocumentException;
 
 import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.model.exception.CitizenException;

@@ -2,7 +2,8 @@ package es.uniovi.asw.business.parser.writer;
 
 import java.io.*;
 
-import com.itextpdf.text.DocumentException;
+import com.lowagie.text.DocumentException;
+
 import es.uniovi.asw.model.Citizen;
 
 /**

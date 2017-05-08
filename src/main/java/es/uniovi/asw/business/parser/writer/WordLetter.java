@@ -8,7 +8,8 @@ import java.io.IOException;
 import es.uniovi.asw.model.Citizen;
 import org.apache.poi.xwpf.usermodel.*;
 
-import com.itextpdf.text.DocumentException;
+import com.lowagie.text.DocumentException;
+
 
 /**
  * Clase encargada de crear las cartas con formato WORD.

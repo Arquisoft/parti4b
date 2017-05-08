@@ -2,8 +2,11 @@ package es.uniovi.asw.business.parser.writer;
 
 import java.io.*;
 
-import com.itextpdf.text.*;
-import com.itextpdf.text.pdf.*;
+import com.lowagie.text.Document;
+import com.lowagie.text.DocumentException;
+import com.lowagie.text.Paragraph;
+import com.lowagie.text.pdf.PdfWriter;
+
 import es.uniovi.asw.model.Citizen;
 
 /**
