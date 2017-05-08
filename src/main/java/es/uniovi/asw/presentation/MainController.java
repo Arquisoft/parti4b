@@ -33,6 +33,7 @@ import es.uniovi.asw.model.Proposal;
 import es.uniovi.asw.model.exception.CitizenException;
 import es.uniovi.asw.model.types.status.EstadosComentario;
 import es.uniovi.asw.model.types.status.EstadosPropuesta;
+import es.uniovi.asw.model.types.topics.Topics;
 import es.uniovi.asw.streamkafka.producers.KafkaProducer;
 import es.uniovi.asw.util.Printer;
 
@@ -212,7 +213,7 @@ public class MainController {
 			if (validateComment(comment, session)) {
 				// Arreglar la parte del modelo
 				factory.getServicesFactory().getCommentaryService().save(user.getId(), idPropuesta, comment);
-				kafkaProducer.send("user", "El comentario se añadio correctamente");
+				kafkaProducer.send(Topics.NEW_COMMENT, ""+idPropuesta);
 			} else {
 				kafkaProducer.send("user", "El comentario no es válido.");
 			}
@@ -303,6 +304,7 @@ public class MainController {
 						.addObject("mensaje", "El usuario ya ha votado esta propuesta");
 			} else {
 				factory.getServicesFactory().getVoteService().save(user.getId(), propuesta.getId());
+				kafkaProducer.send(Topics.POSITIVE_VOTE, ""+propuesta.getId());
 			}
 			if (propuesta.getValoration() >= propuesta.getMinVotes()) {
 				propuesta.setStatus(EstadosPropuesta.Aceptada);
@@ -332,6 +334,7 @@ public class MainController {
 						.addObject("mensaje", "El usuario ya ha votado esta propuesta");
 			} else {
 				factory.getServicesFactory().getVoteService().save(user.getId(), propuesta.getId());
+				kafkaProducer.send(Topics.NEGATIVE_VOTE, ""+propuesta.getId());
 			}
 			factory.getServicesFactory().getProposalService().update(propuesta);
 

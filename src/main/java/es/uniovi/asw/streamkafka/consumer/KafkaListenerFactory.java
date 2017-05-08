@@ -15,6 +15,9 @@ import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 import org.springframework.kafka.listener.ConcurrentMessageListenerContainer;
 
+import es.uniovi.asw.dashboard.EventController;
+import es.uniovi.asw.dashboard.impl.EventControllerImpl;
+
 @Configuration
 @EnableKafka
 public class KafkaListenerFactory {
@@ -46,4 +49,9 @@ public class KafkaListenerFactory {
 		props.put(ConsumerConfig.GROUP_ID_CONFIG, "es.uniovi");
 		return props;
 	}
+	
+	  @Bean
+	  public EventController eventController() {
+	    return new EventControllerImpl();
+	  }
 }
