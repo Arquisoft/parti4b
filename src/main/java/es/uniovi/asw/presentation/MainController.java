@@ -491,7 +491,7 @@ public class MainController {
 	public ModelAndView addKeyWords(@RequestParam("keyWord") String keyWord, HttpSession session) {
 		Citizen user = (Citizen) session.getAttribute("user");
 		if (user != null) {
-
+			
 			keyWords.add(keyWord);
 			kafkaProducer.send("admin", "Añadida palabra a palabras no permitidas");
 
@@ -515,17 +515,19 @@ public class MainController {
 		Citizen user = (Citizen) session.getAttribute("user");
 
 		if (user != null) {
-
-			System.out.println("1");
-
-			if (keyWords.size() < 1) {
-				inicializarKeyWord();
-				System.out.println("2");
+			if(user.isAdmin()){
+				System.out.println("1");
+	
+				if (keyWords.size() < 1) {
+					inicializarKeyWord();
+					System.out.println("2");
+				}
+	
+				kafkaProducer.send("admin", "Accediendo a palabras no permitidas");
+				return new ModelAndView("getKeyWords").addObject("getKeyWords", keyWords).addObject("hidden", false);
+			} else {
+				return fail(session);
 			}
-
-			kafkaProducer.send("admin", "Accediendo a palabras no permitidas");
-
-			return new ModelAndView("getKeyWords").addObject("getKeyWords", keyWords).addObject("hidden", false);
 		} else {
 			kafkaProducer.send("admin", "No se puede acceder a las palabras no permitidas");
 			return fail(session);
@@ -536,9 +538,13 @@ public class MainController {
 	public ModelAndView citizensLoader(HttpSession session) {
 		Citizen user = (Citizen) session.getAttribute("user");
 		if (user != null) {
-			kafkaProducer.send("admin", "Accediendo a citizensLoader");
-
-			return new ModelAndView("citizensLoader");
+			if(user.isAdmin()){
+				kafkaProducer.send("admin", "Accediendo a citizensLoader");
+				return new ModelAndView("citizensLoader");
+			}
+			else {
+				return fail(session);
+			}
 		} else {
 			kafkaProducer.send("admin", "No se puede acceder a citizensLoader");
 			return fail(session);
