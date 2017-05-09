@@ -210,7 +210,7 @@ public class MainController {
 		if (idPropuesta != null && user != null) {
 			System.out.println(comment + " \nid de la propuesta: " + Long.toString(idPropuesta));
 
-			if (validateComment(comment, session)) {
+			if (validateComment(comment)) {
 				// Arreglar la parte del modelo
 				factory.getServicesFactory().getCommentaryService().save(user.getId(), idPropuesta, comment);
 				kafkaProducer.send(Topics.NEW_COMMENT, ""+idPropuesta);
@@ -471,8 +471,7 @@ public class MainController {
 		}
 	}
 
-	private boolean validateComment(String comment, HttpSession session) {
-		Citizen user = (Citizen) session.getAttribute("user");
+	private boolean validateComment(String comment) {
 
 		if (keyWords.size() < 1) {
 			inicializarKeyWord();
