@@ -4,7 +4,9 @@ if [ ! -d kafka ]; then
     mkdir -p kafka && tar xzf kafka.tgz -C kafka --strip-components 1
     rm kafka.tgz
 fi
-nohup bash -c "cd kafka && bin/zookeeper-server-start.sh config/zookeeper.properties &"
+cd kafka
+bash bin/zookeeper-server-start.sh config/zookeeper.properties &
 sleep 10
-nohup bash -c "cd kafka && bin/kafka-server-start.sh config/server.properties &"
-web: java -Dserver.port=$PORT -jar target/parti4b-0.0.1.jar 
+bash bin/kafka-server-start.sh config/server.properties &
+cd ..
+java -Dserver.port=$PORT -jar target/parti4b-0.0.1.jar 
