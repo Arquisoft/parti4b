@@ -80,9 +80,9 @@ public class MainController {
 	public ModelAndView login(@RequestParam("dni") String dni, @RequestParam("password") String password,
 			HttpSession session) {
 		// Para cuando la bbdd tenga contraseñas que nos conocemos
-		// usuario = servicio.findLoggableUser(dni , md5(password));
+		usuario = factory.getServicesFactory().getCitizenService().findLoggableUser(dni , password);
 
-		usuario = factory.getServicesFactory().getCitizenService().findByDni(dni);
+		//usuario = factory.getServicesFactory().getCitizenService().findByDni(dni);
 
 		if (usuario != null) {
 			if (usuario.isAdmin()) {
