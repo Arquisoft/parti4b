@@ -10,7 +10,7 @@ import es.uniovi.asw.model.types.topics.Topics;
 
 public class EventControllerImpl implements EventController {
 
-	static Map<String, Integer> votedProposals = new HashMap<String, Integer>();
+	public static Map<String, Integer> votedProposals = new HashMap<String, Integer>();
 	
 	@KafkaListener(topics = Topics.POSITIVE_VOTE)	
 	@Override

@@ -2,9 +2,9 @@ package es.uniovi.asw.util;
 
 import java.util.List;
 
-import es.uniovi.asw.business.reportwritter.WreportP;
 import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.model.exception.CitizenException;
+import es.uniovi.asw.participationSystem.reportwriter.WreportP;
 
 /**
  * Clase encarga de mostrar por pantalla datos al usuario.
