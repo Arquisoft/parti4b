@@ -51,10 +51,17 @@ public class UserVoteSteps {
 		
 	}
 
-	@Entonces("^puede hacer click en votar para votarlas$")
-	public void puede_hacer_click_en_votar_para_votarlas() throws Throwable {
+	@Entonces("^votara la propuesta 3 a favor$")
+	public void votara_la_propuesta_3_a_favor() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-		driver.findElement(By.id("3")).click();
+		driver.findElement(By.id("si3")).click();
 	}
+	
+	@Entonces("^votara la propuesta 4 en contra$")
+	public void votara_la_propuesta_4_en_contra() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		driver.findElement(By.id("no4")).click();
+	}
+	
 
 }
