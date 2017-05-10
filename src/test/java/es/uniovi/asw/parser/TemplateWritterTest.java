@@ -45,7 +45,7 @@ public class TemplateWritterTest {
 		usuario = new Citizen("a", "b b", "c@gmail.com",
 				new Date(c1.getTimeInMillis()), "residencia", "nacionalidad",
 				"dni");
-		anonimo = new Citizen();
+		anonimo = new Citizen((long)3);
 	}
 
 	/**
