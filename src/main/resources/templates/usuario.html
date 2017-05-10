@@ -29,7 +29,8 @@
 		<tr th:each="proposal:${proposals}" class="active">
 			<td th:text="${proposal.name}"></td>
 			<td th:text="${proposal.content}"></td>
-			<td><a th:href="@{/votarPositivo(idPropuesta=${proposal.id})}"><img
+			<td><a th:href="@{/votarPositivo(idPropuesta=${proposal.id})}" 
+					th:id="${proposal.id}"><img
 					src="../static/images/voteY.JPG" th:src="@{/images/voteY.JPG}" /></a>
 				<a th:href="@{/votarNegativo(idPropuesta=${proposal.id})}"><img
 					src="../static/images/voteN.JPG" th:src="@{/images/voteN.JPG}" /></a></td>

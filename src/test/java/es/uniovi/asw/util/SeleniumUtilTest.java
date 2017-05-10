@@ -36,6 +36,14 @@ public class SeleniumUtilTest {
 		assertTrue(isElementPresent(By.id("propuestasRechazadas")));
 		assertTrue(isElementPresent(By.id("Salir")));
 	}
+	
+	public void comprobarCabeceraUser() {
+		assertTrue(isElementPresent(By.id("inicio")));
+		assertTrue(isElementPresent(By.id("nuevaProp")));
+		assertTrue(isElementPresent(By.id("propTram")));
+		assertTrue(isElementPresent(By.id("propAcep")));
+		assertTrue(isElementPresent(By.id("salir")));
+	}
 
 	public boolean isElementPresent(By by) {
 		try {

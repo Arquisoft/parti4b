@@ -72,7 +72,7 @@ public class MainController {
 		// Cerramos sesion usuario a null y lo mandamos al landing
 		// Aunque tambien se inicializa al principio
 		session.removeAttribute("user");
-		kafkaProducer.send("logout", "El usuario cerro sesion correctamente" + " o es la primera vez que entrea");
+//		kafkaProducer.send("logout", "El usuario cerro sesion correctamente" + " o es la primera vez que entrea");
 		return "landing";
 	}
 
@@ -86,13 +86,13 @@ public class MainController {
 
 		if (usuario != null) {
 			if (usuario.isAdmin()) {
-				kafkaProducer.send("admin", "El administrador del sistema se ha logueado");
+				kafkaProducer.send(Topics.LOGGIN, "" + usuario.getId());
 				session.setAttribute("user", usuario);
 				return new ModelAndView("admin"); // la contraseña de admin es
 			} else {
 				List<Proposal> proposals = factory.getServicesFactory().getProposalService().findByStatus(EstadosPropuesta.EnTramite);
 				session.setAttribute("user", usuario);
-				kafkaProducer.send("user", "El usuario " + usuario.getNombre() + " se ha logueado");
+				kafkaProducer.send(Topics.LOGGIN, " " + usuario.getId());
 				return new ModelAndView("usuario").addObject("proposals", proposals);
 			}
 		} else {
@@ -255,7 +255,7 @@ public class MainController {
 	public ModelAndView nuevaPropuesta(HttpSession session) {
 		Citizen user = (Citizen) session.getAttribute("user");
 		if (user != null) {
-			kafkaProducer.send("admin", "Sección para crear propuestas");
+			kafkaProducer.send(Topics.NEW_PROPOSAL, "Sección para crear propuestas");
 			return new ModelAndView("nuevaPropuesta");
 		} else {
 			kafkaProducer.send("admin", "Fallo al acceder a crear propuestas");
@@ -271,10 +271,10 @@ public class MainController {
 
 			factory.getServicesFactory().getProposalService().save(propuesta);
 			List<Proposal> proposals = factory.getServicesFactory().getProposalService().findByStatus(EstadosPropuesta.EnTramite);
-			kafkaProducer.send("admin", "Propuesta creada");
+			kafkaProducer.send(Topics.NEW_PROPOSAL, "" + propuesta.getId());
 			return new ModelAndView("usuario").addObject("proposals", proposals);
 		} else {
-			kafkaProducer.send("admin", "Fallo al crear propuesta");
+//			kafkaProducer.send("admin", "Fallo al crear propuesta");
 			return fail(session);
 		}
 	}
@@ -288,7 +288,7 @@ public class MainController {
 			List<Proposal> proposals = factory.getServicesFactory().getProposalService().findByStatus(EstadosPropuesta.EnTramite);
 
 			if (!propuesta.positiveVote(user)) {
-				kafkaProducer.send("user", "Ya ha votado el usuario");
+				kafkaProducer.send(Topics.ILEGAL_VOTE, "" + propuesta.getId());
 				return new ModelAndView("usuario").addObject("proposals", proposals).addObject("hiddenFalse", true).addObject("mensaje", "El usuario ya ha votado esta propuesta");
 			} else {
 				factory.getServicesFactory().getVoteService().save(user.getId(), propuesta.getId());
@@ -298,10 +298,10 @@ public class MainController {
 				propuesta.setStatus(EstadosPropuesta.Aceptada);
 			}
 
-			kafkaProducer.send("user", "Voto realizado");
+//			kafkaProducer.send("user", "Voto realizado");
 			return new ModelAndView("usuario").addObject("proposals", proposals).addObject("hiddenTrue", true).addObject("mensaje", "Voto realizado correctamente");
 		} else {
-			kafkaProducer.send("user", "Error al votar");
+//			kafkaProducer.send("user", "Error al votar");
 			return fail(session);
 		}
 	}
@@ -314,7 +314,7 @@ public class MainController {
 			List<Proposal> proposals = factory.getServicesFactory().getProposalService().findByStatus(EstadosPropuesta.EnTramite);
 
 			if (!propuesta.negativeVote(user)) {
-				kafkaProducer.send("user", "Ya ha votado el usuario");
+				kafkaProducer.send(Topics.ILEGAL_VOTE, "" + propuesta.getId());
 				return new ModelAndView("usuario").addObject("proposals", proposals).addObject("hiddenFalse", true).addObject("mensaje", "El usuario ya ha votado esta propuesta");
 			} else {
 				factory.getServicesFactory().getVoteService().save(user.getId(), propuesta.getId());
@@ -322,10 +322,10 @@ public class MainController {
 			}
 			factory.getServicesFactory().getProposalService().update(propuesta);
 
-			kafkaProducer.send("user", "Voto realizado");
+//			kafkaProducer.send("user", "Voto realizado");
 			return new ModelAndView("usuario").addObject("proposals", proposals).addObject("hiddenTrue", true).addObject("mensaje", "Voto realizado correctamente");
 		} else {
-			kafkaProducer.send("user", "Error al votar");
+//			kafkaProducer.send("user", "Error al votar");
 			return fail(session);
 		}
 	}
@@ -338,23 +338,23 @@ public class MainController {
 
 			if (user.isAdmin()) {
 				if (proposals != null) {
-					kafkaProducer.send("admin", "Propuestas en trámite");
+//					kafkaProducer.send("admin", "Propuestas en trámite");
 					return new ModelAndView("enTramiteAdmin").addObject("proposals", proposals).addObject("hidden", false).addObject("id", idPropuesta);
 				} else {
-					kafkaProducer.send("admin", "Propuestas en trámite");
+//					kafkaProducer.send("admin", "Propuestas en trámite");
 					return new ModelAndView("enTramiteAdmin").addObject("hidden", true);
 				}
 			} else {
 				if (proposals != null) {
-					kafkaProducer.send("user", "Propuestas en trámite");
+//					kafkaProducer.send("user", "Propuestas en trámite");
 					return new ModelAndView("enTramite").addObject("proposals", proposals).addObject("hidden", false);
 				} else {
-					kafkaProducer.send("user", "Propuestas en trámite");
+//					kafkaProducer.send("user", "Propuestas en trámite");
 					return new ModelAndView("enTramite").addObject("hidden", true);
 				}
 			}
 		} else {
-			kafkaProducer.send("user", "Error en propuestas en trámite");
+//			kafkaProducer.send("user", "Error en propuestas en trámite");
 			return fail(session);
 		}
 	}
@@ -366,18 +366,18 @@ public class MainController {
 			List<Proposal> proposals = factory.getServicesFactory().getProposalService().findByStatus(EstadosPropuesta.Rechazada);
 			if (user.isAdmin()) {
 				if (proposals != null) {
-					kafkaProducer.send("admin", "Propuestas rechazadas");
+//					kafkaProducer.send("admin", "Propuestas rechazadas");
 					return new ModelAndView("rechazadas").addObject("proposals", proposals).addObject("hidden", false);
 				} else {
-					kafkaProducer.send("admin", "Propuestas rechazadas");
+//					kafkaProducer.send("admin", "Propuestas rechazadas");
 					return new ModelAndView("rechazadas").addObject("hidden", true);
 				}
 			} else {
-				kafkaProducer.send("admin", "Error en propuestas rechazadas");
+//				kafkaProducer.send("admin", "Error en propuestas rechazadas");
 				return fail(session);
 			}
 		} else {
-			kafkaProducer.send("admin", "Error en propuestas rechazadas");
+//			kafkaProducer.send("admin", "Error en propuestas rechazadas");
 			return fail(session);
 		}
 	}
@@ -389,23 +389,23 @@ public class MainController {
 			List<Proposal> proposals = factory.getServicesFactory().getProposalService().findByStatus(EstadosPropuesta.Aceptada);
 			if (user.isAdmin()) {
 				if (proposals != null) {
-					kafkaProducer.send("admin", "Propuestas aceptadas");
+//					kafkaProducer.send("admin", "Propuestas aceptadas");
 					return new ModelAndView("aceptadasAdmin").addObject("proposals", proposals).addObject("hidden", false);
 				} else {
-					kafkaProducer.send("admin", "Propuestas aceptadas");
+//					kafkaProducer.send("admin", "Propuestas aceptadas");
 					return new ModelAndView("aceptadasAdmin").addObject("hidden", true);
 				}
 			} else {
 				if (proposals != null) {
-					kafkaProducer.send("user", "Propuestas aceptadas");
+//					kafkaProducer.send("user", "Propuestas aceptadas");
 					return new ModelAndView("aceptadas").addObject("proposals", proposals).addObject("hidden", false);
 				} else {
-					kafkaProducer.send("user", "Propuestas aceptadas");
+//					kafkaProducer.send("user", "Propuestas aceptadas");
 					return new ModelAndView("aceptadas").addObject("hidden", true);
 				}
 			}
 		} else {
-			kafkaProducer.send("admin", "Error en propuestas aceptadas");
+//			kafkaProducer.send("admin", "Error en propuestas aceptadas");
 			return fail(session);
 		}
 	}
@@ -419,10 +419,10 @@ public class MainController {
 
 			factory.getServicesFactory().getProposalService().update(propuesta);
 			List<Proposal> proposals = factory.getServicesFactory().getProposalService().findByStatus(EstadosPropuesta.EnTramite);
-			kafkaProducer.send("admin", "Propuesta rechazada");
+//			kafkaProducer.send("admin", "Propuesta rechazada");
 			return new ModelAndView("enTramiteAdmin").addObject("proposals", proposals).addObject("hidden", false);
 		} else {
-			kafkaProducer.send("admin", "Error al rechazar una propuesta");
+//			kafkaProducer.send("admin", "Error al rechazar una propuesta");
 			return fail(session);
 		}
 	}
@@ -436,10 +436,10 @@ public class MainController {
 
 			factory.getServicesFactory().getProposalService().update(propuesta);
 			List<Proposal> proposals = factory.getServicesFactory().getProposalService().findByStatus(EstadosPropuesta.EnTramite);
-			kafkaProducer.send("admin", "Modificar número de votos");
+//			kafkaProducer.send("admin", "Modificar número de votos");
 			return new ModelAndView("enTramiteAdmin").addObject("proposals", proposals).addObject("hidden", false);
 		} else {
-			kafkaProducer.send("admin", "Error en modificar número de votos");
+//			kafkaProducer.send("admin", "Error en modificar número de votos");
 			return fail(session);
 		}
 	}
@@ -465,11 +465,11 @@ public class MainController {
 		if (user != null) {
 
 			keyWords.add(keyWord);
-			kafkaProducer.send("admin", "Añadida palabra a palabras no permitidas");
+//			kafkaProducer.send("admin", "Añadida palabra a palabras no permitidas");
 
 			return new ModelAndView("getKeyWords").addObject("getKeyWords", keyWords).addObject("hidden", false);
 		} else {
-			kafkaProducer.send("admin", "Error añadiendo palabra a palabras no permitidas");
+//			kafkaProducer.send("admin", "Error añadiendo palabra a palabras no permitidas");
 			return fail(session);
 		}
 	}
@@ -495,13 +495,13 @@ public class MainController {
 					System.out.println("2");
 				}
 
-				kafkaProducer.send("admin", "Accediendo a palabras no permitidas");
+//				kafkaProducer.send("admin", "Accediendo a palabras no permitidas");
 				return new ModelAndView("getKeyWords").addObject("getKeyWords", keyWords).addObject("hidden", false);
 			} else {
 				return fail(session);
 			}
 		} else {
-			kafkaProducer.send("admin", "No se puede acceder a las palabras no permitidas");
+//			kafkaProducer.send("admin", "No se puede acceder a las palabras no permitidas");
 			return fail(session);
 		}
 	}
@@ -511,13 +511,13 @@ public class MainController {
 		Citizen user = (Citizen) session.getAttribute("user");
 		if (user != null) {
 			if (user.isAdmin()) {
-				kafkaProducer.send("admin", "Accediendo a citizensLoader");
+//				kafkaProducer.send("admin", "Accediendo a citizensLoader");
 				return new ModelAndView("citizensLoader");
 			} else {
 				return fail(session);
 			}
 		} else {
-			kafkaProducer.send("admin", "No se puede acceder a citizensLoader");
+//			kafkaProducer.send("admin", "No se puede acceder a citizensLoader");
 			return fail(session);
 		}
 	}
@@ -526,7 +526,7 @@ public class MainController {
 	public ModelAndView loadUsers(@RequestParam("censo") File censo, HttpSession session) throws CitizenException {
 		Citizen user = (Citizen) session.getAttribute("user");
 		if (user != null) {
-			kafkaProducer.send("admin", "Accediendo a loadUsers");
+//			kafkaProducer.send("admin", "Accediendo a loadUsers");
 
 			try {
 				if (censo != null) {
@@ -545,7 +545,7 @@ public class MainController {
 
 			return new ModelAndView("citizensLoader");
 		} else {
-			kafkaProducer.send("admin", "Acceso denegado");
+//			kafkaProducer.send("admin", "Acceso denegado");
 			return fail(session);
 		}
 	}
