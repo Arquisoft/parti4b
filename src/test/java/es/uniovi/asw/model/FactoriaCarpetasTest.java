@@ -1,4 +1,4 @@
-package es.uniovi.asw.util;
+package es.uniovi.asw.model;
 
 import static org.junit.Assert.*;
 
@@ -6,6 +6,8 @@ import java.io.File;
 import java.util.Random;
 
 import org.junit.Test;
+
+import es.uniovi.asw.util.FactoryCarpetas;
 
 public class FactoriaCarpetasTest {
 	
