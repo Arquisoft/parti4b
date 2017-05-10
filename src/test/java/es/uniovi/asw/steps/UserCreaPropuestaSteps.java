@@ -5,12 +5,14 @@ import org.junit.runner.RunWith;
 
 import static org.junit.Assert.*;
 import org.openqa.selenium.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import cucumber.api.java.es.*;
 import es.uniovi.asw.Application;
+import es.uniovi.asw.dbManagement.ProposalRepository;
 import es.uniovi.asw.util.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -54,7 +56,6 @@ public class UserCreaPropuestaSteps {
 	@Entonces("^puede hacer click en nueva propuesta$")
 	public void puede_hacer_click_en_nueva_propuesta() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-		su.comprobarCabeceraUser();
 		driver.findElement(By.id("nuevaProp")).click();
 	}
 
@@ -68,6 +69,8 @@ public class UserCreaPropuestaSteps {
 		driver.findElement(By.name("contenido")).sendKeys("Pues en este test se realizo a traves de cucumber");
 	}
 
+	@Autowired
+	ProposalRepository p;
 	@Entonces("^se publica el comentario si es correcto$")
 	public void se_publica_el_comentario_si_es_correcto() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions

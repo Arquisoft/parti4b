@@ -96,7 +96,7 @@ public class MainController {
 				return new ModelAndView("usuario").addObject("proposals", proposals);
 			}
 		} else {
-			kafkaProducer.send("login", "Usuario o contraseña incorrectos");
+//			kafkaProducer.send("login", "Usuario o contraseña incorrectos");
 			return new ModelAndView("landing").addObject("hidden", true).addObject("mensaje", "Usuario o contraseña invalido.");
 		}
 	}
@@ -126,10 +126,10 @@ public class MainController {
 				}
 
 				if (commentaries != null) {
-					kafkaProducer.send("admin", "La propuesta seleccionada tiene comentarios");
+//					kafkaProducer.send("admin", "La propuesta seleccionada tiene comentarios");
 					return new ModelAndView("commentAdmin").addObject("commentaries", commentaries).addObject("hidden", false).addObject("id", id).addObject("datos", imp);
 				} else {
-					kafkaProducer.send("admin", "La propuesta seleccionada no tiene comentarios");
+//					kafkaProducer.send("admin", "La propuesta seleccionada no tiene comentarios");
 					return new ModelAndView("commentAdmin").addObject("hidden", true).addObject("id", id);
 				}
 
@@ -146,10 +146,10 @@ public class MainController {
 				}
 
 				if (commentaries != null) {
-					kafkaProducer.send("user", "La propuesta seleccionada tiene comentarios");
+//					kafkaProducer.send("user", "La propuesta seleccionada tiene comentarios");
 					return new ModelAndView("comment").addObject("commentaries", commentaries).addObject("hidden", false).addObject("id", id).addObject("datos", imp);
 				} else {
-					kafkaProducer.send("user", "La propuesta seleccionada no tiene comentarios");
+//					kafkaProducer.send("user", "La propuesta seleccionada no tiene comentarios");
 					return new ModelAndView("comment").addObject("hidden", true).addObject("id", id);
 				}
 			}
@@ -175,10 +175,10 @@ public class MainController {
 			comentario.setEstado(EstadosComentario.Censurado);
 			factory.getServicesFactory().getCommentaryService().update(comentario);
 
-			kafkaProducer.send("admin", "El administrador censuro este comentario: " + comentario.getContent());
+//			kafkaProducer.send("admin", "El administrador censuro este comentario: " + comentario.getContent());
 			return comment(idPropuesta.toString(), session);
 		} else {
-			kafkaProducer.send("login", "No existe el usuario en sesion");
+//			kafkaProducer.send("login", "No existe el usuario en sesion");
 			return fail(session);
 		}
 	}
@@ -189,10 +189,10 @@ public class MainController {
 		Citizen user = (Citizen) session.getAttribute("user");
 		if (user != null) {
 			this.idPropuesta = Long.parseLong(id);
-			kafkaProducer.send("user", "Cargando formulario para crear comentario");
+//			kafkaProducer.send("user", "Cargando formulario para crear comentario");
 			return new ModelAndView("crearComment").addObject("hidden", false);
 		} else {
-			kafkaProducer.send("login", "El usuario no existe en sesion");
+//			kafkaProducer.send("login", "El usuario no existe en sesion");
 			return fail(session);
 		}
 	}
@@ -209,13 +209,13 @@ public class MainController {
 				factory.getServicesFactory().getCommentaryService().save(user.getId(), idPropuesta, comment);
 				kafkaProducer.send(Topics.NEW_COMMENT, "" + idPropuesta);
 			} else {
-				kafkaProducer.send("user", "El comentario no es válido.");
+//				kafkaProducer.send("user", "El comentario no es válido.");
 			}
 
 			return comment(Long.toString(idPropuesta), session);
 
 		} else {
-			kafkaProducer.send("login", "El usuario no existe en sesion");
+//			kafkaProducer.send("login", "El usuario no existe en sesion");
 			return fail(session);
 		}
 	}
@@ -227,18 +227,18 @@ public class MainController {
 		Citizen user = (Citizen) session.getAttribute("user");
 		if (user != null) {
 			if (user.isAdmin()) {
-				kafkaProducer.send("admin", "El administrador volvio a su pagina principal");
+//				kafkaProducer.send("admin", "El administrador volvio a su pagina principal");
 				return new ModelAndView("admin");
 			} else {
 				idPropuesta = null; // cuando se pulsa en incio reseteo el id de
 									// la propuesta para evitar la navegacion
 									// incorrecta
 				List<Proposal> proposals = factory.getServicesFactory().getProposalService().findByStatus(EstadosPropuesta.EnTramite);
-				kafkaProducer.send("user", "El usuario " + user.getNombre() + " volvio a su pagina principal");
+//				kafkaProducer.send("user", "El usuario " + user.getNombre() + " volvio a su pagina principal");
 				return new ModelAndView("usuario").addObject("proposals", proposals);
 			}
 		} else {
-			kafkaProducer.send("login", "El usuario no existe en sesion");
+//			kafkaProducer.send("login", "El usuario no existe en sesion");
 			return fail(session);
 		}
 	}
@@ -255,10 +255,10 @@ public class MainController {
 	public ModelAndView nuevaPropuesta(HttpSession session) {
 		Citizen user = (Citizen) session.getAttribute("user");
 		if (user != null) {
-			kafkaProducer.send(Topics.NEW_PROPOSAL, "Sección para crear propuestas");
+//			kafkaProducer.send(Topics.NEW_PROPOSAL, "");
 			return new ModelAndView("nuevaPropuesta");
 		} else {
-			kafkaProducer.send("admin", "Fallo al acceder a crear propuestas");
+//			kafkaProducer.send("admin", "Fallo al acceder a crear propuestas");
 			return fail(session);
 		}
 	}
