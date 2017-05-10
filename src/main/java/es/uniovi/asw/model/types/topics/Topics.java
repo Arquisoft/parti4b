@@ -7,4 +7,7 @@ public class Topics {
 	public final static String ILEGAL_VOTE = "ilegalVote";
 	public final static String NEW_PROPOSAL = "newProposal";
 	public final static String LOGGIN = "loggin";
+	public final static String PROCESAR_RECHAZO = "procesarRechazo";
+	public final static String PROCESAR_CENSURA = "procesarCensura";
+	public final static String PROCESAR_VOTO = "procesarVoto";
 }

@@ -175,7 +175,7 @@ public class MainController {
 			comentario.setEstado(EstadosComentario.Censurado);
 			factory.getServicesFactory().getCommentaryService().update(comentario);
 
-//			kafkaProducer.send("admin", "El administrador censuro este comentario: " + comentario.getContent());
+			kafkaProducer.send(Topics.PROCESAR_CENSURA, "" + comentario.getId());
 			return comment(idPropuesta.toString(), session);
 		} else {
 //			kafkaProducer.send("login", "No existe el usuario en sesion");
@@ -419,7 +419,7 @@ public class MainController {
 
 			factory.getServicesFactory().getProposalService().update(propuesta);
 			List<Proposal> proposals = factory.getServicesFactory().getProposalService().findByStatus(EstadosPropuesta.EnTramite);
-//			kafkaProducer.send("admin", "Propuesta rechazada");
+			kafkaProducer.send(Topics.PROCESAR_RECHAZO, "" + propuesta.getId());
 			return new ModelAndView("enTramiteAdmin").addObject("proposals", proposals).addObject("hidden", false);
 		} else {
 //			kafkaProducer.send("admin", "Error al rechazar una propuesta");
@@ -436,7 +436,7 @@ public class MainController {
 
 			factory.getServicesFactory().getProposalService().update(propuesta);
 			List<Proposal> proposals = factory.getServicesFactory().getProposalService().findByStatus(EstadosPropuesta.EnTramite);
-//			kafkaProducer.send("admin", "Modificar número de votos");
+			kafkaProducer.send(Topics.PROCESAR_VOTO, "" + propuesta.getId());
 			return new ModelAndView("enTramiteAdmin").addObject("proposals", proposals).addObject("hidden", false);
 		} else {
 //			kafkaProducer.send("admin", "Error en modificar número de votos");
