@@ -56,7 +56,7 @@ public class Citizen {
 			CascadeType.REMOVE }, mappedBy = "citizen", fetch = FetchType.EAGER)
 	private Set<Vote> votes = new HashSet<Vote>();
 
-	Citizen() {
+	public Citizen() {
 	}
 
 	public Citizen(String nombre, String apellidos, String email,

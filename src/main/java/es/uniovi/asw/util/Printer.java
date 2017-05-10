@@ -25,7 +25,6 @@ public class Printer {
 	 */
 	public void printCitizenException(Exception e) throws CitizenException {
 		new WreportP().grabarError(e.getLocalizedMessage());
-		e.printStackTrace();
 		System.err.print(e.getLocalizedMessage());
 	}
 
