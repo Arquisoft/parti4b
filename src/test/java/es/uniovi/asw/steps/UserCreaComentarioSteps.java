@@ -15,14 +15,13 @@ import es.uniovi.asw.util.*;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = Application.class)
 @SpringBootTest(classes = Application.class, webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
-public class AdminSeeAllProposalAceptedSteps {
+public class UserCreaComentarioSteps {
 	private SeleniumUtilTest su = new SeleniumUtilTest();
 	private WebDriver driver = su.getDriver();
 	private String baseUrl = String.format("http://localhost:8080");
 
-	
-	@Cuando("^el administrador esta en la pantalla de inicio$")
-	public void el_administrador_esta_en_la_pantalla_de_inicio() throws Throwable {
+	@Cuando("^el usuario entra en sesion$")
+	public void el_usuario_entra_en_sesion() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 		driver.get(baseUrl + "/");
 		su.comprobarTexto("titulo", "PARTICIPATION SYSTEM 4b");
@@ -36,24 +35,43 @@ public class AdminSeeAllProposalAceptedSteps {
 		su.comprobarNumElemetos("fieldset", "./*", 4);
 		
 		driver.findElement(By.name("dni")).clear();
-		driver.findElement(By.name("dni")).sendKeys("666xxx");
+		driver.findElement(By.name("dni")).sendKeys("1236547n");
 		driver.findElement(By.name("password")).clear();
-		driver.findElement(By.name("password")).sendKeys("admin");
+		driver.findElement(By.name("password")).sendKeys("contraseña");
 		assertTrue(su.isElementPresent(By.id("login")));
 		driver.findElement(By.id("login")).click();
 	}
 	
-	@Entonces("^puede ver el menu$")
-	public void puede_ver_el_menu() throws Throwable {
+	@Entonces("^ve las propuestas$")
+	public void ve_las_propuestas() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-		su.comprobarNumElemetos("body", "./*", 1);
-		su.comprobarCabeceraAdmin();
+		su.comprobarCabeceraUser();
+		
 	}
-	
-	@Entonces("^puede hacer click para ver las propuestas aceptadas$")
-	public void puede_hacer_click_para_ver_las_propuestas_aceptadas() throws Throwable {
+
+	@Entonces("^puede hacer click en ver dentro de cada propuesta$")
+	public void puede_hacer_click_en_ver_dentro_de_cada_propuesta() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-		su.comprobarCabeceraAdmin();
-		driver.findElement(By.linkText("Propuestas aceptadas")).click();
+		driver.findElement(By.id("ver5")).click();
+	}
+
+	@Entonces("^desde el nuevo menu puede hacer click en nuevo comentario$")
+	public void desde_el_nuevo_menu_puede_hacer_click_en_nuevo_comentario() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		driver.findElement(By.id("crearComment")).click();
+	}
+
+	@Entonces("^rellena los datos necesarios$")
+	public void rellena_los_datos_necesarios() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		driver.findElement(By.name("comment")).clear();
+		driver.findElement(By.name("comment")).sendKeys("Pues en este comentario es de cucumber");
+	
+	}
+
+	@Entonces("^crea un nuevo comentario$")
+	public void crea_un_nuevo_comentario() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		driver.findElement(By.id("comentar")).click();
 	}
 }

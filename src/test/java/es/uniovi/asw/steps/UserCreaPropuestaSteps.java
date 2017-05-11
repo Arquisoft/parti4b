@@ -1,6 +1,5 @@
 package es.uniovi.asw.steps;
 
-import java.util.List;
 import org.junit.runner.RunWith;
 
 import static org.junit.Assert.*;
@@ -52,7 +51,7 @@ public class UserCreaPropuestaSteps {
 		su.comprobarCabeceraUser();
 		
 	}
-	
+
 	@Entonces("^puede hacer click en nueva propuesta$")
 	public void puede_hacer_click_en_nueva_propuesta() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions

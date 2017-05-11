@@ -1,11 +1,10 @@
 # language: es
 
-Característica: el usuario debe poder crear comentarios
+Característica: el usuario debe poder crear propuestas
 
-Escenario: Crear comentarios
-	Cuando el usuario entra en sesion
+Escenario: Crear propuestas
+	Cuando el usuario inicia sesion
 	Entonces puede ver las propuestas
-	Entonces puede hacer click en ver dentro de cada propuesta
-	Entonces desde el nuevo menu puede hacer click en nuevo comentario
-	Entonces rellena los datos necesarios
-	Entonces crea un nuevo comentario
+	Entonces puede hacer click en nueva propuesta
+	Entonces rellena los datos
+	Entonces se publica el comentario si es correcto

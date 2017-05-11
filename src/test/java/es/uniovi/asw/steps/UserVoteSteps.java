@@ -1,6 +1,5 @@
 package es.uniovi.asw.steps;
 
-import java.util.List;
 import org.junit.runner.RunWith;
 
 import static org.junit.Assert.*;
@@ -54,7 +53,7 @@ public class UserVoteSteps {
 	@Entonces("^puede hacer click en votar para votarlas$")
 	public void puede_hacer_click_en_votar_para_votarlas() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-		driver.findElement(By.id("3")).click();
+		driver.findElement(By.id("si3")).click();
 	}
 
 }
